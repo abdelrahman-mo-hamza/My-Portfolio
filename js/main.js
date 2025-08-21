@@ -1,4 +1,4 @@
-const countDownDate = new Date("Jan 1, 2024 23:59:59").getTime(),
+const countDownDate = new Date("Dec 31, 2027 23:59:59").getTime(),
   counter = setInterval(() => {
     var t = new Date().getTime(),
       t = countDownDate - t;
@@ -66,3 +66,4 @@ window.addEventListener("scroll", () => {
         ));
     });
   });
+
