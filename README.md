@@ -13,14 +13,12 @@ https://github.com/abdelrahman-mo-hamza
 <br>
 My Social Media<br>
 Facebook:<br>
-https://www.facebook.com/AbdelrahmanMo.Hamza<br>
-Twitter:<br>
-https://twitter.com/Mano_Love_Oo<br>
+https://www.facebook.com/TheAccountantHub.ar<br>
+Telegram:<br>
+https://t.me/mano_love1<br>
 Linkedin:<br>
 https://www.linkedin.com/in/abdelrahman-mo-hamza/<br>
 WhatsApp:<br>
-https://wa.me/1554575716<br>
-Telegram:<br>
-https://t.me/mano_love1<br>
+https://wa.me/966590285307<br>
 Instagram:<br>
 https://www.instagram.com/mano_love1/
