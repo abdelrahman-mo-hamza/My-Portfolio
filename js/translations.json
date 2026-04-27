@@ -15,7 +15,9 @@
     },
     "landing": {
       "title": "ERP & Retail Accounting Professional",
-      "description": "Hi, I'm Abdelrahman Mohamed Hamza, an experienced ERP and Retail Accountant with proven expertise in financial systems implementation, inventory management, and VAT compliance. I specialize in data migration, financial reporting, and optimizing accounting processes in retail environments."
+      "description": "Hi, I'm Abdelrahman Mohamed Hamza, an experienced ERP and Retail Accountant with proven expertise in financial systems implementation, inventory management, and VAT compliance. I specialize in data migration, financial reporting, and optimizing accounting processes in retail environments.",
+      "downloadCv": "Download CV",
+      "contactCta": "Get In Touch"
     },
     "articles": {
       "title": "Skills",
@@ -254,7 +256,9 @@
     },
     "landing": {
       "title": "محاسب ERP متخصص في قطاع التجزئة",
-      "description": "مرحبًا، أنا عبدالرحمن محمد حمزة، محاسب ERP بخبرة عملية في تشغيل الأنظمة المالية وإدارة المخزون والامتثال الضريبي. أركز على ترحيل البيانات، إعداد التقارير المالية، وتحسين العمليات المحاسبية داخل بيئات التجزئة."
+      "description": "مرحبًا، أنا عبدالرحمن محمد حمزة، محاسب ERP بخبرة عملية في تشغيل الأنظمة المالية وإدارة المخزون والامتثال الضريبي. أركز على ترحيل البيانات، إعداد التقارير المالية، وتحسين العمليات المحاسبية داخل بيئات التجزئة.",
+      "downloadCv": "تحميل السيرة الذاتية",
+      "contactCta": "تواصل معي"
     },
     "articles": {
       "title": "المهارات",

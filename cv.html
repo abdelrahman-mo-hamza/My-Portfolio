@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdelrahman Mohamed Hamza - CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0f172a;
+      --muted: #475569;
+      --accent: #2196f3;
+      --line: #dbe4ef;
+      --panel: #f8fbff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Cairo", sans-serif;
+      color: var(--ink);
+      background: #eef4fb;
+      line-height: 1.6;
+    }
+
+    .page {
+      width: min(960px, 100%);
+      margin: 24px auto;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 24px 48px rgb(15 23 42 / 10%);
+      overflow: hidden;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 28px;
+      padding: 40px;
+      background: linear-gradient(135deg, #f8fbff, #eef6ff);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 36px;
+      line-height: 1.15;
+    }
+
+    .hero .role {
+      margin: 0 0 18px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .summary {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .contact-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: white;
+    }
+
+    .contact-card h2,
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact-list a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .column {
+      padding: 32px 40px 40px;
+    }
+
+    .column + .column {
+      border-left: 1px solid var(--line);
+    }
+
+    .section + .section {
+      margin-top: 28px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .bullet-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .bullet-list li + li {
+      margin-top: 10px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 14px;
+      background: var(--panel);
+      border: 1px solid #e4eef9;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+
+    .stat span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-note {
+      padding: 0 40px 36px;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .page {
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <h1>Abdelrahman Mohamed Hamza</h1>
+        <p class="role">ERP & Retail Accountant</p>
+        <p class="summary">
+          ERP and retail accounting professional with hands-on experience in financial reporting,
+          inventory management, VAT compliance, data migration, supplier invoice review, and
+          operational accounting within retail environments. Strong track record in improving data
+          accuracy, building reliable reporting workflows, and supporting management decisions with
+          clean financial information.
+        </p>
+      </div>
+
+      <aside class="contact-card">
+        <h2>Contact</h2>
+        <ul class="contact-list">
+          <li>Jeddah, Saudi Arabia</li>
+          <li><a href="tel:+966590285307">+966590285307</a></li>
+          <li><a href="tel:+201554575716">+201554575716</a></li>
+          <li><a href="mailto:manobaker1@gmail.com">manobaker1@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/abdelrahman-mo-hamza/">LinkedIn Profile</a></li>
+          <li><a href="https://www.facebook.com/TheAccountantHub.ar">Facebook: TheAccountantHub.ar</a></li>
+          <li><a href="https://t.me/mano_love1">Telegram: @mano_love1</a></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="body">
+      <div class="column">
+        <section class="section">
+          <h2>Core Expertise</h2>
+          <div class="chips">
+            <span class="chip">ERP Implementation & Migration</span>
+            <span class="chip">Financial Reporting</span>
+            <span class="chip">Inventory Optimization</span>
+            <span class="chip">VAT Compliance</span>
+            <span class="chip">Excel & Power BI</span>
+            <span class="chip">Cost Correction</span>
+            <span class="chip">Bank Reconciliation</span>
+            <span class="chip">Supplier Invoice Review</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Systems & Tools</h2>
+          <ul class="bullet-list">
+            <li>ERP Systems: Rewaa, DataSpace, Odoo, Oracle, Wafeq, Qoyod</li>
+            <li>Advanced Excel reporting, formulas, validation, and dashboards</li>
+            <li>Power BI for interactive analysis and business reporting</li>
+            <li>Retail accounting workflows, reconciliations, and data controls</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Education</h2>
+          <ul class="bullet-list">
+            <li>Bachelor's Degree in Accounting</li>
+            <li>Sadat City University, Faculty of Commerce</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="column">
+        <section class="section">
+          <h2>Impact Highlights</h2>
+          <div class="stats-grid">
+            <div class="stat">
+              <strong>5,500+</strong>
+              <span>Products managed and cleaned across active retail inventory</span>
+            </div>
+            <div class="stat">
+              <strong>11,000+</strong>
+              <span>Historical financial and inventory records migrated and validated</span>
+            </div>
+            <div class="stat">
+              <strong>60%</strong>
+              <span>Reduction in manual reconciliation effort after ERP migration cleanup</span>
+            </div>
+            <div class="stat">
+              <strong>95%</strong>
+              <span>Reduction in product record errors after inventory data optimization</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Selected Project Outcomes</h2>
+          <ul class="bullet-list">
+            <li>Migrated financial and inventory data to modern ERP platforms while protecting data integrity and operational continuity.</li>
+            <li>Cleaned duplicate products, corrected barcode issues, and reorganized product categories to improve stock accuracy and reporting reliability.</li>
+            <li>Audited and corrected costing data to restore reliable profit calculations and improve confidence in management reporting.</li>
+            <li>Supported VAT compliance, reconciliations, and structured reporting processes for retail and trading businesses.</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      This CV is generated from the portfolio profile and updated contact details for direct sharing and download.
+    </div>
+  </main>
+</body>
+
+</html>
