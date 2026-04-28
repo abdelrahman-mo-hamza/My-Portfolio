@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abdelrahman Mohamed Hamza - CV</title>
+  <title>عبدالرحمن محمد حمزة - السيرة الذاتية</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #0f172a;
-      --muted: #475569;
       --accent: #2196f3;
-      --line: #dbe4ef;
-      --panel: #f8fbff;
+      --accent-dark: #1787e0;
+      --ink: #102033;
+      --muted: #637083;
+      --line: #dbeafe;
+      --soft: #f5faff;
+      --panel: #ffffff;
+      --shadow: 0 18px 40px rgb(15 23 42 / 10%);
     }
 
     * {
@@ -23,276 +26,541 @@
 
     body {
       margin: 0;
-      font-family: "Cairo", sans-serif;
+      font-family: "Cairo", Arial, sans-serif;
       color: var(--ink);
-      background: #eef4fb;
-      line-height: 1.6;
+      background: #edf5ff;
+      line-height: 1.65;
     }
 
-    .page {
-      width: min(960px, 100%);
-      margin: 24px auto;
-      background: white;
-      border-radius: 18px;
-      box-shadow: 0 24px 48px rgb(15 23 42 / 10%);
-      overflow: hidden;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.35fr 0.85fr;
-      gap: 28px;
-      padding: 40px;
-      background: linear-gradient(135deg, #f8fbff, #eef6ff);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero h1 {
-      margin: 0 0 10px;
-      font-size: 36px;
-      line-height: 1.15;
-    }
-
-    .hero .role {
-      margin: 0 0 18px;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .summary {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .contact-card {
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: white;
-    }
-
-    .contact-card h2,
-    .section h2 {
-      margin: 0 0 14px;
-      font-size: 18px;
-      line-height: 1.2;
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .contact-list a {
+    a {
       color: inherit;
       text-decoration: none;
     }
 
-    .body {
+    .cv {
+      width: min(1080px, calc(100% - 32px));
+      margin: 24px auto;
+      background: var(--panel);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero {
+      position: relative;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 0.42fr;
+      gap: 28px;
+      padding: 34px 38px;
+      background:
+        linear-gradient(135deg, rgb(33 150 243 / 11%), rgb(255 255 255 / 92%)),
+        radial-gradient(circle at top left, rgb(33 150 243 / 18%), transparent 34%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      top: 0;
+      width: 7px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+    }
+
+    .name {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .role {
+      margin: 10px 0 16px;
+      color: var(--accent-dark);
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .summary {
+      margin: 0;
+      max-width: 760px;
+      color: #415066;
+      font-size: 15px;
+    }
+
+    .contact-card {
+      align-self: stretch;
+      padding: 18px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 10px 24px rgb(33 150 243 / 8%);
+    }
+
+    .contact-card h2,
+    .section h2 {
+      margin: 0 0 12px;
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 7px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 12.8px;
+      line-height: 1.45;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .contact-list .rtl {
+      direction: rtl;
+      text-align: right;
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      padding: 20px 38px;
+      background: #fbfdff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .metric {
+      padding: 14px;
+      border: 1px solid #e2efff;
+      border-radius: 12px;
+      background: white;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--accent-dark);
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 900;
+      direction: ltr;
+      text-align: right;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.45;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 0.74fr 1.26fr;
       gap: 0;
     }
 
-    .column {
-      padding: 32px 40px 40px;
+    .side,
+    .main {
+      padding: 28px 34px 34px;
     }
 
-    .column + .column {
+    .side {
+      background: var(--soft);
       border-left: 1px solid var(--line);
     }
 
     .section + .section {
-      margin-top: 28px;
+      margin-top: 24px;
+    }
+
+    .section h2 {
+      position: relative;
+      padding-bottom: 9px;
+      border-bottom: 2px solid #e2efff;
+    }
+
+    .section h2::after {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      bottom: -2px;
+      width: 64px;
+      height: 2px;
+      background: var(--accent);
     }
 
     .chips {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
     }
 
     .chip {
-      padding: 8px 12px;
+      padding: 7px 10px;
       border-radius: 999px;
-      background: var(--panel);
-      color: var(--ink);
+      background: white;
+      border: 1px solid #dcecff;
+      color: #24364d;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
       font-size: 13px;
+    }
+
+    .list li {
+      position: relative;
+      padding-inline-start: 16px;
+    }
+
+    .list li + li {
+      margin-top: 7px;
+    }
+
+    .list li::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      top: 0.78em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .job {
+      break-inside: avoid;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #e6eef8;
+    }
+
+    .job + .job {
+      margin-top: 18px;
+    }
+
+    .job:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .job-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 6px;
+    }
+
+    .job h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .date {
+      flex: 0 0 auto;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #e9f5ff;
+      color: var(--accent-dark);
+      font-size: 11.5px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .company {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 12.8px;
       font-weight: 700;
     }
 
-    .bullet-list {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 14px;
+    .job .list {
+      font-size: 12.7px;
+      line-height: 1.62;
     }
 
-    .bullet-list li + li {
-      margin-top: 10px;
+    .project {
+      break-inside: avoid;
+      padding: 14px;
+      border: 1px solid #e2efff;
+      border-radius: 12px;
+      background: #fbfdff;
     }
 
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+    .project + .project {
+      margin-top: 12px;
     }
 
-    .stat {
-      padding: 16px;
-      border-radius: 14px;
-      background: var(--panel);
-      border: 1px solid #e4eef9;
+    .project h3 {
+      margin: 0 0 8px;
+      color: var(--accent-dark);
+      font-size: 14.5px;
+      font-weight: 900;
     }
 
-    .stat strong {
-      display: block;
-      font-size: 24px;
-      line-height: 1;
-      margin-bottom: 8px;
-      color: var(--accent);
+    .footer {
+      padding: 16px 38px 24px;
+      color: #718096;
+      background: #fbfdff;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      text-align: center;
     }
 
-    .stat span {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .footer-note {
-      padding: 0 40px 36px;
-      color: #64748b;
-      font-size: 13px;
+    @page {
+      size: A4;
+      margin: 10mm;
     }
 
     @media print {
       body {
         background: white;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
 
-      .page {
-        margin: 0;
+      .cv {
         width: 100%;
+        margin: 0;
         border-radius: 0;
         box-shadow: none;
       }
 
-      a {
-        color: inherit;
-        text-decoration: none;
+      .hero {
+        padding: 24px 26px;
+      }
+
+      .metric-row {
+        padding: 16px 26px;
+      }
+
+      .side,
+      .main {
+        padding: 22px 26px 26px;
+      }
+
+      .footer {
+        padding: 12px 26px 0;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .cv {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+      }
+
+      .hero,
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .side {
+        border-left: none;
+        border-top: 1px solid var(--line);
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="page">
-    <section class="hero">
+  <main class="cv">
+    <header class="hero">
       <div>
-        <h1>Abdelrahman Mohamed Hamza</h1>
-        <p class="role">ERP & Retail Accountant</p>
+        <h1 class="name">عبدالرحمن محمد حمزة عبدالرحمن</h1>
+        <p class="role">محاسب أنظمة ERP ومحاسبة قطاع التجزئة</p>
         <p class="summary">
-          ERP and retail accounting professional with hands-on experience in financial reporting,
-          inventory management, VAT compliance, data migration, supplier invoice review, and
-          operational accounting within retail environments. Strong track record in improving data
-          accuracy, building reliable reporting workflows, and supporting management decisions with
-          clean financial information.
+          محاسب متخصص في تشغيل أنظمة ERP وإدارة العمليات المالية داخل بيئات التجزئة. أمتلك خبرة عملية في إدارة المخزون،
+          مراجعة الموردين، إعداد التقارير المالية، وتحليل البيانات باستخدام Excel وPower BI لدعم اتخاذ القرار وتحسين كفاءة العمليات.
         </p>
       </div>
 
       <aside class="contact-card">
-        <h2>Contact</h2>
+        <h2>بيانات التواصل</h2>
         <ul class="contact-list">
-          <li>Jeddah, Saudi Arabia</li>
-          <li><a href="tel:+966590285307">+966590285307</a></li>
-          <li><a href="tel:+201554575716">+201554575716</a></li>
+          <li class="rtl">جدة، المملكة العربية السعودية</li>
+          <li><a href="tel:+966590285307">+966 59 028 5307</a></li>
+          <li><a href="tel:+201554575716">+20 155 457 5716</a></li>
           <li><a href="mailto:manobaker1@gmail.com">manobaker1@gmail.com</a></li>
-          <li><a href="https://www.linkedin.com/in/abdelrahman-mo-hamza/">LinkedIn Profile</a></li>
-          <li><a href="https://www.facebook.com/TheAccountantHub.ar">Facebook: TheAccountantHub.ar</a></li>
+          <li><a href="https://www.linkedin.com/in/abdelrahman-mo-hamza">linkedin.com/in/abdelrahman-mo-hamza</a></li>
+          <li><a href="https://www.facebook.com/TheAccountantHub.ar">facebook.com/TheAccountantHub.ar</a></li>
           <li><a href="https://t.me/mano_love1">Telegram: @mano_love1</a></li>
         </ul>
       </aside>
+    </header>
+
+    <section class="metric-row" aria-label="أبرز النتائج">
+      <div class="metric">
+        <strong>5,500+</strong>
+        <span>صنف تمت إدارته داخل بيئة تجزئة نشطة</span>
+      </div>
+      <div class="metric">
+        <strong>11,000+</strong>
+        <span>صنف وبيانات تاريخية تمت إعادة تنظيمها</span>
+      </div>
+      <div class="metric">
+        <strong>20-40</strong>
+        <span>فاتورة مورد تتم مراجعتها يوميًا</span>
+      </div>
+      <div class="metric">
+        <strong>2026</strong>
+        <span>آخر تحديث للسيرة الذاتية</span>
+      </div>
     </section>
 
-    <section class="body">
-      <div class="column">
+    <section class="content">
+      <aside class="side">
         <section class="section">
-          <h2>Core Expertise</h2>
+          <h2>المهارات الأساسية</h2>
           <div class="chips">
-            <span class="chip">ERP Implementation & Migration</span>
-            <span class="chip">Financial Reporting</span>
-            <span class="chip">Inventory Optimization</span>
-            <span class="chip">VAT Compliance</span>
-            <span class="chip">Excel & Power BI</span>
-            <span class="chip">Cost Correction</span>
-            <span class="chip">Bank Reconciliation</span>
-            <span class="chip">Supplier Invoice Review</span>
+            <span class="chip">المحاسبة العامة</span>
+            <span class="chip">حسابات العملاء والموردين</span>
+            <span class="chip">إدارة النقدية والرواتب</span>
+            <span class="chip">قائمة الدخل</span>
+            <span class="chip">مطابقة البنك</span>
+            <span class="chip">إقرارات VAT</span>
+            <span class="chip">تشغيل أنظمة ERP</span>
+            <span class="chip">إدارة المخزون والباركود</span>
+            <span class="chip">إعداد شجرة الحسابات</span>
+            <span class="chip">Power BI</span>
+            <span class="chip">Excel</span>
+            <span class="chip">Power Query</span>
           </div>
         </section>
 
         <section class="section">
-          <h2>Systems & Tools</h2>
-          <ul class="bullet-list">
-            <li>ERP Systems: Rewaa, DataSpace, Odoo, Oracle, Wafeq, Qoyod</li>
-            <li>Advanced Excel reporting, formulas, validation, and dashboards</li>
-            <li>Power BI for interactive analysis and business reporting</li>
-            <li>Retail accounting workflows, reconciliations, and data controls</li>
+          <h2>الأنظمة والأدوات</h2>
+          <ul class="list">
+            <li>Rewaa, DataSpace ERP, Oracle, OA, Odoo, Wafeq, Qoyod</li>
+            <li>Excel, Power BI, Power Query, Power Pivot</li>
+            <li>Word, Outlook، وإعداد التقارير التشغيلية والمالية</li>
+            <li>تصميم لوحات متابعة وتحسين جودة قواعد البيانات</li>
           </ul>
         </section>
 
         <section class="section">
-          <h2>Education</h2>
-          <ul class="bullet-list">
-            <li>Bachelor's Degree in Accounting</li>
-            <li>Sadat City University, Faculty of Commerce</li>
+          <h2>المؤهل العلمي</h2>
+          <ul class="list">
+            <li>بكالوريوس محاسبة</li>
+            <li>جامعة مدينة السادات - مصر</li>
+            <li>2023 | التقدير العام: جيد</li>
           </ul>
-        </section>
-      </div>
-
-      <div class="column">
-        <section class="section">
-          <h2>Impact Highlights</h2>
-          <div class="stats-grid">
-            <div class="stat">
-              <strong>5,500+</strong>
-              <span>Products managed and cleaned across active retail inventory</span>
-            </div>
-            <div class="stat">
-              <strong>11,000+</strong>
-              <span>Historical financial and inventory records migrated and validated</span>
-            </div>
-            <div class="stat">
-              <strong>60%</strong>
-              <span>Reduction in manual reconciliation effort after ERP migration cleanup</span>
-            </div>
-            <div class="stat">
-              <strong>95%</strong>
-              <span>Reduction in product record errors after inventory data optimization</span>
-            </div>
-          </div>
         </section>
 
         <section class="section">
-          <h2>Selected Project Outcomes</h2>
-          <ul class="bullet-list">
-            <li>Migrated financial and inventory data to modern ERP platforms while protecting data integrity and operational continuity.</li>
-            <li>Cleaned duplicate products, corrected barcode issues, and reorganized product categories to improve stock accuracy and reporting reliability.</li>
-            <li>Audited and corrected costing data to restore reliable profit calculations and improve confidence in management reporting.</li>
-            <li>Supported VAT compliance, reconciliations, and structured reporting processes for retail and trading businesses.</li>
+          <h2>الشهادات</h2>
+          <ul class="list">
+            <li>أساسيات المحاسبة - CFI</li>
+            <li>تحليل البيانات - Udacity</li>
+            <li>دورة Python - Coursera</li>
+            <li>برنامج الأسواق المالية - HSBC</li>
+            <li>برنامج رواد - بنك مصر</li>
           </ul>
+        </section>
+      </aside>
+
+      <div class="main">
+        <section class="section">
+          <h2>الخبرة العملية</h2>
+
+          <article class="job">
+            <div class="job-head">
+              <h3>محاسب ومسؤول نظام ERP</h3>
+              <span class="date">مارس 2025 - حتى الآن</span>
+            </div>
+            <p class="company">واحة آزال | جدة، المملكة العربية السعودية</p>
+            <ul class="list">
+              <li>إدارة وتشغيل نظام ERP لمخزون يضم أكثر من 5,500 صنف داخل بيئة Retail متعددة الأنشطة تعمل على مدار 24 ساعة.</li>
+              <li>تنفيذ نقل شامل للبيانات من نظام قديم إلى ERP جديد شمل المخزون والأرصدة المالية مع إعادة تنظيم بيانات تاريخية تجاوزت 11,000 صنف.</li>
+              <li>تصحيح بيانات تكلفة الأصناف Costing لتحسين دقة قائمة الدخل واعتماد النتائج المالية من الإدارة.</li>
+              <li>مراجعة ما بين 20 إلى 40 فاتورة مورد يوميًا والتحقق من الأسعار والكميات وتنفيذ مردودات الموردين.</li>
+              <li>إعداد تقارير Slow Moving وصلاحية المنتجات، وتقارير المبيعات اليومية، ومتابعة الخزينة والمصروفات ومديونيات الموردين.</li>
+              <li>تنفيذ مطابقة حسابات البنك ورفع إقرارات ضريبة القيمة المضافة VAT، وتنفيذ جرد شهري وسنوي شامل للمخزون.</li>
+              <li>تقديم الدعم الفني والتشغيلي لجميع الأقسام كمسؤول رئيسي عن تشغيل النظام.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-head">
+              <h3>محاسب دوام جزئي ومسؤول نظام</h3>
+              <span class="date">ديسمبر 2025 - حتى الآن</span>
+            </div>
+            <p class="company">نهري الصغير - محل تجزئة لأسماك الزينة | جدة، المملكة العربية السعودية</p>
+            <ul class="list">
+              <li>تشغيل النظام المحاسبي من الصفر وإعداد شجرة الحسابات وربط العمليات المالية.</li>
+              <li>إدخال وتنظيم أكثر من 300 صنف داخل النظام وإعداد قاعدة بيانات المخزون.</li>
+              <li>إعداد تقارير الأرباح والمصروفات ومتابعة الأداء المالي.</li>
+              <li>تدريب الموظفين على استخدام النظام وإدارة العمليات اليومية ومراقبة حركة الأصناف عن بعد.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-head">
+              <h3>محلل بيانات</h3>
+              <span class="date">يناير - ديسمبر 2024</span>
+            </div>
+            <p class="company">دواجن الوطنية | مصر</p>
+            <ul class="list">
+              <li>إعداد تقارير المبيعات والتكاليف والتشغيل باستخدام Excel.</li>
+              <li>تحليل البيانات باستخدام Power Query وتحسين دقة التقارير.</li>
+              <li>تصميم لوحات متابعة باستخدام Power BI لدعم الإدارة في اتخاذ القرار.</li>
+              <li>تنظيم قواعد البيانات وتحسين سرعة استخراج التقارير.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="section">
+          <h2>المشاريع والخبرات المستقلة</h2>
+
+          <article class="project">
+            <h3>مستودع غاز الحوية - الطائف</h3>
+            <ul class="list">
+              <li>تشغيل نظام Rewaa ERP من الصفر، وإعداد شجرة الحسابات وربط العمليات المالية.</li>
+              <li>إعداد المخزون وتصنيف الأصناف وتنظيم الدورة المستندية وتجهيز النظام للعمل الكامل داخل المنشأة.</li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <h3>مؤسسة المثلث الشمسي - جدة</h3>
+            <ul class="list">
+              <li>إعادة تنظيم بيانات المخزون داخل النظام وتنفيذ جرد شامل وتصنيف الأصناف.</li>
+              <li>تدريب الموظفين والإدارة على استخدام النظام وإعداد التقارير التشغيلية.</li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <h3>الزي الأسود - جدة</h3>
+            <ul class="list">
+              <li>إعادة تنظيم الحسابات والدورة المستندية وتحليل النظام المحاسبي الحالي.</li>
+              <li>اقتراح حلول أكثر كفاءة لتحسين دقة التقارير المالية وسهولة استخراجها.</li>
+            </ul>
+          </article>
         </section>
       </div>
     </section>
 
-    <div class="footer-note">
-      This CV is generated from the portfolio profile and updated contact details for direct sharing and download.
-    </div>
+    <footer class="footer">
+      تم إعداد هذه السيرة الذاتية بتصميم متوافق مع الهوية البصرية لموقع عبدالرحمن محمد حمزة.
+    </footer>
   </main>
 </body>
 

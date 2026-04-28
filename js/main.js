@@ -199,19 +199,6 @@ function updateLanguageUrl(lang) {
   window.history.replaceState({}, "", url);
 }
 
-function legacyUpdateLanguageButton() {
-  const langBtn = document.getElementById("langSwitchBtn");
-  if (langBtn) {
-    const compactLabel = window.innerWidth <= 479;
-    if (compactLabel) {
-      langBtn.textContent = currentLanguage === "en" ? "AR" : "EN";
-      return;
-    }
-
-    langBtn.textContent = currentLanguage === "en" ? "العربية" : "English";
-  }
-}
-
 function updateLanguageButton() {
   const langBtn = document.getElementById("langSwitchBtn");
   if (!langBtn) {
@@ -405,6 +392,8 @@ function bindGalleryPreview() {
     .filter(Boolean);
   let currentIndex = 0;
   let activeTrigger = null;
+  let touchStartX = 0;
+  let touchStartY = 0;
 
   if (!preview || !previewImage || !previewClose || !previewPrev || !previewNext || !previewCounter || !galleryImages.length) {
     return;
@@ -424,7 +413,7 @@ function bindGalleryPreview() {
       return;
     }
 
-    previewImage.src = sourceImage.currentSrc || sourceImage.src;
+    previewImage.src = sourceImage.dataset.fullSrc || sourceImage.src;
     previewImage.alt = sourceImage.alt || "Certificate preview";
     previewCounter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
   };
@@ -457,14 +446,48 @@ function bindGalleryPreview() {
     });
   });
 
-  previewClose.addEventListener("click", closePreview);
-  previewPrev.addEventListener("click", () => movePreview(-1));
-  previewNext.addEventListener("click", () => movePreview(1));
+  previewClose.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    closePreview();
+  });
+  previewPrev.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    movePreview(-1);
+  });
+  previewNext.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    movePreview(1);
+  });
   preview.addEventListener("click", (event) => {
     if (event.target instanceof HTMLElement && event.target.dataset.galleryClose === "true") {
       closePreview();
     }
   });
+
+  preview.addEventListener("touchstart", (event) => {
+    const touch = event.changedTouches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+  }, { passive: true });
+
+  preview.addEventListener("touchend", (event) => {
+    if (!preview.classList.contains("active")) {
+      return;
+    }
+
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - touchStartX;
+    const deltaY = touch.clientY - touchStartY;
+
+    if (Math.abs(deltaX) < 55 || Math.abs(deltaX) < Math.abs(deltaY) * 1.25) {
+      return;
+    }
+
+    movePreview(deltaX > 0 ? -1 : 1);
+  }, { passive: true });
 
   refreshInteractiveLabels();
 
