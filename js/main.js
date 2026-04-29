@@ -1,7 +1,14 @@
 const MOBILE_BREAKPOINT = 991;
 const WHATSAPP_NUMBER = "966590285307";
+const CV_DOWNLOAD_FILES = {
+  ar: "Abdelrahman-Mohamed-Hamza-CV-ar.pdf",
+  en: "Abdelrahman-Mohamed-Hamza-CV-en.pdf",
+};
+const THEME_STORAGE_KEY = "theme";
+const SUPPORTED_THEMES = ["light", "dark"];
 
 let currentLanguage = getInitialLanguage();
+let currentTheme = getInitialTheme();
 let translations = {};
 let progressSpans = [];
 let section;
@@ -17,6 +24,8 @@ const uiLabels = {
     galleryNext: "Next certificate",
     scrollDown: "Scroll to bottom",
     scrollUp: "Scroll to top",
+    themeToDark: "Switch to dark mode",
+    themeToLight: "Switch to light mode",
   },
   ar: {
     language: "English",
@@ -26,6 +35,8 @@ const uiLabels = {
     galleryNext: "\u0627\u0644\u0634\u0647\u0627\u062f\u0629 \u0627\u0644\u062a\u0627\u0644\u064a\u0629",
     scrollDown: "\u0627\u0644\u0627\u0646\u062a\u0642\u0627\u0644 \u0625\u0644\u0649 \u0622\u062e\u0631 \u0627\u0644\u0635\u0641\u062d\u0629",
     scrollUp: "\u0627\u0644\u0639\u0648\u062f\u0629 \u0625\u0644\u0649 \u0623\u0639\u0644\u0649 \u0627\u0644\u0635\u0641\u062d\u0629",
+    themeToDark: "\u062a\u0641\u0639\u064a\u0644 \u0627\u0644\u0648\u0636\u0639 \u0627\u0644\u062f\u0627\u0643\u0646",
+    themeToLight: "\u062a\u0641\u0639\u064a\u0644 \u0627\u0644\u0648\u0636\u0639 \u0627\u0644\u0641\u0627\u062a\u062d",
   },
 };
 
@@ -43,12 +54,63 @@ function getInitialLanguage() {
   return localStorage.getItem("language") || detectBrowserLanguage() || "en";
 }
 
+function getInitialTheme() {
+  const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+  if (SUPPORTED_THEMES.includes(savedTheme)) {
+    return savedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
 function isMobileView() {
   return window.innerWidth <= MOBILE_BREAKPOINT;
 }
 
 function getUiLabel(key) {
   return uiLabels[currentLanguage]?.[key] || uiLabels.en[key] || "";
+}
+
+function updateThemeMeta() {
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  if (!themeMeta) {
+    return;
+  }
+
+  themeMeta.setAttribute("content", currentTheme === "dark" ? "#0f172a" : "#2196f3");
+}
+
+function updateThemeButton() {
+  const themeBtn = document.getElementById("themeSwitchBtn");
+  if (!themeBtn) {
+    return;
+  }
+
+  const nextLabel = getUiLabel(currentTheme === "dark" ? "themeToLight" : "themeToDark");
+  const icon = themeBtn.querySelector("i");
+  themeBtn.setAttribute("aria-label", nextLabel);
+  themeBtn.setAttribute("title", nextLabel);
+  themeBtn.setAttribute("aria-pressed", String(currentTheme === "dark"));
+
+  if (icon) {
+    icon.className = currentTheme === "dark" ? "fas fa-sun" : "fas fa-moon";
+  }
+}
+
+function applyTheme(theme, shouldPersist = true) {
+  currentTheme = SUPPORTED_THEMES.includes(theme) ? theme : "light";
+  document.documentElement.dataset.theme = currentTheme;
+
+  if (shouldPersist) {
+    localStorage.setItem(THEME_STORAGE_KEY, currentTheme);
+  }
+
+  updateThemeMeta();
+  updateThemeButton();
+}
+
+function toggleTheme() {
+  applyTheme(currentTheme === "dark" ? "light" : "dark");
 }
 
 function buildWhatsAppUrl(serviceKey = "", customMessage = "") {
@@ -74,6 +136,37 @@ function refreshWhatsAppLinks() {
     link.setAttribute("href", buildWhatsAppUrl(serviceKey));
     link.setAttribute("target", "_blank");
     link.setAttribute("rel", "noopener noreferrer");
+  });
+}
+
+function refreshCvLinks() {
+  document.querySelectorAll("[data-cv-link]").forEach((link) => {
+    link.setAttribute("href", `cv.html?lang=${currentLanguage}`);
+  });
+}
+
+function refreshCvDownloads() {
+  const fileName = CV_DOWNLOAD_FILES[currentLanguage] || CV_DOWNLOAD_FILES.en;
+
+  document.querySelectorAll("[data-cv-download]").forEach((link) => {
+    link.setAttribute("href", fileName);
+    link.setAttribute("download", fileName);
+  });
+}
+
+function bindCvLinks() {
+  document.querySelectorAll("[data-cv-link]").forEach((link) => {
+    link.addEventListener("click", () => {
+      link.setAttribute("href", `cv.html?lang=${currentLanguage}`);
+    });
+  });
+}
+
+function bindCvDownloads() {
+  document.querySelectorAll("[data-cv-download]").forEach((link) => {
+    link.addEventListener("click", () => {
+      refreshCvDownloads();
+    });
   });
 }
 
@@ -157,7 +250,10 @@ async function loadTranslations() {
 function initializeLanguage() {
   applyLanguage(currentLanguage);
   updateLanguageButton();
+  updateThemeButton();
   refreshInteractiveLabels();
+  refreshCvLinks();
+  refreshCvDownloads();
 }
 
 function getTranslation(key) {
@@ -212,7 +308,10 @@ function applyLanguage(lang) {
   });
 
   updateLanguageButton();
+  updateThemeButton();
   refreshInteractiveLabels();
+  refreshCvLinks();
+  refreshCvDownloads();
 }
 
 function toggleLanguage() {
@@ -592,10 +691,15 @@ document.addEventListener("DOMContentLoaded", () => {
   statsSection = document.querySelector(".stats");
 
   const langSwitchBtn = document.getElementById("langSwitchBtn");
+  const themeSwitchBtn = document.getElementById("themeSwitchBtn");
   const contactForm = document.getElementById("contactForm");
 
   if (langSwitchBtn) {
     langSwitchBtn.addEventListener("click", toggleLanguage);
+  }
+
+  if (themeSwitchBtn) {
+    themeSwitchBtn.addEventListener("click", toggleTheme);
   }
 
   if (contactForm) {
@@ -604,12 +708,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   bindMenuInteractions();
   bindSmoothScroll();
+  bindCvLinks();
+  bindCvDownloads();
   bindGalleryPreview();
   bindScrollToggle();
+  applyTheme(currentTheme, false);
   loadTranslations();
   window.addEventListener("resize", () => {
     updateLanguageButton();
+    updateThemeButton();
     refreshInteractiveLabels();
+  });
+
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
+    if (!localStorage.getItem(THEME_STORAGE_KEY)) {
+      applyTheme(event.matches ? "dark" : "light", false);
+    }
   });
   handleScroll();
 });

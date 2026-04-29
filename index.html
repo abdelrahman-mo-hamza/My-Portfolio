@@ -26,6 +26,20 @@
   <meta property="og:image:width" content="1774" />
   <meta property="og:image:height" content="887" />
   <meta property="og:image:alt" content="Abdelrahman Mohamed Hamza - ERP Accountant" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="theme-color" content="#2196f3" />
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = savedTheme === "dark" || savedTheme === "light" ? savedTheme : (prefersDark ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      } catch (error) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Abdelrahman Mohamed Hamza - ERP & Retail Accountant Portfolio" />
   <meta name="twitter:description" content="ERP & Retail Accountant specialized in financial reporting, inventory management, VAT compliance, and ERP systems implementation." />
@@ -61,7 +75,7 @@
     }
   </script>
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/mano.css" />
+  <link rel="stylesheet" href="css/mano.css?v=20260429-theme-toggle" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="css/all.min.css" />
   <!-- Google Fonts -->
@@ -84,8 +98,9 @@
 
       <ul class="main-nav" id="mobileNav">
         <li><a href="#articles" data-translate="header.skills">Skills</a></li>
-        <li><a href="#services" data-translate="header.services">Services</a></li>
+        <li><a href="#services" data-translate="header.services">Value Areas</a></li>
         <li><a href="#case-studies" data-translate="header.caseStudies">Case Studies</a></li>
+        <li><a href="cv.html" data-cv-link data-translate="header.cv">CV</a></li>
         <li>
           <a href="#" id="otherLinksTrigger" data-menu-toggle="other-links" data-translate="header.otherLinks" aria-haspopup="true" aria-controls="otherLinksMenu" aria-expanded="false">Other Links</a>
           <!-- Start Megamenu -->
@@ -104,7 +119,7 @@
                 <a href="#gallery"><i class="fas fa-certificate fa-fw"></i> <span data-translate="header.certifications">Certifications</span></a>
               </li>
               <li>
-                <a href="#services"><i class="far fa-building fa-fw"></i> <span data-translate="header.services">Services</span></a>
+                <a href="#services"><i class="far fa-building fa-fw"></i> <span data-translate="header.services">Value Areas</span></a>
               </li>
               <li>
                 <a href="#our-skills"><i class="far fa-check-circle fa-fw"></i> <span data-translate="header.mySkills">My Skills</span></a>
@@ -126,7 +141,16 @@
         </li>
       </ul>
 
-      <button class="lang-switch" id="langSwitchBtn" type="button" aria-label="Switch language">English</button>
+      <div class="header-actions">
+        <button class="lang-switch" id="langSwitchBtn" type="button" aria-label="Switch language">English</button>
+        <button class="theme-switch" id="themeSwitchBtn" type="button" aria-label="Switch theme">
+          <span class="theme-switch__track" aria-hidden="true">
+            <span class="theme-switch__thumb">
+              <i class="fas fa-moon"></i>
+            </span>
+          </span>
+        </button>
+      </div>
     </div>
   </div>
   <!-- End Header -->
@@ -137,7 +161,8 @@
         <h1 data-translate="landing.title">ERP & Retail Accounting Professional</h1>
         <p data-translate="landing.description">Hi, I'm Abdelrahman Mohamed Hamza, an experienced ERP and Retail Accountant with proven expertise in financial systems implementation, inventory management, and VAT compliance. I specialize in data migration, financial reporting, and optimizing accounting processes in retail environments.</p>
         <div class="landing-actions">
-          <a href="Abdelrahman-Mohamed-Hamza-CV.pdf" class="landing-action landing-action--primary" download data-translate="landing.downloadCv">Download CV</a>
+          <a href="Abdelrahman-Mohamed-Hamza-CV-en.pdf" class="landing-action landing-action--primary" data-cv-download download="Abdelrahman-Mohamed-Hamza-CV-en.pdf" data-translate="landing.downloadCv">Download CV</a>
+          <a href="cv.html" class="landing-action landing-action--tertiary" data-cv-link data-translate="landing.viewCv">View Online CV</a>
           <a href="#discount" class="landing-action landing-action--secondary" data-translate="landing.contactCta">Get In Touch</a>
         </div>
         <div class="landing-highlights" aria-label="Professional highlights">
@@ -352,7 +377,8 @@
   <!-- End Problems -->
   <!-- Start Services -->
   <div class="services" id="services">
-    <h2 class="main-title" data-translate="services.title">Services</h2>
+    <h2 class="main-title" data-translate="services.title">Value Areas</h2>
+    <p class="section-lead" data-translate="services.intro">Focused areas where my accounting, ERP, inventory, and reporting experience can add practical value inside retail and trading operations.</p>
     <div class="container">
       <div class="box">
         <i class="fas fa-exchange-alt fa-4x"></i>
@@ -360,7 +386,7 @@
         <p class="service-desc" data-translate="services.items.0.description">Set up ERP workflows, migrate data, and prepare teams to operate with reliable financial and inventory controls.</p>
         <ul class="service-points" data-translate="services.items.0.points"></ul>
         <div class="info">
-          <a href="#discount" data-service-key="erp" data-translate="services.details">Discuss This Service</a>
+          <a href="#discount" data-service-key="erp" data-translate="services.details">Discuss Related Work</a>
         </div>
       </div>
       <div class="box">
@@ -369,7 +395,7 @@
         <p class="service-desc" data-translate="services.items.1.description">Build monthly reports, closing controls, and financial visibility that management can rely on.</p>
         <ul class="service-points" data-translate="services.items.1.points"></ul>
         <div class="info">
-          <a href="#discount" data-service-key="reports" data-translate="services.details">Discuss This Service</a>
+          <a href="#discount" data-service-key="reports" data-translate="services.details">Discuss Related Work</a>
         </div>
       </div>
       <div class="box">
@@ -378,7 +404,7 @@
         <p class="service-desc" data-translate="services.items.2.description">Clean product records, barcodes, categories, and stock reports to reduce errors and improve purchasing decisions.</p>
         <ul class="service-points" data-translate="services.items.2.points"></ul>
         <div class="info">
-          <a href="#discount" data-service-key="inventory" data-translate="services.details">Discuss This Service</a>
+          <a href="#discount" data-service-key="inventory" data-translate="services.details">Discuss Related Work</a>
         </div>
       </div>
       <div class="box">
@@ -387,7 +413,7 @@
         <p class="service-desc" data-translate="services.items.3.description">Prepare VAT reconciliations, review supporting documents, and keep reporting ready for periodic filing.</p>
         <ul class="service-points" data-translate="services.items.3.points"></ul>
         <div class="info">
-          <a href="#discount" data-service-key="vat" data-translate="services.details">Discuss This Service</a>
+          <a href="#discount" data-service-key="vat" data-translate="services.details">Discuss Related Work</a>
         </div>
       </div>
       <div class="box">
@@ -396,7 +422,7 @@
         <p class="service-desc" data-translate="services.items.4.description">Turn Excel and ERP exports into dashboards that show sales, stock, costs, and operational performance.</p>
         <ul class="service-points" data-translate="services.items.4.points"></ul>
         <div class="info">
-          <a href="#discount" data-service-key="dashboards" data-translate="services.details">Discuss This Service</a>
+          <a href="#discount" data-service-key="dashboards" data-translate="services.details">Discuss Related Work</a>
         </div>
       </div>
       <div class="box">
@@ -405,7 +431,7 @@
         <p class="service-desc" data-translate="services.items.5.description">Review product costs against supplier invoices and fix costing issues that distort profit reporting.</p>
         <ul class="service-points" data-translate="services.items.5.points"></ul>
         <div class="info">
-          <a href="#discount" data-service-key="costing" data-translate="services.details">Discuss This Service</a>
+          <a href="#discount" data-service-key="costing" data-translate="services.details">Discuss Related Work</a>
         </div>
       </div>
     </div>
@@ -414,6 +440,7 @@
   <!-- Start Case Studies -->
   <div class="case-studies" id="case-studies">
     <h2 class="main-title" data-translate="caseStudies.title">Case Studies</h2>
+    <p class="section-lead" data-translate="caseStudies.intro">Selected examples of real accounting and ERP work, written around the business problem, my role, the tools used, and the measurable outcome.</p>
     <div class="container case-study-feature">
       <div class="case-study-hero">
         <div class="case-study-copy">
@@ -466,6 +493,8 @@
         <h3 data-translate="caseStudies.studies.0.title">ERP Migration & Financial Data Transfer</h3>
         <div>
           <p><strong data-translate="caseStudies.challengeLabel">Challenge:</strong> <span data-translate="caseStudies.studies.0.challenge">A retail company needed to migrate financial and inventory data from their legacy system to a modern ERP platform with minimal operational disruption.</span></p>
+          <p><strong data-translate="caseStudies.roleLabel">My Role:</strong> <span data-translate="caseStudies.studies.0.role">Planned the data transfer, validated balances, cleaned records, and supported the launch workflow.</span></p>
+          <p><strong data-translate="caseStudies.toolsLabel">Tools:</strong> <span data-translate="caseStudies.studies.0.tools">ERP, Excel, inventory exports, supplier ledgers</span></p>
           <p><strong data-translate="caseStudies.solutionLabel">Solution:</strong></p>
           <ul  data-translate="caseStudies.studies.0.solutionItems"></ul>
           <p><strong data-translate="caseStudies.resultsLabel">Results:</strong></p>
@@ -476,6 +505,8 @@
         <h3 data-translate="caseStudies.studies.1.title">Inventory Data Cleanup & Optimization</h3>
         <div>
           <p><strong data-translate="caseStudies.challengeLabel">Challenge:</strong> <span data-translate="caseStudies.studies.1.challenge">A retail enterprise with 5,500+ active products faced inventory tracking issues due to duplicate records, incorrect barcodes, and poor product categorization.</span></p>
+          <p><strong data-translate="caseStudies.roleLabel">My Role:</strong> <span data-translate="caseStudies.studies.1.role">Audited product records, corrected barcode and category issues, and built a cleaner inventory structure.</span></p>
+          <p><strong data-translate="caseStudies.toolsLabel">Tools:</strong> <span data-translate="caseStudies.studies.1.tools">ERP inventory module, barcode data, Excel, stock reports</span></p>
           <p><strong data-translate="caseStudies.solutionLabel">Solution:</strong></p>
           <ul  data-translate="caseStudies.studies.1.solutionItems"></ul>
           <p><strong data-translate="caseStudies.resultsLabel">Results:</strong></p>
@@ -486,6 +517,8 @@
         <h3 data-translate="caseStudies.studies.2.title">Costing Correction & Financial Accuracy Improvement</h3>
         <div>
           <p><strong data-translate="caseStudies.challengeLabel">Challenge:</strong> <span data-translate="caseStudies.studies.2.challenge">Inaccurate product costing led to flawed profit calculations and unreliable financial reports that management could not rely upon for decision-making.</span></p>
+          <p><strong data-translate="caseStudies.roleLabel">My Role:</strong> <span data-translate="caseStudies.studies.2.role">Compared supplier invoices against item costs, corrected costing gaps, and reviewed reporting impact.</span></p>
+          <p><strong data-translate="caseStudies.toolsLabel">Tools:</strong> <span data-translate="caseStudies.studies.2.tools">Supplier invoices, ERP costing, Excel checks, income statement review</span></p>
           <p><strong data-translate="caseStudies.solutionLabel">Solution:</strong></p>
           <ul  data-translate="caseStudies.studies.2.solutionItems"></ul>
           <p><strong data-translate="caseStudies.resultsLabel">Results:</strong></p>
@@ -501,7 +534,6 @@
 
     <div class="container skills-board">
       <div class="skills-profile">
-        <img src="imgs/skills.webp" alt="Professional skills illustration" loading="lazy" />
         <span data-translate="skills.kicker">Core Strengths</span>
         <h3 data-translate="skills.summaryTitle">Accounting systems, clean data, and reliable reporting</h3>
         <p data-translate="skills.summaryText">My strongest area is connecting accounting operations with ERP discipline: clean master data, controlled inventory, accurate costing, and reports management can trust.</p>
@@ -579,7 +611,6 @@
     <h2 class="main-title" data-translate="workSteps.title">My Accounting Process</h2>
     <div class="container process-board">
       <div class="process-intro">
-        <img src="imgs/work-steps.webp" alt="Accounting workflow illustration" class="image" loading="lazy" />
         <span data-translate="workSteps.kicker">How I Work</span>
         <h3 data-translate="workSteps.summaryTitle">From messy data to controlled monthly reporting</h3>
         <p data-translate="workSteps.summaryText">I start by understanding the operational source of the numbers, then clean the data, apply controls, and turn the result into reports the business can use.</p>
@@ -737,7 +768,7 @@
           <input class="input" type="email" placeholder="Your Email" data-translate="discount.yourEmail" name="email" autocomplete="email" required />
           <input class="input" type="tel" placeholder="Your Phone" data-translate="discount.yourPhone" name="mobile" autocomplete="tel" inputmode="tel" required />
           <select class="input" name="topic" required>
-            <option value="" data-translate="discount.serviceTopic">Choose Service</option>
+            <option value="" data-translate="discount.serviceTopic">Choose Topic</option>
             <option value="erp" data-translate="discount.serviceOptions.erp">ERP implementation or migration</option>
             <option value="inventory" data-translate="discount.serviceOptions.inventory">Inventory cleanup</option>
             <option value="reports" data-translate="discount.serviceOptions.reports">Financial reporting</option>
@@ -850,7 +881,7 @@
   <button class="scroll-toggle" id="scrollToggleBtn" type="button" aria-label="Scroll to bottom">
     <i class="fas fa-angle-double-down"></i>
   </button>
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=20260429-theme-toggle"></script>
 </body>
 
 </html>

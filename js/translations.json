@@ -3,7 +3,7 @@
     "header": {
       "logo": "Abdelrahman - Accountant",
       "skills": "Skills",
-      "services": "Services",
+      "services": "Value Areas",
       "caseStudies": "Case Studies",
       "problems": "Problems I Solve",
       "packages": "Packages",
@@ -14,12 +14,14 @@
       "testimonials": "Testimonials",
       "expertiseAreas": "Expertise Areas",
       "getInTouch": "Get in Touch",
-      "mySkills": "My Skills"
+      "mySkills": "My Skills",
+      "cv": "CV"
     },
     "landing": {
       "title": "ERP & Retail Accounting Professional",
       "description": "Hi, I'm Abdelrahman Mohamed Hamza, an experienced ERP and Retail Accountant with proven expertise in financial systems implementation, inventory management, and VAT compliance. I specialize in data migration, financial reporting, and optimizing accounting processes in retail environments.",
       "downloadCv": "Download CV",
+      "viewCv": "View Online CV",
       "contactCta": "Get In Touch",
       "highlights": [
         "Products managed",
@@ -99,8 +101,9 @@
       ]
     },
     "services": {
-      "title": "Services",
-      "details": "Discuss This Service",
+      "title": "Value Areas",
+      "intro": "Focused areas where my accounting, ERP, inventory, and reporting experience can add practical value inside retail and trading operations.",
+      "details": "Discuss Related Work",
       "items": [
         {
           "title": "ERP Implementation & Migration",
@@ -212,7 +215,10 @@
     },
     "caseStudies": {
       "title": "Case Studies",
+      "intro": "Selected examples of real accounting and ERP work, written around the business problem, my role, the tools used, and the measurable outcome.",
       "challengeLabel": "Challenge:",
+      "roleLabel": "My Role:",
+      "toolsLabel": "Tools:",
       "solutionLabel": "Solution:",
       "resultsLabel": "Results:",
       "feature": {
@@ -245,6 +251,8 @@
         {
           "title": "ERP Migration & Financial Data Transfer",
           "challenge": "A retail company needed to migrate financial and inventory data from their legacy system to a modern ERP platform with minimal operational disruption.",
+          "role": "Planned the data transfer, validated balances, cleaned records, and supported the launch workflow.",
+          "tools": "ERP, Excel, inventory exports, supplier ledgers",
           "solutionItems": [
             "Migrated complete financial records and inventory data to the new ERP system",
             "Transferred supplier balances, outstanding debts, and payment histories",
@@ -261,6 +269,8 @@
         {
           "title": "Inventory Data Cleanup & Optimization",
           "challenge": "A retail enterprise with 5,500+ active products faced inventory tracking issues due to duplicate records, incorrect barcodes, and poor product categorization.",
+          "role": "Audited product records, corrected barcode and category issues, and built a cleaner inventory structure.",
+          "tools": "ERP inventory module, barcode data, Excel, stock reports",
           "solutionItems": [
             "Identified and eliminated duplicate product records",
             "Corrected barcode data and fixed product information",
@@ -277,6 +287,8 @@
         {
           "title": "Costing Correction & Financial Accuracy Improvement",
           "challenge": "Inaccurate product costing led to flawed profit calculations and unreliable financial reports that management could not rely upon for decision-making.",
+          "role": "Compared supplier invoices against item costs, corrected costing gaps, and reviewed reporting impact.",
+          "tools": "Supplier invoices, ERP costing, Excel checks, income statement review",
           "solutionItems": [
             "Conducted a comprehensive costing audit across product lines",
             "Corrected erroneous product cost entries",
@@ -448,7 +460,7 @@
       "yourName": "Your Name",
       "yourEmail": "Your Email",
       "yourPhone": "Your Phone",
-      "serviceTopic": "Choose Service",
+      "serviceTopic": "Choose Topic",
       "serviceOptions": {
         "erp": "ERP implementation or migration",
         "inventory": "Inventory cleanup",
@@ -472,14 +484,14 @@
         "name": "Name",
         "email": "Email",
         "phone": "Phone",
-        "topic": "Service",
+        "topic": "Topic",
         "message": "Accounting needs"
       },
       "services": {
-        "erp": "Hello Abdelrahman, I would like to discuss ERP implementation or data migration support.",
-        "reports": "Hello Abdelrahman, I would like to discuss financial reporting and monthly closing support.",
-        "inventory": "Hello Abdelrahman, I would like to discuss inventory cleanup and optimization support.",
-        "vat": "Hello Abdelrahman, I would like to discuss VAT compliance and reconciliation support.",
+        "erp": "Hello Abdelrahman, I would like to discuss ERP implementation or data migration work.",
+        "reports": "Hello Abdelrahman, I would like to discuss financial reporting and monthly closing work.",
+        "inventory": "Hello Abdelrahman, I would like to discuss inventory cleanup and optimization work.",
+        "vat": "Hello Abdelrahman, I would like to discuss VAT compliance and reconciliation work.",
         "dashboards": "Hello Abdelrahman, I would like to discuss Excel or Power BI dashboards for my business.",
         "costing": "Hello Abdelrahman, I would like to discuss product costing correction and profit reporting accuracy."
       }
@@ -509,7 +521,7 @@
     "header": {
       "logo": "عبدالرحمن - محاسب",
       "skills": "المهارات",
-      "services": "الخدمات",
+      "services": "مجالات القيمة",
       "caseStudies": "أبرز المشاريع",
       "problems": "مشاكل أساعدك في حلها",
       "packages": "الباقات",
@@ -520,12 +532,14 @@
       "testimonials": "آراء العملاء",
       "expertiseAreas": "مجالات الخبرة",
       "getInTouch": "تواصل معي",
-      "mySkills": "مهاراتي"
+      "mySkills": "مهاراتي",
+      "cv": "السيرة الذاتية"
     },
     "landing": {
       "title": "محاسب ERP متخصص في قطاع التجزئة",
       "description": "مرحبًا، أنا عبدالرحمن محمد حمزة، محاسب ERP بخبرة عملية في تشغيل الأنظمة المالية وإدارة المخزون والامتثال الضريبي. أركز على ترحيل البيانات، إعداد التقارير المالية، وتحسين العمليات المحاسبية داخل بيئات التجزئة.",
       "downloadCv": "تحميل السيرة الذاتية",
+      "viewCv": "عرض السيرة أونلاين",
       "contactCta": "تواصل معي",
       "highlights": [
         "صنف تمت إدارته",
@@ -605,8 +619,9 @@
       ]
     },
     "services": {
-      "title": "الخدمات",
-      "details": "ناقش هذه الخدمة",
+      "title": "مجالات القيمة",
+      "intro": "مجالات مركزة أضيف فيها قيمة عملية من خلال خبرتي في المحاسبة وأنظمة ERP والمخزون والتقارير داخل بيئات التجزئة والتجارة.",
+      "details": "ناقش عملًا مشابهًا",
       "items": [
         {
           "title": "تنفيذ وترحيل أنظمة ERP",
@@ -718,7 +733,10 @@
     },
     "caseStudies": {
       "title": "أبرز المشاريع",
+      "intro": "نماذج مختارة من أعمال محاسبية وERP حقيقية، موضحة من زاوية المشكلة ودوري والأدوات المستخدمة والنتائج القابلة للقياس.",
       "challengeLabel": "التحدي:",
+      "roleLabel": "دوري:",
+      "toolsLabel": "الأدوات:",
       "solutionLabel": "الحل:",
       "resultsLabel": "النتائج:",
       "feature": {
@@ -751,6 +769,8 @@
         {
           "title": "ترحيل نظام ERP ونقل البيانات المالية",
           "challenge": "شركة تجزئة احتاجت إلى نقل بياناتها المالية وبيانات المخزون إلى نظام ERP حديث دون تعطيل العمليات اليومية.",
+          "role": "تخطيط نقل البيانات، مراجعة الأرصدة، تنظيف السجلات، ودعم دورة التشغيل بعد الإطلاق.",
+          "tools": "ERP، Excel، مخرجات المخزون، دفاتر الموردين",
           "solutionItems": [
             "نقل كامل البيانات المالية وبيانات المخزون إلى النظام الجديد",
             "ترحيل أرصدة الموردين والديون وسجل المدفوعات",
@@ -767,6 +787,8 @@
         {
           "title": "تنظيف بيانات المخزون وتحسينها",
           "challenge": "شركة لديها أكثر من 5,500 صنف نشط كانت تعاني من تكرار البيانات، وأخطاء في الباركود، وضعف في التصنيف.",
+          "role": "مراجعة سجلات الأصناف، تصحيح مشاكل الباركود والتصنيف، وبناء هيكل مخزون أنظف.",
+          "tools": "وحدة المخزون في ERP، بيانات الباركود، Excel، تقارير المخزون",
           "solutionItems": [
             "إزالة التكرار في سجلات المنتجات",
             "تصحيح بيانات الباركود والمعلومات الأساسية",
@@ -783,6 +805,8 @@
         {
           "title": "تصحيح التكلفة وتحسين دقة التقارير المالية",
           "challenge": "أدت أخطاء تكلفة المنتجات إلى حسابات أرباح غير دقيقة وتقارير مالية لا يمكن الاعتماد عليها في اتخاذ القرار.",
+          "role": "مطابقة فواتير الموردين مع تكلفة الأصناف، تصحيح فجوات التكلفة، ومراجعة أثرها على التقارير.",
+          "tools": "فواتير الموردين، تكلفة الأصناف داخل ERP، مراجعات Excel، قائمة الدخل",
           "solutionItems": [
             "تنفيذ مراجعة شاملة للتكلفة على خطوط المنتجات",
             "تصحيح قيود التكلفة الخاطئة",
@@ -954,7 +978,7 @@
       "yourName": "اسمك",
       "yourEmail": "بريدك الإلكتروني",
       "yourPhone": "رقم هاتفك",
-      "serviceTopic": "اختر الخدمة",
+      "serviceTopic": "اختر الموضوع",
       "serviceOptions": {
         "erp": "تنفيذ أو ترحيل ERP",
         "inventory": "تنظيف بيانات المخزون",
@@ -978,16 +1002,16 @@
         "name": "الاسم",
         "email": "البريد الإلكتروني",
         "phone": "رقم الهاتف",
-        "topic": "الخدمة",
+        "topic": "الموضوع",
         "message": "الاحتياج المحاسبي"
       },
       "services": {
-        "erp": "مرحبًا عبدالرحمن، أريد مناقشة خدمة تنفيذ أو ترحيل نظام ERP.",
-        "reports": "مرحبًا عبدالرحمن، أريد مناقشة خدمة إعداد التقارير المالية والإقفال الشهري.",
-        "inventory": "مرحبًا عبدالرحمن، أريد مناقشة خدمة تنظيف وتحسين بيانات المخزون.",
-        "vat": "مرحبًا عبدالرحمن، أريد مناقشة خدمة ضريبة القيمة المضافة والتسويات.",
-        "dashboards": "مرحبًا عبدالرحمن، أريد مناقشة خدمة لوحات Excel أو Power BI لشركتي.",
-        "costing": "مرحبًا عبدالرحمن، أريد مناقشة خدمة تصحيح تكلفة الأصناف ودقة تقارير الأرباح."
+        "erp": "مرحبًا عبدالرحمن، أريد مناقشة عمل متعلق بتنفيذ أو ترحيل نظام ERP.",
+        "reports": "مرحبًا عبدالرحمن، أريد مناقشة عمل متعلق بالتقارير المالية والإقفال الشهري.",
+        "inventory": "مرحبًا عبدالرحمن، أريد مناقشة عمل متعلق بتنظيف وتحسين بيانات المخزون.",
+        "vat": "مرحبًا عبدالرحمن، أريد مناقشة عمل متعلق بضريبة القيمة المضافة والتسويات.",
+        "dashboards": "مرحبًا عبدالرحمن، أريد مناقشة عمل متعلق بلوحات Excel أو Power BI لشركتي.",
+        "costing": "مرحبًا عبدالرحمن، أريد مناقشة عمل متعلق بتصحيح تكلفة الأصناف ودقة تقارير الأرباح."
       }
     },
     "footer": {

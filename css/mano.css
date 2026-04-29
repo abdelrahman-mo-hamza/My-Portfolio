@@ -158,6 +158,18 @@ ul {
   display: flex;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.header-actions .lang-switch,
+.header-actions .theme-switch {
+  margin: 0;
+}
+
 @media (max-width: 991px) {
   .header .main-nav {
     position: absolute;
@@ -360,22 +372,30 @@ ul {
   .hamburger-menu {
     display: flex;
     margin-right: 0;
+    order: 3;
   }
 
   .header .container {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-columns: minmax(0, auto) auto auto;
+    justify-content: start;
     flex-wrap: nowrap;
     gap: 10px;
     min-height: 72px;
   }
 
   .header .logo {
+    order: 1;
     flex: 1;
     min-width: 0;
     font-size: 22px;
     justify-content: flex-start;
     width: 100%;
+  }
+
+  .header-actions {
+    order: 2;
+    gap: 6px;
   }
 
   .header .main-nav {
@@ -434,7 +454,8 @@ ul {
     padding: 10px;
   }
 
-  .header .lang-switch {
+  .header .lang-switch,
+  .header .theme-switch {
     position: static;
     margin: 0;
     padding: 8px 10px;
@@ -455,7 +476,7 @@ ul {
     width: auto;
     height: 72px;
     font-size: 16px;
-    max-width: calc(100% - 110px);
+    max-width: min(42vw, 170px);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -464,6 +485,15 @@ ul {
   .header .lang-switch {
     padding: 6px 8px;
     font-size: 10px;
+    flex-shrink: 0;
+  }
+
+  .header .theme-switch {
+    width: 58px;
+    height: 34px;
+    min-width: 58px;
+    padding: 3px;
+    font-size: 13px;
     flex-shrink: 0;
   }
 
@@ -499,7 +529,8 @@ ul {
     min-width: 100px;
   }
 
-  .lang-switch {
+  .lang-switch,
+  .theme-switch {
     font-size: 12px;
     padding: 8px 12px;
   }
@@ -679,6 +710,15 @@ ul {
 .landing-action--secondary:hover {
   border-color: var(--main-color);
   color: var(--main-color);
+}
+.landing-action--tertiary {
+  border-color: #d7e7f8;
+  background-color: #f8fbff;
+  color: var(--main-color);
+}
+.landing-action--tertiary:hover {
+  border-color: var(--main-color);
+  background-color: white;
 }
 @media (max-width: 991px) {
   .landing .text p {
@@ -1364,6 +1404,15 @@ body.certificate-preview-active .scroll-toggle {
   min-height: 32px;
 }
 /* End Services */
+.section-lead {
+  width: min(760px, calc(100% - 30px));
+  margin: -48px auto 48px;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.8;
+  text-align: center;
+}
+
 .case-studies {
   padding-top: var(--main-padding-top);
   padding-bottom: var(--main-padding-bottom);
@@ -1514,6 +1563,16 @@ body.certificate-preview-active .scroll-toggle {
 }
 .case-studies .box ul {
   margin-left: 20px;
+}
+
+.case-studies .box p {
+  margin: 0 0 12px;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.case-studies .box strong {
+  color: #0f172a;
 }
 /* Start Skills */
 .our-skills {
@@ -2072,7 +2131,6 @@ body.certificate-preview-active .scroll-toggle {
   flex-wrap: wrap;
 }
 .discount .image {
-  background-image: url(../imgs/discount-background1.webp);
   background-size: cover;
   color: white;
   flex-basis: 50%;
@@ -2081,7 +2139,6 @@ body.certificate-preview-active .scroll-toggle {
   justify-content: center;
   position: relative;
   z-index: 1;
-  animation: change-background 10s linear infinite;
 }
 .discount .image::before {
   content: "";
@@ -2435,15 +2492,6 @@ body.certificate-preview-active .scroll-toggle {
     height: 200%;
   }
 }
-@keyframes change-background {
-  0%,
-  100% {
-    background-image: url("../imgs/discount-background1.webp");
-  }
-  50% {
-    background-image: url("../imgs/discount-background2.webp");
-  }
-}
 /* End Animation */
 
 /* ===== RTL Support for Arabic ===== */
@@ -2595,8 +2643,9 @@ html[dir="rtl"] .main-title:hover::after {
   animation: left-move 0.5s linear forwards;
 }
 
-/* Language Switcher */
-.lang-switch {
+/* Header Switchers */
+.lang-switch,
+.theme-switch {
   background-color: var(--main-color);
   color: white;
   border: none;
@@ -2609,8 +2658,51 @@ html[dir="rtl"] .main-title:hover::after {
   margin: 10px;
 }
 
-.lang-switch:hover {
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 34px;
+  min-width: 62px;
+  padding: 3px;
+  border-radius: 999px;
+  background-color: #eaf6ff;
+  color: var(--main-color);
+  box-shadow: inset 0 0 0 1px rgb(33 150 243 / 24%);
+  font-size: 13px;
+}
+
+.theme-switch__track {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.theme-switch__thumb {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 4px 12px rgb(15 23 42 / 18%);
+  transition: transform var(--main-transition), background-color var(--main-transition), color var(--main-transition);
+}
+
+.lang-switch:hover,
+.theme-switch:hover {
   background-color: var(--main-color-alt);
+}
+
+.theme-switch:hover {
+  background-color: #dff2ff;
 }
 
 .header-top {
@@ -2972,7 +3064,8 @@ html[dir="rtl"] .text {
   }
 
   button,
-  .lang-switch {
+  .lang-switch,
+  .theme-switch {
     min-height: 44px;
     min-width: 44px;
     padding: 10px 15px;
@@ -3120,12 +3213,18 @@ html[dir="rtl"] .container::after {
 
 @media (max-width: 479px) {
   .header .logo {
-    max-width: calc(100% - 90px);
+    max-width: min(42vw, 160px);
   }
 
   .header .lang-switch {
     min-width: 44px;
     padding: 6px;
+  }
+
+  .header .theme-switch {
+    min-width: 58px;
+    width: 58px;
+    padding: 3px;
   }
 }
 
@@ -3391,7 +3490,8 @@ html[dir="rtl"] #ayah {
 
 @media (max-width: 767px) {
   .header .container {
-    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-columns: minmax(0, auto) auto auto;
+    justify-content: start;
     gap: 8px;
     min-height: 68px;
     padding-top: 4px;
@@ -3400,7 +3500,7 @@ html[dir="rtl"] #ayah {
 
   .header .logo {
     width: auto;
-    max-width: none;
+    max-width: min(42vw, 170px);
     min-width: 0;
     min-height: 56px;
     height: auto;
@@ -3423,6 +3523,12 @@ html[dir="rtl"] #ayah {
     min-width: 56px;
     padding: 8px 10px;
     font-size: 11px;
+  }
+
+  .header .theme-switch {
+    min-width: 58px;
+    width: 58px;
+    padding: 3px;
   }
 
   .hamburger-menu {
@@ -4010,9 +4116,46 @@ html[dir="rtl"] .experience-item {
 }
 
 /* Start Portfolio Refinements */
+.services .box {
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgb(15 23 42 / 7%);
+}
+
+.services .box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgb(15 23 42 / 10%);
+}
+
+.services .box .info {
+  padding: 18px 20px 22px;
+  border-top: 1px solid #eef2f7;
+  background-color: white;
+  text-align: center;
+}
+
+.services .box .info::before,
+.services .box .info::after {
+  display: none;
+}
+
+.services .box .info a {
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid rgb(33 150 243 / 35%);
+  border-radius: 999px;
+  background-color: #f8fbff;
+}
+
+.services .box .info a:hover {
+  border-color: var(--main-color);
+  background-color: var(--main-color);
+  color: white;
+}
+
 .our-skills .skills-board {
   display: grid;
-  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
   gap: 28px;
   align-items: stretch;
 }
@@ -4030,13 +4173,6 @@ html[dir="rtl"] .experience-item {
   border-radius: 8px;
   background: linear-gradient(135deg, #f8fbff 0%, #eef7ff 100%);
   box-shadow: 0 14px 34px rgb(15 23 42 / 7%);
-}
-
-.our-skills .skills-profile img {
-  display: block;
-  width: 100%;
-  max-width: 330px;
-  margin-inline: auto;
 }
 
 .skills-profile > span,
@@ -4178,7 +4314,7 @@ html[dir="rtl"] .experience-item {
 
 .work-steps .process-board {
   display: grid;
-  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
   gap: 30px;
   align-items: start;
 }
@@ -4196,13 +4332,6 @@ html[dir="rtl"] .experience-item {
   border-radius: 8px;
   background-color: white;
   box-shadow: 0 14px 34px rgb(15 23 42 / 7%);
-}
-
-.work-steps .process-intro .image {
-  display: block;
-  width: 100%;
-  max-width: 330px;
-  margin: 0 auto 6px !important;
 }
 
 .process-grid {
@@ -4292,6 +4421,7 @@ html[dir="rtl"] .experience-item {
 }
 
 .discount .image {
+  background-image: none;
   min-height: 500px;
   animation: none;
 }
@@ -4429,6 +4559,295 @@ html[dir="rtl"] .process-intro > span {
   }
 }
 /* End Portfolio Refinements */
+
+/* Start Dark Mode */
+html {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --main-color: #4db5ff;
+  --main-color-alt: #77c8ff;
+  --section-background: #111827;
+}
+
+html[data-theme="dark"] body {
+  background-color: #0b1120;
+  color: #e5edf7;
+}
+
+html[data-theme="dark"] .header,
+html[data-theme="dark"] .header .main-nav,
+html[data-theme="dark"] .header .mega-menu {
+  background-color: #0f172a;
+  border-color: #1e293b;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 28%);
+}
+
+html[data-theme="dark"] .header .main-nav > li {
+  border-color: #1e293b;
+}
+
+html[data-theme="dark"] .header .main-nav > li > a {
+  color: #e5edf7;
+}
+
+html[data-theme="dark"] .header .main-nav > li > a:hover,
+html[data-theme="dark"] .header .mega-menu .links li::before {
+  background-color: #162033;
+}
+
+html[data-theme="dark"] .header .mega-menu .links li:not(:last-child),
+html[data-theme="dark"] .header .mega-menu .links:first-of-type li:last-child {
+  border-color: #1e293b;
+}
+
+html[data-theme="dark"] .hamburger-menu span {
+  background-color: var(--main-color);
+}
+
+html[data-theme="dark"] .main-title {
+  color: #f8fafc;
+  border-color: #dbeafe;
+}
+
+html[data-theme="dark"] .main-title:hover {
+  color: white;
+  border-color: white;
+}
+
+html[data-theme="dark"] .spikes::after {
+  background-image: linear-gradient(135deg, #0b1120 25%, transparent 25%),
+    linear-gradient(225deg, #0b1120 25%, transparent 25%);
+}
+
+html[data-theme="dark"] .landing::before {
+  background-color: #111827;
+}
+
+html[data-theme="dark"] .landing .text h1,
+html[data-theme="dark"] .stats h2,
+html[data-theme="dark"] .work-steps .info .box h3 {
+  color: #f8fafc;
+}
+
+html[data-theme="dark"] .landing .text p,
+html[data-theme="dark"] .articles .box .content p,
+html[data-theme="dark"] .section-lead,
+html[data-theme="dark"] .services .service-desc,
+html[data-theme="dark"] .services .service-points,
+html[data-theme="dark"] .case-study-flow p,
+html[data-theme="dark"] .case-studies .box p,
+html[data-theme="dark"] .skills-profile p,
+html[data-theme="dark"] .process-intro p,
+html[data-theme="dark"] .skill-card p,
+html[data-theme="dark"] .process-card p,
+html[data-theme="dark"] .problem-card p,
+html[data-theme="dark"] .package-card p,
+html[data-theme="dark"] .faq details p,
+html[data-theme="dark"] .experience-item p,
+html[data-theme="dark"] .work-steps .info .box p,
+html[data-theme="dark"] .discount .contact-note,
+html[data-theme="dark"] .discount .content p {
+  color: #a8b3c7;
+}
+
+html[data-theme="dark"] .landing-highlights div,
+html[data-theme="dark"] .articles .box,
+html[data-theme="dark"] .gallery .box,
+html[data-theme="dark"] .services .box,
+html[data-theme="dark"] .case-study-flow > div,
+html[data-theme="dark"] .case-studies .box,
+html[data-theme="dark"] .skills-profile,
+html[data-theme="dark"] .skill-card,
+html[data-theme="dark"] .process-intro,
+html[data-theme="dark"] .process-card,
+html[data-theme="dark"] .problem-card,
+html[data-theme="dark"] .package-card,
+html[data-theme="dark"] .faq details,
+html[data-theme="dark"] .experience-item,
+html[data-theme="dark"] .stats .box,
+html[data-theme="dark"] .work-steps .info .box {
+  background-color: #111827;
+  border-color: #243247;
+  box-shadow: 0 16px 34px rgb(0 0 0 / 28%);
+}
+
+html[data-theme="dark"] .gallery,
+html[data-theme="dark"] .case-studies,
+html[data-theme="dark"] .work-steps,
+html[data-theme="dark"] .faq,
+html[data-theme="dark"] .services,
+html[data-theme="dark"] .packages,
+html[data-theme="dark"] .discount {
+  background-color: #0b1120;
+}
+
+html[data-theme="dark"] .problems,
+html[data-theme="dark"] .our-skills,
+html[data-theme="dark"] .videos {
+  background-color: #0f172a;
+}
+
+html[data-theme="dark"] .landing-action--secondary,
+html[data-theme="dark"] .landing-action--tertiary,
+html[data-theme="dark"] .services .box .info,
+html[data-theme="dark"] .services .box .info a,
+html[data-theme="dark"] .skills-tools span,
+html[data-theme="dark"] .skill-card .percent,
+html[data-theme="dark"] .process-card strong,
+html[data-theme="dark"] .experience-item span,
+html[data-theme="dark"] .problem-card i,
+html[data-theme="dark"] .package-badge,
+html[data-theme="dark"] .discount .form .input,
+html[data-theme="dark"] .discount .form select.input {
+  background-color: #162033;
+  border-color: #2c3d56;
+  color: #dbeafe;
+}
+
+html[data-theme="dark"] .landing-action--secondary:hover,
+html[data-theme="dark"] .landing-action--tertiary:hover,
+html[data-theme="dark"] .services .box .info a:hover {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  color: #06111f;
+}
+
+html[data-theme="dark"] .landing-highlights span,
+html[data-theme="dark"] .skills-tools span,
+html[data-theme="dark"] .experience-item strong {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .articles .box .info,
+html[data-theme="dark"] .services .box .info,
+html[data-theme="dark"] .skill-card .the-progress {
+  border-color: #243247;
+  background-color: #162033;
+}
+
+html[data-theme="dark"] .skill-card h3,
+html[data-theme="dark"] .process-card h3,
+html[data-theme="dark"] .skills-profile h3,
+html[data-theme="dark"] .process-intro h3,
+html[data-theme="dark"] .problem-card h3,
+html[data-theme="dark"] .package-card h3,
+html[data-theme="dark"] .faq summary,
+html[data-theme="dark"] .experience-item h3,
+html[data-theme="dark"] .case-study-flow h4,
+html[data-theme="dark"] .case-studies .box strong,
+html[data-theme="dark"] .our-skills .skill h3 span:first-child {
+  color: #f8fafc;
+}
+
+html[data-theme="dark"] .services .box > i {
+  color: #64748b;
+}
+
+html[data-theme="dark"] .services .box:hover,
+html[data-theme="dark"] .articles .box:hover,
+html[data-theme="dark"] .gallery .box:hover,
+html[data-theme="dark"] .skill-card:hover,
+html[data-theme="dark"] .problem-card:hover,
+html[data-theme="dark"] .package-card:hover {
+  box-shadow: 0 22px 44px rgb(0 0 0 / 38%);
+}
+
+html[data-theme="dark"] .case-study-hero,
+html[data-theme="dark"] .experience-summary {
+  background: linear-gradient(135deg, #06111f, #0f3764 62%, #0e7490);
+}
+
+html[data-theme="dark"] .experience-summary #ayah,
+html[data-theme="dark"] .videos .holder .preview .info {
+  background-color: #eaf6ff;
+  color: #0f172a;
+}
+
+html[data-theme="dark"] .stats::before {
+  background-color: rgb(11 17 32 / 92%);
+}
+
+html[data-theme="dark"] .discount .image::before {
+  background-color: rgb(15 55 100 / 96%);
+}
+
+html[data-theme="dark"] .discount .form .input::placeholder,
+html[data-theme="dark"] .events .subscribe form input[type="email"]::placeholder {
+  color: #94a3b8;
+}
+
+html[data-theme="dark"] .gallery-preview__frame {
+  background-color: #0f172a;
+  box-shadow: 0 28px 70px rgb(0 0 0 / 55%);
+}
+
+html[data-theme="dark"] .gallery-preview__close,
+html[data-theme="dark"] .gallery-preview__nav {
+  background-color: rgb(15 23 42 / 94%);
+  color: #f8fafc;
+}
+
+html[data-theme="dark"] .scroll-toggle,
+html[data-theme="dark"] .lang-switch,
+html[data-theme="dark"] .theme-switch {
+  box-shadow: 0 14px 30px rgb(33 150 243 / 18%);
+}
+
+html[data-theme="dark"] .theme-switch {
+  background-color: #172033;
+  color: #facc15;
+  box-shadow: inset 0 0 0 1px #2c3d56, 0 14px 30px rgb(33 150 243 / 18%);
+}
+
+html[data-theme="dark"] .theme-switch:hover {
+  background-color: #1e2b43;
+}
+
+html[data-theme="dark"] .theme-switch__thumb {
+  transform: translateX(28px);
+  background-color: #0f172a;
+  color: #facc15;
+}
+
+html[data-theme="dark"] .skills-profile {
+  background:
+    linear-gradient(145deg, rgb(77 181 255 / 13%), transparent 42%),
+    linear-gradient(135deg, #111827 0%, #14233a 100%);
+  border-color: #315172;
+  box-shadow: 0 18px 40px rgb(0 0 0 / 32%);
+}
+
+html[data-theme="dark"] .skills-profile > span {
+  background-color: rgb(77 181 255 / 16%);
+  border: 1px solid rgb(77 181 255 / 28%);
+  color: #7dd3fc;
+}
+
+html[data-theme="dark"] .skills-profile h3 {
+  color: #f8fafc;
+}
+
+html[data-theme="dark"] .skills-profile p {
+  color: #c7d2e4;
+}
+
+html[data-theme="dark"] .skills-profile .skills-tools span {
+  background-color: rgb(15 23 42 / 76%);
+  border-color: #315172;
+  color: #dbeafe;
+}
+
+.header .theme-switch {
+  width: 62px;
+  height: 34px;
+  min-width: 62px;
+  min-height: 34px;
+  padding: 3px;
+}
+/* End Dark Mode */
 
 
 

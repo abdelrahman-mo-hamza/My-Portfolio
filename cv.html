@@ -5,6 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>عبدالرحمن محمد حمزة - السيرة الذاتية</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/all.min.css" />
+  <meta name="theme-color" content="#2196f3" />
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = savedTheme === "dark" || savedTheme === "light" ? savedTheme : (prefersDark ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      } catch (error) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
@@ -20,6 +35,22 @@
       --shadow: 0 18px 40px rgb(15 23 42 / 10%);
     }
 
+    html {
+      color-scheme: light;
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --accent: #4db5ff;
+      --accent-dark: #77c8ff;
+      --ink: #e5edf7;
+      --muted: #a8b3c7;
+      --line: #243247;
+      --soft: #0b1120;
+      --panel: #111827;
+      --shadow: 0 22px 46px rgb(0 0 0 / 34%);
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -30,11 +61,88 @@
       color: var(--ink);
       background: #edf5ff;
       line-height: 1.65;
+      overflow-x: hidden;
     }
 
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    .cv-toolbar {
+      width: min(1080px, calc(100% - 32px));
+      margin: 18px auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      direction: inherit;
+    }
+
+    .cv-toolbar__title {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .cv-toolbar__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cv-toolbar a,
+    .cv-toolbar button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border: 1px solid #d7e7f8;
+      border-radius: 999px;
+      background: white;
+      color: var(--accent-dark);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .cv-toolbar a:hover,
+    .cv-toolbar button:hover {
+      border-color: var(--accent);
+      background: #f8fbff;
+    }
+
+    .cv-toolbar [data-theme-toggle] {
+      width: 62px;
+      min-width: 62px;
+      padding: 3px;
+      border-radius: 999px;
+    }
+
+    .theme-switch__track {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 28px;
+      border-radius: inherit;
+    }
+
+    .theme-switch__thumb {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: white;
+      color: var(--accent-dark);
+      box-shadow: 0 4px 12px rgb(15 23 42 / 18%);
+      transition: transform 0.3s, background-color 0.3s, color 0.3s;
     }
 
     .cv {
@@ -74,6 +182,7 @@
       line-height: 1.15;
       font-weight: 900;
       letter-spacing: 0;
+      overflow-wrap: anywhere;
     }
 
     .role {
@@ -123,6 +232,11 @@
     .contact-list .rtl {
       direction: rtl;
       text-align: right;
+    }
+
+    html[dir="rtl"] .contact-list {
+      direction: ltr;
+      text-align: left;
     }
 
     .metric-row {
@@ -321,6 +435,80 @@
       text-align: center;
     }
 
+    html[data-theme="dark"] body {
+      background: #0b1120;
+    }
+
+    html[data-theme="dark"] .cv-toolbar a,
+    html[data-theme="dark"] .cv-toolbar button,
+    html[data-theme="dark"] .contact-card,
+    html[data-theme="dark"] .metric,
+    html[data-theme="dark"] .chip,
+    html[data-theme="dark"] .project {
+      background: #162033;
+      border-color: #2c3d56;
+      color: #dbeafe;
+    }
+
+    html[data-theme="dark"] .cv-toolbar a:hover,
+    html[data-theme="dark"] .cv-toolbar button:hover {
+      border-color: var(--accent);
+      background: #1e2b43;
+    }
+
+    html[data-theme="dark"] .theme-switch__thumb {
+      transform: translateX(28px);
+      background: #0f172a;
+      color: #facc15;
+    }
+
+    html[data-theme="dark"] .hero {
+      background:
+        linear-gradient(135deg, rgb(77 181 255 / 13%), rgb(17 24 39 / 94%)),
+        radial-gradient(circle at top left, rgb(77 181 255 / 17%), transparent 34%);
+    }
+
+    html[data-theme="dark"] .summary,
+    html[data-theme="dark"] .contact-list,
+    html[data-theme="dark"] .metric span,
+    html[data-theme="dark"] .list,
+    html[data-theme="dark"] .company,
+    html[data-theme="dark"] .footer {
+      color: #a8b3c7;
+    }
+
+    html[data-theme="dark"] .metric-row,
+    html[data-theme="dark"] .footer {
+      background: #0f172a;
+    }
+
+    html[data-theme="dark"] .section h2 {
+      border-color: #2c3d56;
+    }
+
+    html[data-theme="dark"] .job {
+      border-color: #243247;
+    }
+
+    html[data-theme="dark"] .date {
+      background: #19314f;
+      color: var(--accent-dark);
+    }
+
+    @media print {
+      html[data-theme="dark"] {
+        color-scheme: light;
+        --accent: #2196f3;
+        --accent-dark: #1787e0;
+        --ink: #102033;
+        --muted: #637083;
+        --line: #dbeafe;
+        --soft: #f5faff;
+        --panel: #ffffff;
+        --shadow: none;
+      }
+    }
+
     @page {
       size: A4;
       margin: 10mm;
@@ -338,6 +526,10 @@
         margin: 0;
         border-radius: 0;
         box-shadow: none;
+      }
+
+      .cv-toolbar {
+        display: none;
       }
 
       .hero {
@@ -359,10 +551,71 @@
     }
 
     @media (max-width: 760px) {
-      .cv {
+      html,
+      body {
         width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      #cvRoot {
+        width: 100%;
+        max-width: 100vw;
+        overflow: hidden;
+        direction: ltr;
+      }
+
+      html[dir="rtl"] .cv,
+      html[dir="rtl"] .cv-toolbar {
+        direction: rtl;
+      }
+
+      html[dir="ltr"] .cv,
+      html[dir="ltr"] .cv-toolbar {
+        direction: ltr;
+      }
+
+      .cv {
+        width: 100vw;
+        max-width: 100vw;
         margin: 0;
         border-radius: 0;
+        overflow: hidden;
+      }
+
+      .cv-toolbar {
+        width: 100vw;
+        max-width: 100vw;
+        margin: 0;
+        padding: 12px;
+        align-items: flex-start;
+        flex-direction: column;
+        background: white;
+      }
+
+      .cv-toolbar__title,
+      .cv-toolbar__actions {
+        width: 100%;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+      }
+
+      .cv-toolbar__actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .cv-toolbar a,
+      .cv-toolbar button {
+        width: 100%;
+        min-width: 0;
+        padding: 0 10px;
+        text-align: center;
+      }
+
+      html[data-theme="dark"] .cv-toolbar {
+        background: #0f172a;
       }
 
       .hero,
@@ -370,8 +623,54 @@
         grid-template-columns: 1fr;
       }
 
+      .hero > div {
+        text-align: center;
+      }
+
+      .summary {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
       .metric-row {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 18px;
+      }
+
+      .hero,
+      .side,
+      .main {
+        padding-left: 28px;
+        padding-right: 28px;
+        min-width: 0;
+      }
+
+      .name {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+
+      .role,
+      .summary,
+      .contact-card,
+      .contact-list li,
+      .section h2,
+      .job h3,
+      .project h3 {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+
+      .job-head {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .date {
+        width: fit-content;
+        max-width: 100%;
+        white-space: normal;
       }
 
       .side {
@@ -383,185 +682,443 @@
 </head>
 
 <body>
-  <main class="cv">
-    <header class="hero">
-      <div>
-        <h1 class="name">عبدالرحمن محمد حمزة عبدالرحمن</h1>
-        <p class="role">محاسب أنظمة ERP ومحاسبة قطاع التجزئة</p>
-        <p class="summary">
-          محاسب متخصص في تشغيل أنظمة ERP وإدارة العمليات المالية داخل بيئات التجزئة. أمتلك خبرة عملية في إدارة المخزون،
-          مراجعة الموردين، إعداد التقارير المالية، وتحليل البيانات باستخدام Excel وPower BI لدعم اتخاذ القرار وتحسين كفاءة العمليات.
-        </p>
-      </div>
+  <div id="cvRoot"></div>
+  <script>
+    const CV_CONTENT = {
+      ar: {
+        pageTitle: "عبدالرحمن محمد حمزة - السيرة الذاتية",
+        toolbarTitle: "السيرة الذاتية - عبدالرحمن محمد حمزة",
+        back: "العودة للموقع",
+        download: "تحميل PDF",
+        print: "طباعة",
+        switchLanguage: "English",
+        themeToDark: "تفعيل الوضع الداكن",
+        themeToLight: "تفعيل الوضع الفاتح",
+        metricsLabel: "أبرز النتائج",
+        name: "عبدالرحمن محمد حمزة عبدالرحمن",
+        role: "محاسب أنظمة ERP ومحاسبة قطاع التجزئة",
+        summary: "محاسب متخصص في تشغيل أنظمة ERP وإدارة العمليات المالية داخل بيئات التجزئة. أمتلك خبرة عملية في إدارة المخزون، مراجعة الموردين، إعداد التقارير المالية، وتحليل البيانات باستخدام Excel وPower BI لدعم اتخاذ القرار وتحسين كفاءة العمليات.",
+        contactTitle: "بيانات التواصل",
+        contacts: [
+          { text: "جدة، المملكة العربية السعودية", rtl: true },
+          { text: "+966 59 028 5307", href: "tel:+966590285307" },
+          { text: "+20 155 457 5716", href: "tel:+201554575716" },
+          { text: "manobaker1@gmail.com", href: "mailto:manobaker1@gmail.com" },
+          { text: "linkedin.com/in/abdelrahman-mo-hamza", href: "https://www.linkedin.com/in/abdelrahman-mo-hamza" },
+          { text: "facebook.com/TheAccountantHub.ar", href: "https://www.facebook.com/TheAccountantHub.ar" },
+          { text: "Telegram: @mano_love1", href: "https://t.me/mano_love1" }
+        ],
+        metrics: [
+          { value: "5,500+", label: "صنف تمت إدارته داخل بيئة تجزئة نشطة" },
+          { value: "11,000+", label: "صنف وبيانات تاريخية تمت إعادة تنظيمها" },
+          { value: "20-40", label: "فاتورة مورد تتم مراجعتها يوميًا" },
+          { value: "2026", label: "آخر تحديث للسيرة الذاتية" }
+        ],
+        sideSections: [
+          {
+            title: "المهارات الأساسية",
+            type: "chips",
+            items: ["المحاسبة العامة", "حسابات العملاء والموردين", "إدارة النقدية والرواتب", "قائمة الدخل", "مطابقة البنك", "إقرارات VAT", "تشغيل أنظمة ERP", "إدارة المخزون والباركود", "إعداد شجرة الحسابات", "Power BI", "Excel", "Power Query"]
+          },
+          {
+            title: "الأنظمة والأدوات",
+            items: ["Rewaa, DataSpace ERP, Oracle, OA, Odoo, Wafeq, Qoyod", "Excel, Power BI, Power Query, Power Pivot", "Word, Outlook، وإعداد التقارير التشغيلية والمالية", "تصميم لوحات متابعة وتحسين جودة قواعد البيانات"]
+          },
+          {
+            title: "المؤهل العلمي",
+            items: ["بكالوريوس محاسبة", "جامعة مدينة السادات - مصر", "2023 | التقدير العام: جيد"]
+          },
+          {
+            title: "الشهادات",
+            items: ["أساسيات المحاسبة - CFI", "تحليل البيانات - Udacity", "دورة Python - Coursera", "برنامج الأسواق المالية - HSBC", "برنامج رواد - بنك مصر"]
+          }
+        ],
+        experienceTitle: "الخبرة العملية",
+        jobs: [
+          {
+            title: "محاسب ومسؤول نظام ERP",
+            date: "مارس 2025 - حتى الآن",
+            company: "واحة آزال | جدة، المملكة العربية السعودية",
+            items: [
+              "إدارة وتشغيل نظام ERP لمخزون يضم أكثر من 5,500 صنف داخل بيئة Retail متعددة الأنشطة تعمل على مدار 24 ساعة.",
+              "تنفيذ نقل شامل للبيانات من نظام قديم إلى ERP جديد شمل المخزون والأرصدة المالية مع إعادة تنظيم بيانات تاريخية تجاوزت 11,000 صنف.",
+              "تصحيح بيانات تكلفة الأصناف Costing لتحسين دقة قائمة الدخل واعتماد النتائج المالية من الإدارة.",
+              "مراجعة ما بين 20 إلى 40 فاتورة مورد يوميًا والتحقق من الأسعار والكميات وتنفيذ مردودات الموردين.",
+              "إعداد تقارير Slow Moving وصلاحية المنتجات، وتقارير المبيعات اليومية، ومتابعة الخزينة والمصروفات ومديونيات الموردين.",
+              "تنفيذ مطابقة حسابات البنك ورفع إقرارات ضريبة القيمة المضافة VAT، وتنفيذ جرد شهري وسنوي شامل للمخزون.",
+              "تقديم الدعم الفني والتشغيلي لجميع الأقسام كمسؤول رئيسي عن تشغيل النظام."
+            ]
+          },
+          {
+            title: "محاسب دوام جزئي ومسؤول نظام",
+            date: "ديسمبر 2025 - حتى الآن",
+            company: "نهري الصغير - محل تجزئة لأسماك الزينة | جدة، المملكة العربية السعودية",
+            items: [
+              "تشغيل النظام المحاسبي من الصفر وإعداد شجرة الحسابات وربط العمليات المالية.",
+              "إدخال وتنظيم أكثر من 300 صنف داخل النظام وإعداد قاعدة بيانات المخزون.",
+              "إعداد تقارير الأرباح والمصروفات ومتابعة الأداء المالي.",
+              "تدريب الموظفين على استخدام النظام وإدارة العمليات اليومية ومراقبة حركة الأصناف عن بعد."
+            ]
+          },
+          {
+            title: "محلل بيانات",
+            date: "يناير - ديسمبر 2024",
+            company: "دواجن الوطنية | مصر",
+            items: [
+              "إعداد تقارير المبيعات والتكاليف والتشغيل باستخدام Excel.",
+              "تحليل البيانات باستخدام Power Query وتحسين دقة التقارير.",
+              "تصميم لوحات متابعة باستخدام Power BI لدعم الإدارة في اتخاذ القرار.",
+              "تنظيم قواعد البيانات وتحسين سرعة استخراج التقارير."
+            ]
+          }
+        ],
+        projectsTitle: "المشاريع والخبرات المستقلة",
+        projects: [
+          {
+            title: "مستودع غاز الحوية - الطائف",
+            items: ["تشغيل نظام Rewaa ERP من الصفر، وإعداد شجرة الحسابات وربط العمليات المالية.", "إعداد المخزون وتصنيف الأصناف وتنظيم الدورة المستندية وتجهيز النظام للعمل الكامل داخل المنشأة."]
+          },
+          {
+            title: "مؤسسة المثلث الشمسي - جدة",
+            items: ["إعادة تنظيم بيانات المخزون داخل النظام وتنفيذ جرد شامل وتصنيف الأصناف.", "تدريب الموظفين والإدارة على استخدام النظام وإعداد التقارير التشغيلية."]
+          },
+          {
+            title: "الزي الأسود - جدة",
+            items: ["إعادة تنظيم الحسابات والدورة المستندية وتحليل النظام المحاسبي الحالي.", "اقتراح حلول أكثر كفاءة لتحسين دقة التقارير المالية وسهولة استخراجها."]
+          }
+        ],
+        footer: "تم إعداد هذه السيرة الذاتية بتصميم متوافق مع الهوية البصرية لموقع عبدالرحمن محمد حمزة."
+      },
+      en: {
+        pageTitle: "Abdelrahman Mohamed Hamza - CV",
+        toolbarTitle: "Curriculum Vitae - Abdelrahman Mohamed Hamza",
+        back: "Back to Website",
+        download: "Download PDF",
+        print: "Print",
+        switchLanguage: "العربية",
+        themeToDark: "Switch to dark mode",
+        themeToLight: "Switch to light mode",
+        metricsLabel: "Key results",
+        name: "Abdelrahman Mohamed Hamza Abdelrahman",
+        role: "ERP Systems & Retail Accounting Professional",
+        summary: "Accounting professional specialized in ERP operations and financial workflows for retail environments. Experienced in inventory control, supplier invoice review, financial reporting, and data analysis using Excel and Power BI to support better decisions and improve operational efficiency.",
+        contactTitle: "Contact",
+        contacts: [
+          { text: "Jeddah, Saudi Arabia" },
+          { text: "+966 59 028 5307", href: "tel:+966590285307" },
+          { text: "+20 155 457 5716", href: "tel:+201554575716" },
+          { text: "manobaker1@gmail.com", href: "mailto:manobaker1@gmail.com" },
+          { text: "linkedin.com/in/abdelrahman-mo-hamza", href: "https://www.linkedin.com/in/abdelrahman-mo-hamza" },
+          { text: "facebook.com/TheAccountantHub.ar", href: "https://www.facebook.com/TheAccountantHub.ar" },
+          { text: "Telegram: @mano_love1", href: "https://t.me/mano_love1" }
+        ],
+        metrics: [
+          { value: "5,500+", label: "Products managed in an active retail environment" },
+          { value: "11,000+", label: "Historical product records reorganized" },
+          { value: "20-40", label: "Supplier invoices reviewed daily" },
+          { value: "2026", label: "Latest CV update" }
+        ],
+        sideSections: [
+          {
+            title: "Core Skills",
+            type: "chips",
+            items: ["General Accounting", "Customers & Suppliers", "Cash & Payroll", "Income Statement", "Bank Reconciliation", "VAT Returns", "ERP Operations", "Inventory & Barcodes", "Chart of Accounts", "Power BI", "Excel", "Power Query"]
+          },
+          {
+            title: "Systems & Tools",
+            items: ["Rewaa, DataSpace ERP, Oracle, OA, Odoo, Wafeq, Qoyod", "Excel, Power BI, Power Query, Power Pivot", "Word, Outlook, operational and financial reporting", "Dashboard design and database quality improvement"]
+          },
+          {
+            title: "Education",
+            items: ["Bachelor's Degree in Accounting", "Sadat City University - Egypt", "2023 | Overall grade: Good"]
+          },
+          {
+            title: "Certifications",
+            items: ["Accounting Fundamentals - CFI", "Data Analysis - Udacity", "Python Course - Coursera", "Financial Markets Program - HSBC", "Rowad Program - Banque Misr"]
+          }
+        ],
+        experienceTitle: "Professional Experience",
+        jobs: [
+          {
+            title: "Accountant & ERP System Administrator",
+            date: "March 2025 - Present",
+            company: "Wahat Azal | Jeddah, Saudi Arabia",
+            items: [
+              "Managed and operated an ERP system for more than 5,500 products in a 24-hour multi-activity retail environment.",
+              "Led a full data migration from a legacy system to a new ERP, covering inventory, financial balances, and more than 11,000 historical records.",
+              "Corrected item costing data to improve income statement accuracy and support management approval of financial results.",
+              "Reviewed 20 to 40 supplier invoices daily, validating prices, quantities, and supplier returns.",
+              "Prepared slow-moving and expiry reports, daily sales reports, cash follow-up, expenses, and supplier payable tracking.",
+              "Performed bank reconciliations, supported VAT filing, and participated in monthly and annual inventory counts.",
+              "Provided operational and technical support across departments as the main ERP system owner."
+            ]
+          },
+          {
+            title: "Part-Time Accountant & System Administrator",
+            date: "December 2025 - Present",
+            company: "Nahr Al Sagheer - Aquarium Retail Store | Jeddah, Saudi Arabia",
+            items: [
+              "Set up the accounting system from scratch, including chart of accounts and financial workflow structure.",
+              "Entered and organized more than 300 products and built the inventory database.",
+              "Prepared profit, expense, and performance reports.",
+              "Trained employees on system usage, daily operations, and remote inventory monitoring."
+            ]
+          },
+          {
+            title: "Data Analyst",
+            date: "January - December 2024",
+            company: "Al Watania Poultry | Egypt",
+            items: [
+              "Prepared sales, cost, and operational reports using Excel.",
+              "Analyzed data with Power Query and improved report accuracy.",
+              "Designed Power BI dashboards to support management decisions.",
+              "Organized databases and improved report extraction speed."
+            ]
+          }
+        ],
+        projectsTitle: "Projects & Independent Experience",
+        projects: [
+          {
+            title: "Al Hawiyah Gas Warehouse - Taif",
+            items: ["Implemented Rewaa ERP from scratch, including chart of accounts and financial workflow setup.", "Prepared inventory, classified products, organized documentation flow, and made the system ready for full operation."]
+          },
+          {
+            title: "Al Muthalath Al Shamsi Est. - Jeddah",
+            items: ["Reorganized inventory data inside the system and performed full stock counting and product classification.", "Trained employees and management on system usage and operational reporting."]
+          },
+          {
+            title: "Black Uniform - Jeddah",
+            items: ["Reorganized accounts and documentation flow, and analyzed the current accounting system.", "Suggested more efficient solutions to improve report accuracy and ease of extraction."]
+          }
+        ],
+        footer: "This CV was designed to match the visual identity of Abdelrahman Mohamed Hamza's portfolio."
+      }
+    };
 
-      <aside class="contact-card">
-        <h2>بيانات التواصل</h2>
-        <ul class="contact-list">
-          <li class="rtl">جدة، المملكة العربية السعودية</li>
-          <li><a href="tel:+966590285307">+966 59 028 5307</a></li>
-          <li><a href="tel:+201554575716">+20 155 457 5716</a></li>
-          <li><a href="mailto:manobaker1@gmail.com">manobaker1@gmail.com</a></li>
-          <li><a href="https://www.linkedin.com/in/abdelrahman-mo-hamza">linkedin.com/in/abdelrahman-mo-hamza</a></li>
-          <li><a href="https://www.facebook.com/TheAccountantHub.ar">facebook.com/TheAccountantHub.ar</a></li>
-          <li><a href="https://t.me/mano_love1">Telegram: @mano_love1</a></li>
-        </ul>
-      </aside>
-    </header>
+    const root = document.getElementById("cvRoot");
+    const supportedLanguages = ["ar", "en"];
+    const supportedThemes = ["light", "dark"];
+    const themeStorageKey = "theme";
+    let currentTheme = getInitialTheme();
 
-    <section class="metric-row" aria-label="أبرز النتائج">
-      <div class="metric">
-        <strong>5,500+</strong>
-        <span>صنف تمت إدارته داخل بيئة تجزئة نشطة</span>
-      </div>
-      <div class="metric">
-        <strong>11,000+</strong>
-        <span>صنف وبيانات تاريخية تمت إعادة تنظيمها</span>
-      </div>
-      <div class="metric">
-        <strong>20-40</strong>
-        <span>فاتورة مورد تتم مراجعتها يوميًا</span>
-      </div>
-      <div class="metric">
-        <strong>2026</strong>
-        <span>آخر تحديث للسيرة الذاتية</span>
-      </div>
-    </section>
+    function detectBrowserLanguage() {
+      const language = navigator.language || navigator.userLanguage || "en";
+      return language.startsWith("ar") ? "ar" : "en";
+    }
 
-    <section class="content">
-      <aside class="side">
+    function getInitialLanguage() {
+      const urlLanguage = new URLSearchParams(window.location.search).get("lang");
+      if (supportedLanguages.includes(urlLanguage)) {
+        return urlLanguage;
+      }
+
+      const storedLanguage = localStorage.getItem("language");
+      if (supportedLanguages.includes(storedLanguage)) {
+        return storedLanguage;
+      }
+
+      return detectBrowserLanguage();
+    }
+
+    function getInitialTheme() {
+      const storedTheme = localStorage.getItem(themeStorageKey);
+      if (supportedThemes.includes(storedTheme)) {
+        return storedTheme;
+      }
+
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+
+    function updateThemeMeta() {
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+      if (!themeMeta) {
+        return;
+      }
+
+      themeMeta.setAttribute("content", currentTheme === "dark" ? "#0f172a" : "#2196f3");
+    }
+
+    function applyTheme(theme, shouldPersist = true) {
+      currentTheme = supportedThemes.includes(theme) ? theme : "light";
+      document.documentElement.dataset.theme = currentTheme;
+
+      if (shouldPersist) {
+        localStorage.setItem(themeStorageKey, currentTheme);
+      }
+
+      updateThemeMeta();
+      updateThemeButton();
+    }
+
+    function updateThemeButton() {
+      const themeButton = root.querySelector("[data-theme-toggle]");
+      if (!themeButton) {
+        return;
+      }
+
+      const content = CV_CONTENT[document.documentElement.lang] || CV_CONTENT.en;
+      const label = currentTheme === "dark" ? content.themeToLight : content.themeToDark;
+      const icon = themeButton.querySelector("i");
+      themeButton.setAttribute("aria-label", label);
+      themeButton.setAttribute("title", label);
+      themeButton.setAttribute("aria-pressed", String(currentTheme === "dark"));
+
+      if (icon) {
+        icon.className = currentTheme === "dark" ? "fas fa-sun" : "fas fa-moon";
+      }
+    }
+
+    function toggleTheme() {
+      applyTheme(currentTheme === "dark" ? "light" : "dark");
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function renderList(items) {
+      return `<ul class="list">${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+    }
+
+    function renderSideSection(section) {
+      if (section.type === "chips") {
+        return `
+          <section class="section">
+            <h2>${escapeHtml(section.title)}</h2>
+            <div class="chips">${section.items.map((item) => `<span class="chip">${escapeHtml(item)}</span>`).join("")}</div>
+          </section>
+        `;
+      }
+
+      return `
         <section class="section">
-          <h2>المهارات الأساسية</h2>
-          <div class="chips">
-            <span class="chip">المحاسبة العامة</span>
-            <span class="chip">حسابات العملاء والموردين</span>
-            <span class="chip">إدارة النقدية والرواتب</span>
-            <span class="chip">قائمة الدخل</span>
-            <span class="chip">مطابقة البنك</span>
-            <span class="chip">إقرارات VAT</span>
-            <span class="chip">تشغيل أنظمة ERP</span>
-            <span class="chip">إدارة المخزون والباركود</span>
-            <span class="chip">إعداد شجرة الحسابات</span>
-            <span class="chip">Power BI</span>
-            <span class="chip">Excel</span>
-            <span class="chip">Power Query</span>
+          <h2>${escapeHtml(section.title)}</h2>
+          ${renderList(section.items)}
+        </section>
+      `;
+    }
+
+    function renderContact(contact) {
+      const content = contact.href
+        ? `<a href="${escapeHtml(contact.href)}">${escapeHtml(contact.text)}</a>`
+        : escapeHtml(contact.text);
+      return `<li${contact.rtl ? ' class="rtl"' : ""}>${content}</li>`;
+    }
+
+    function renderJob(job) {
+      return `
+        <article class="job">
+          <div class="job-head">
+            <h3>${escapeHtml(job.title)}</h3>
+            <span class="date">${escapeHtml(job.date)}</span>
           </div>
-        </section>
+          <p class="company">${escapeHtml(job.company)}</p>
+          ${renderList(job.items)}
+        </article>
+      `;
+    }
 
-        <section class="section">
-          <h2>الأنظمة والأدوات</h2>
-          <ul class="list">
-            <li>Rewaa, DataSpace ERP, Oracle, OA, Odoo, Wafeq, Qoyod</li>
-            <li>Excel, Power BI, Power Query, Power Pivot</li>
-            <li>Word, Outlook، وإعداد التقارير التشغيلية والمالية</li>
-            <li>تصميم لوحات متابعة وتحسين جودة قواعد البيانات</li>
-          </ul>
-        </section>
+    function renderProject(project) {
+      return `
+        <article class="project">
+          <h3>${escapeHtml(project.title)}</h3>
+          ${renderList(project.items)}
+        </article>
+      `;
+    }
 
-        <section class="section">
-          <h2>المؤهل العلمي</h2>
-          <ul class="list">
-            <li>بكالوريوس محاسبة</li>
-            <li>جامعة مدينة السادات - مصر</li>
-            <li>2023 | التقدير العام: جيد</li>
-          </ul>
-        </section>
+    function applyLanguage(lang) {
+      const language = supportedLanguages.includes(lang) ? lang : "en";
+      const content = CV_CONTENT[language];
+      const direction = language === "ar" ? "rtl" : "ltr";
+      const oppositeLanguage = language === "ar" ? "en" : "ar";
+      const pdfFile = language === "ar" ? "Abdelrahman-Mohamed-Hamza-CV-ar.pdf" : "Abdelrahman-Mohamed-Hamza-CV-en.pdf";
 
-        <section class="section">
-          <h2>الشهادات</h2>
-          <ul class="list">
-            <li>أساسيات المحاسبة - CFI</li>
-            <li>تحليل البيانات - Udacity</li>
-            <li>دورة Python - Coursera</li>
-            <li>برنامج الأسواق المالية - HSBC</li>
-            <li>برنامج رواد - بنك مصر</li>
-          </ul>
-        </section>
-      </aside>
+      localStorage.setItem("language", language);
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", language);
+      window.history.replaceState({}, "", url);
 
-      <div class="main">
-        <section class="section">
-          <h2>الخبرة العملية</h2>
+      document.documentElement.lang = language;
+      document.documentElement.dir = direction;
+      document.title = content.pageTitle;
+      document.body.classList.remove("lang-ar", "lang-en");
+      document.body.classList.add(`lang-${language}`);
 
-          <article class="job">
-            <div class="job-head">
-              <h3>محاسب ومسؤول نظام ERP</h3>
-              <span class="date">مارس 2025 - حتى الآن</span>
+      root.innerHTML = `
+        <nav class="cv-toolbar" aria-label="${escapeHtml(content.toolbarTitle)}">
+          <span class="cv-toolbar__title">${escapeHtml(content.toolbarTitle)}</span>
+          <div class="cv-toolbar__actions">
+            <a href="index.html?lang=${language}">${escapeHtml(content.back)}</a>
+            <a href="${pdfFile}" download="${pdfFile}">${escapeHtml(content.download)}</a>
+            <button type="button" data-print>${escapeHtml(content.print)}</button>
+            <button type="button" data-theme-toggle aria-label="${escapeHtml(content.themeToDark)}">
+              <span class="theme-switch__track" aria-hidden="true">
+                <span class="theme-switch__thumb">
+                  <i class="${currentTheme === "dark" ? "fas fa-sun" : "fas fa-moon"}"></i>
+                </span>
+              </span>
+            </button>
+            <button type="button" data-language="${oppositeLanguage}">${escapeHtml(content.switchLanguage)}</button>
+          </div>
+        </nav>
+        <main class="cv">
+          <header class="hero">
+            <div>
+              <h1 class="name">${escapeHtml(content.name)}</h1>
+              <p class="role">${escapeHtml(content.role)}</p>
+              <p class="summary">${escapeHtml(content.summary)}</p>
             </div>
-            <p class="company">واحة آزال | جدة، المملكة العربية السعودية</p>
-            <ul class="list">
-              <li>إدارة وتشغيل نظام ERP لمخزون يضم أكثر من 5,500 صنف داخل بيئة Retail متعددة الأنشطة تعمل على مدار 24 ساعة.</li>
-              <li>تنفيذ نقل شامل للبيانات من نظام قديم إلى ERP جديد شمل المخزون والأرصدة المالية مع إعادة تنظيم بيانات تاريخية تجاوزت 11,000 صنف.</li>
-              <li>تصحيح بيانات تكلفة الأصناف Costing لتحسين دقة قائمة الدخل واعتماد النتائج المالية من الإدارة.</li>
-              <li>مراجعة ما بين 20 إلى 40 فاتورة مورد يوميًا والتحقق من الأسعار والكميات وتنفيذ مردودات الموردين.</li>
-              <li>إعداد تقارير Slow Moving وصلاحية المنتجات، وتقارير المبيعات اليومية، ومتابعة الخزينة والمصروفات ومديونيات الموردين.</li>
-              <li>تنفيذ مطابقة حسابات البنك ورفع إقرارات ضريبة القيمة المضافة VAT، وتنفيذ جرد شهري وسنوي شامل للمخزون.</li>
-              <li>تقديم الدعم الفني والتشغيلي لجميع الأقسام كمسؤول رئيسي عن تشغيل النظام.</li>
-            </ul>
-          </article>
-
-          <article class="job">
-            <div class="job-head">
-              <h3>محاسب دوام جزئي ومسؤول نظام</h3>
-              <span class="date">ديسمبر 2025 - حتى الآن</span>
+            <aside class="contact-card">
+              <h2>${escapeHtml(content.contactTitle)}</h2>
+              <ul class="contact-list">${content.contacts.map(renderContact).join("")}</ul>
+            </aside>
+          </header>
+          <section class="metric-row" aria-label="${escapeHtml(content.metricsLabel)}">
+            ${content.metrics.map((metric) => `
+              <div class="metric">
+                <strong>${escapeHtml(metric.value)}</strong>
+                <span>${escapeHtml(metric.label)}</span>
+              </div>
+            `).join("")}
+          </section>
+          <section class="content">
+            <aside class="side">${content.sideSections.map(renderSideSection).join("")}</aside>
+            <div class="main">
+              <section class="section">
+                <h2>${escapeHtml(content.experienceTitle)}</h2>
+                ${content.jobs.map(renderJob).join("")}
+              </section>
+              <section class="section">
+                <h2>${escapeHtml(content.projectsTitle)}</h2>
+                ${content.projects.map(renderProject).join("")}
+              </section>
             </div>
-            <p class="company">نهري الصغير - محل تجزئة لأسماك الزينة | جدة، المملكة العربية السعودية</p>
-            <ul class="list">
-              <li>تشغيل النظام المحاسبي من الصفر وإعداد شجرة الحسابات وربط العمليات المالية.</li>
-              <li>إدخال وتنظيم أكثر من 300 صنف داخل النظام وإعداد قاعدة بيانات المخزون.</li>
-              <li>إعداد تقارير الأرباح والمصروفات ومتابعة الأداء المالي.</li>
-              <li>تدريب الموظفين على استخدام النظام وإدارة العمليات اليومية ومراقبة حركة الأصناف عن بعد.</li>
-            </ul>
-          </article>
+          </section>
+          <footer class="footer">${escapeHtml(content.footer)}</footer>
+        </main>
+      `;
 
-          <article class="job">
-            <div class="job-head">
-              <h3>محلل بيانات</h3>
-              <span class="date">يناير - ديسمبر 2024</span>
-            </div>
-            <p class="company">دواجن الوطنية | مصر</p>
-            <ul class="list">
-              <li>إعداد تقارير المبيعات والتكاليف والتشغيل باستخدام Excel.</li>
-              <li>تحليل البيانات باستخدام Power Query وتحسين دقة التقارير.</li>
-              <li>تصميم لوحات متابعة باستخدام Power BI لدعم الإدارة في اتخاذ القرار.</li>
-              <li>تنظيم قواعد البيانات وتحسين سرعة استخراج التقارير.</li>
-            </ul>
-          </article>
-        </section>
+      applyTheme(currentTheme, false);
+      root.querySelector("[data-print]")?.addEventListener("click", () => window.print());
+      root.querySelector("[data-theme-toggle]")?.addEventListener("click", toggleTheme);
+      root.querySelector("[data-language]")?.addEventListener("click", (event) => {
+        applyLanguage(event.currentTarget.dataset.language);
+      });
+    }
 
-        <section class="section">
-          <h2>المشاريع والخبرات المستقلة</h2>
-
-          <article class="project">
-            <h3>مستودع غاز الحوية - الطائف</h3>
-            <ul class="list">
-              <li>تشغيل نظام Rewaa ERP من الصفر، وإعداد شجرة الحسابات وربط العمليات المالية.</li>
-              <li>إعداد المخزون وتصنيف الأصناف وتنظيم الدورة المستندية وتجهيز النظام للعمل الكامل داخل المنشأة.</li>
-            </ul>
-          </article>
-
-          <article class="project">
-            <h3>مؤسسة المثلث الشمسي - جدة</h3>
-            <ul class="list">
-              <li>إعادة تنظيم بيانات المخزون داخل النظام وتنفيذ جرد شامل وتصنيف الأصناف.</li>
-              <li>تدريب الموظفين والإدارة على استخدام النظام وإعداد التقارير التشغيلية.</li>
-            </ul>
-          </article>
-
-          <article class="project">
-            <h3>الزي الأسود - جدة</h3>
-            <ul class="list">
-              <li>إعادة تنظيم الحسابات والدورة المستندية وتحليل النظام المحاسبي الحالي.</li>
-              <li>اقتراح حلول أكثر كفاءة لتحسين دقة التقارير المالية وسهولة استخراجها.</li>
-            </ul>
-          </article>
-        </section>
-      </div>
-    </section>
-
-    <footer class="footer">
-      تم إعداد هذه السيرة الذاتية بتصميم متوافق مع الهوية البصرية لموقع عبدالرحمن محمد حمزة.
-    </footer>
-  </main>
+    applyLanguage(getInitialLanguage());
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
+      if (!localStorage.getItem(themeStorageKey)) {
+        applyTheme(event.matches ? "dark" : "light", false);
+      }
+    });
+  </script>
 </body>
 
 </html>
