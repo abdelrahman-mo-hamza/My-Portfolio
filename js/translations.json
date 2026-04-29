@@ -5,6 +5,9 @@
       "skills": "Skills",
       "services": "Services",
       "caseStudies": "Case Studies",
+      "problems": "Problems I Solve",
+      "packages": "Packages",
+      "faq": "FAQ",
       "otherLinks": "Other Links",
       "certifications": "Certifications",
       "myProcess": "My Process",
@@ -17,7 +20,13 @@
       "title": "ERP & Retail Accounting Professional",
       "description": "Hi, I'm Abdelrahman Mohamed Hamza, an experienced ERP and Retail Accountant with proven expertise in financial systems implementation, inventory management, and VAT compliance. I specialize in data migration, financial reporting, and optimizing accounting processes in retail environments.",
       "downloadCv": "Download CV",
-      "contactCta": "Get In Touch"
+      "contactCta": "Get In Touch",
+      "highlights": [
+        "Products managed",
+        "Records migrated",
+        "ERP systems",
+        "Compliance support"
+      ]
     },
     "articles": {
       "title": "Skills",
@@ -60,16 +69,145 @@
     "gallery": {
       "title": "Certificates"
     },
+    "problems": {
+      "title": "Problems I Solve",
+      "items": [
+        {
+          "title": "ERP and Excel numbers do not match",
+          "text": "I trace the source of differences, clean the data flow, and define one trusted reporting source."
+        },
+        {
+          "title": "Inventory data is messy",
+          "text": "I fix duplicates, barcodes, categories, units, inactive items, and stock reports."
+        },
+        {
+          "title": "Supplier invoices need review",
+          "text": "I verify prices, quantities, tax data, and cost impact before reports are trusted."
+        },
+        {
+          "title": "Profit reports are unreliable",
+          "text": "I review costing, margins, reconciliations, and closing entries so management can decide confidently."
+        },
+        {
+          "title": "VAT data is hard to reconcile",
+          "text": "I organize VAT summaries, supporting documents, and reconciliations for cleaner filing."
+        },
+        {
+          "title": "ERP workflow is not controlled",
+          "text": "I help define roles, workflows, permissions, and checks that reduce errors after launch."
+        }
+      ]
+    },
     "services": {
       "title": "Services",
       "details": "Discuss This Service",
       "items": [
-        "ERP Implementation & Migration",
-        "Financial Reporting",
-        "Inventory Optimization",
-        "VAT & Tax Compliance",
-        "Data Analysis & Dashboards",
-        "Cost Correction & Costing"
+        {
+          "title": "ERP Implementation & Migration",
+          "description": "Set up ERP workflows, migrate data, and prepare teams to operate with reliable financial and inventory controls.",
+          "points": [
+            "Chart of accounts and operating workflow setup",
+            "Inventory, supplier, and opening balance migration",
+            "User training and post-launch controls"
+          ]
+        },
+        {
+          "title": "Financial Reporting",
+          "description": "Build monthly reports, closing controls, and financial visibility that management can rely on.",
+          "points": [
+            "Income statement and management reports",
+            "Bank, supplier, and cash reconciliations",
+            "Monthly closing review and variance checks"
+          ]
+        },
+        {
+          "title": "Inventory Optimization",
+          "description": "Clean product records, barcodes, categories, and stock reports to reduce errors and improve purchasing decisions.",
+          "points": [
+            "Duplicate and inactive product cleanup",
+            "Barcode, category, and unit validation",
+            "Slow-moving and expiry reporting"
+          ]
+        },
+        {
+          "title": "VAT & Tax Compliance",
+          "description": "Prepare VAT reconciliations, review supporting documents, and keep reporting ready for periodic filing.",
+          "points": [
+            "VAT data review and reconciliation",
+            "Supporting document checks",
+            "Filing-ready tax summaries"
+          ]
+        },
+        {
+          "title": "Data Analysis & Dashboards",
+          "description": "Turn Excel and ERP exports into dashboards that show sales, stock, costs, and operational performance.",
+          "points": [
+            "Excel and Power BI dashboards",
+            "Power Query data cleanup",
+            "Decision-ready KPI summaries"
+          ]
+        },
+        {
+          "title": "Cost Correction & Costing",
+          "description": "Review product costs against supplier invoices and fix costing issues that distort profit reporting.",
+          "points": [
+            "Costing audit across active products",
+            "Supplier invoice price matching",
+            "Profit margin and income accuracy checks"
+          ]
+        }
+      ]
+    },
+    "packages": {
+      "title": "Service Packages",
+      "includesLabel": "You get",
+      "goodForLabel": "Best for",
+      "cta": "Discuss Package",
+      "items": [
+        {
+          "badge": "Setup",
+          "title": "ERP Migration Setup",
+          "description": "For companies moving from Excel or an old system into a cleaner ERP structure.",
+          "includes": [
+            "Data review and migration plan",
+            "Opening balances and supplier records",
+            "Workflow checks after launch"
+          ],
+          "goodFor": "Retail or trading businesses preparing a new ERP launch."
+        },
+        {
+          "badge": "Cleanup",
+          "title": "Inventory Cleanup",
+          "description": "For businesses that need cleaner product data, barcode control, and more reliable stock reports.",
+          "includes": [
+            "Duplicate and inactive item cleanup",
+            "Barcode, category, and unit review",
+            "Stock movement and slow-moving reports"
+          ],
+          "goodFor": "Stores with many SKUs, duplicate products, or inconsistent categories."
+        },
+        {
+          "badge": "Monthly",
+          "title": "Financial Reporting",
+          "description": "For management teams that need reliable monthly numbers and clearer closing controls.",
+          "includes": [
+            "Income and management reports",
+            "Bank, supplier, and cash reconciliations",
+            "Closing review and variance notes"
+          ],
+          "goodFor": "Businesses that need recurring reporting, reconciliation, and decision support."
+        },
+        {
+          "badge": "Review",
+          "title": "VAT & Cost Review",
+          "description": "For companies that need VAT reconciliation, supplier invoice checks, and product cost accuracy.",
+          "includes": [
+            "VAT summaries and document checks",
+            "Supplier invoice price review",
+            "Costing and margin correction notes"
+          ],
+          "goodFor": "Businesses preparing filings or correcting costing and profit reports."
+        }
       ]
     },
     "caseStudies": {
@@ -77,6 +215,32 @@
       "challengeLabel": "Challenge:",
       "solutionLabel": "Solution:",
       "resultsLabel": "Results:",
+      "feature": {
+        "kicker": "Featured Case Study",
+        "title": "Retail ERP Migration & Inventory Control Recovery",
+        "summary": "A retail operation needed a reliable ERP foundation after fragmented data, duplicated products, and inconsistent costing made reporting difficult. The work focused on data migration, inventory cleanup, cost correction, and practical controls for daily operations.",
+        "cta": "Discuss a Similar Project",
+        "metrics": [
+          "Active products organized",
+          "Historical records reviewed",
+          "Supplier invoices checked daily",
+          "Reconciliation and filing support"
+        ],
+        "flow": [
+          {
+            "title": "Data Foundation",
+            "text": "Migrated balances, inventory records, supplier data, and historical files into a controlled ERP structure."
+          },
+          {
+            "title": "Inventory Cleanup",
+            "text": "Removed duplicates, corrected barcodes, reorganized categories, and improved stock tracking reliability."
+          },
+          {
+            "title": "Financial Accuracy",
+            "text": "Reviewed costing, supplier invoices, reconciliations, VAT data, and reports used for management decisions."
+          }
+        ]
+      },
       "studies": [
         {
           "title": "ERP Migration & Financial Data Transfer",
@@ -130,56 +294,101 @@
     },
     "skills": {
       "title": "My Skills",
+      "kicker": "Core Strengths",
+      "summaryTitle": "Accounting systems, clean data, and reliable reporting",
+      "summaryText": "My strongest area is connecting accounting operations with ERP discipline: clean master data, controlled inventory, accurate costing, and reports management can trust.",
       "items": [
         {
-          "title": "ERP Systems (Rewaa, DataSpace, Odoo, Oracle, Wafeq, Qoyod)"
+          "title": "ERP Systems",
+          "description": "ERP setup, workflow control, migration support, and user-ready operations."
         },
         {
-          "title": "Financial Reporting & Analysis"
+          "title": "Financial Reporting",
+          "description": "Income statements, reconciliations, closing reviews, and management visibility."
         },
         {
-          "title": "Inventory Management & Data Cleanup"
+          "title": "Inventory Control",
+          "description": "Product cleanup, barcode review, category structure, and stock reporting."
         },
         {
-          "title": "Excel & Power BI"
+          "title": "Excel & Power BI",
+          "description": "Dashboards, Power Query cleanup, KPI summaries, and decision-ready analysis."
         },
         {
-          "title": "VAT & Tax Compliance"
+          "title": "VAT Compliance",
+          "description": "VAT data review, supporting documents, reconciliations, and filing summaries."
         },
         {
-          "title": "Data Migration & System Integration"
-        },
-        {
-          "title": "Supplier Invoice Review & Reconciliation"
-        },
-        {
-          "title": "Cost Correction & Costing Analysis"
-        },
-        {
-          "title": "Retail Accounting Operations"
+          "title": "Costing & Reconciliation",
+          "description": "Supplier invoice checks, product cost correction, bank reconciliation, and margin accuracy."
         }
       ]
     },
     "workSteps": {
       "title": "My Accounting Process",
+      "kicker": "How I Work",
+      "summaryTitle": "From messy data to controlled monthly reporting",
+      "summaryText": "I start by understanding the operational source of the numbers, then clean the data, apply controls, and turn the result into reports the business can use.",
       "steps": [
         {
-          "title": "Data Entry & Verification",
-          "description": "I review supplier invoices and verify product quantities, prices, barcodes, and data accuracy before recording transactions into the ERP system."
+          "title": "Diagnose the Current State",
+          "description": "Review reports, ERP exports, master data, invoice flow, and the exact points where numbers stop matching.",
+          "output": "Output: clear issue map"
         },
         {
-          "title": "Financial Recording & Reconciliation",
-          "description": "I record daily transactions including sales, expenses, supplier balances, returns, petty cash, and perform bank reconciliation to maintain accurate financial records."
+          "title": "Clean and Validate Data",
+          "description": "Fix duplicates, inactive items, barcodes, supplier balances, opening balances, and records that affect reporting.",
+          "output": "Output: cleaner data foundation"
         },
         {
-          "title": "Reporting & Data Quality",
-          "description": "I prepare financial reports, monitor inventory movement, review slow-moving and expiry items, and improve data quality to support reliable business decisions."
+          "title": "Control the Workflow",
+          "description": "Set practical checks for posting, inventory movement, invoice review, permissions, and monthly closing.",
+          "output": "Output: fewer repeated errors"
+        },
+        {
+          "title": "Report and Improve",
+          "description": "Prepare financial reports, reconciliations, stock insights, cost checks, and notes that support decisions.",
+          "output": "Output: reliable management view"
         }
       ]
     },
     "videos": {
       "title": "Professional Experience",
       "achievements": "Key Achievements",
+      "introTitle": "Retail accounting operations with ERP depth",
+      "introText": "Hands-on experience across ERP migration, inventory cleanup, supplier invoice review, VAT support, costing correction, and monthly reporting.",
+      "tags": [
+        "ERP",
+        "Inventory",
+        "VAT",
+        "Reporting"
+      ],
+      "timeline": [
+        {
+          "label": "ERP",
+          "title": "System migration and setup",
+          "text": "Moved financial, inventory, supplier, and historical data into ERP structures while keeping daily operations usable.",
+          "meta": "Data foundation and launch control"
+        },
+        {
+          "label": "Inventory",
+          "title": "Inventory data control",
+          "text": "Cleaned duplicated items, barcodes, categories, cost records, and reports across thousands of active products.",
+          "meta": "5,500+ active products"
+        },
+        {
+          "label": "Finance",
+          "title": "Reporting and reconciliation",
+          "text": "Prepared reports, reviewed supplier invoices, checked costs, and improved the reliability of profit and closing numbers.",
+          "meta": "Monthly reporting and decision support"
+        },
+        {
+          "label": "Compliance",
+          "title": "VAT and documentation support",
+          "text": "Reviewed VAT data, supporting invoices, reconciliations, and summaries needed for periodic compliance work.",
+          "meta": "VAT reconciliation readiness"
+        }
+      ],
       "items": [
         {
           "title": "ERP Migration Project",
@@ -207,18 +416,73 @@
       "erpSystems": "ERP Systems",
       "accuracy": "Accuracy Rate"
     },
+    "faq": {
+      "title": "FAQ",
+      "items": [
+        {
+          "question": "Do you work remotely?",
+          "answer": "Yes. I can review data, reports, ERP exports, and workflows remotely, with on-site support when needed and available."
+        },
+        {
+          "question": "Can you support companies outside Saudi Arabia?",
+          "answer": "Yes. The workflow can be adapted for retail and trading businesses in different markets, especially when the need is ERP, inventory, reporting, or data cleanup."
+        },
+        {
+          "question": "Can you review an ERP system that is already live?",
+          "answer": "Yes. I can review current workflows, master data, inventory structure, reporting outputs, permissions, and the controls around monthly closing."
+        },
+        {
+          "question": "Can you handle data migration only?",
+          "answer": "Yes. I can focus only on preparing, cleaning, validating, and migrating financial or inventory data between systems."
+        },
+        {
+          "question": "What do you need to start?",
+          "answer": "A short description of the problem, system name, sample reports or exports, and the goal you want to reach. From there, we can define the right scope."
+        }
+      ]
+    },
     "discount": {
       "title": "Let's Work Together",
-      "description": "I help businesses optimize accounting operations and improve reporting accuracy. With hands-on experience in ERP systems, inventory management, and VAT compliance, I deliver practical solutions tailored to retail and trading businesses.",
+      "description": "Have an accounting, ERP, inventory, or reporting challenge? Send me the details and I will reply with the best next step.",
       "formTitle": "Get In Touch",
       "yourName": "Your Name",
       "yourEmail": "Your Email",
       "yourPhone": "Your Phone",
+      "serviceTopic": "Choose Service",
+      "serviceOptions": {
+        "erp": "ERP implementation or migration",
+        "inventory": "Inventory cleanup",
+        "reports": "Financial reporting",
+        "vat": "VAT and tax review",
+        "dashboards": "Excel or Power BI dashboards",
+        "costing": "Cost correction"
+      },
       "accountingNeeds": "Tell me about your accounting needs",
-      "send": "Open Email Draft",
-      "note": "Submitting opens your email app with a ready-to-send message. You can also contact me directly below.",
+      "send": "Send via WhatsApp",
+      "note": "Submitting opens WhatsApp with a ready message including your contact details. You can also use the direct links below.",
       "directEmail": "Email Directly",
-      "directWhatsApp": "Chat on WhatsApp"
+      "directWhatsApp": "Chat on WhatsApp",
+      "directTelegram": "Telegram"
+    },
+    "whatsapp": {
+      "floatLabel": "WhatsApp",
+      "defaultMessage": "Hello Abdelrahman, I visited your portfolio and would like to discuss accounting or ERP support.",
+      "formIntro": "Hello Abdelrahman, I visited your portfolio and would like to discuss this request:",
+      "formLabels": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "topic": "Service",
+        "message": "Accounting needs"
+      },
+      "services": {
+        "erp": "Hello Abdelrahman, I would like to discuss ERP implementation or data migration support.",
+        "reports": "Hello Abdelrahman, I would like to discuss financial reporting and monthly closing support.",
+        "inventory": "Hello Abdelrahman, I would like to discuss inventory cleanup and optimization support.",
+        "vat": "Hello Abdelrahman, I would like to discuss VAT compliance and reconciliation support.",
+        "dashboards": "Hello Abdelrahman, I would like to discuss Excel or Power BI dashboards for my business.",
+        "costing": "Hello Abdelrahman, I would like to discuss product costing correction and profit reporting accuracy."
+      }
     },
     "footer": {
       "profession": "ERP & Retail Accountant",
@@ -247,6 +511,9 @@
       "skills": "المهارات",
       "services": "الخدمات",
       "caseStudies": "أبرز المشاريع",
+      "problems": "مشاكل أساعدك في حلها",
+      "packages": "الباقات",
+      "faq": "أسئلة شائعة",
       "otherLinks": "روابط أخرى",
       "certifications": "الشهادات",
       "myProcess": "آلية عملي",
@@ -259,7 +526,13 @@
       "title": "محاسب ERP متخصص في قطاع التجزئة",
       "description": "مرحبًا، أنا عبدالرحمن محمد حمزة، محاسب ERP بخبرة عملية في تشغيل الأنظمة المالية وإدارة المخزون والامتثال الضريبي. أركز على ترحيل البيانات، إعداد التقارير المالية، وتحسين العمليات المحاسبية داخل بيئات التجزئة.",
       "downloadCv": "تحميل السيرة الذاتية",
-      "contactCta": "تواصل معي"
+      "contactCta": "تواصل معي",
+      "highlights": [
+        "صنف تمت إدارته",
+        "سجل تم ترحيله",
+        "أنظمة ERP",
+        "دعم الامتثال"
+      ]
     },
     "articles": {
       "title": "المهارات",
@@ -302,16 +575,145 @@
     "gallery": {
       "title": "الشهادات"
     },
+    "problems": {
+      "title": "مشاكل أساعدك في حلها",
+      "items": [
+        {
+          "title": "أرقام ERP وExcel غير متطابقة",
+          "text": "أراجع مصدر الفروقات، أنظف تدفق البيانات، وأحدد مصدرًا واحدًا موثوقًا للتقارير."
+        },
+        {
+          "title": "بيانات المخزون غير منظمة",
+          "text": "أصحح التكرار، الباركود، التصنيفات، وحدات القياس، الأصناف غير النشطة، وتقارير المخزون."
+        },
+        {
+          "title": "فواتير الموردين تحتاج مراجعة",
+          "text": "أتحقق من الأسعار والكميات والضريبة وتأثير التكلفة قبل الاعتماد على التقارير."
+        },
+        {
+          "title": "تقارير الأرباح غير موثوقة",
+          "text": "أراجع التكلفة والهوامش والتسويات وقيود الإقفال حتى تكون قرارات الإدارة مبنية على أرقام واضحة."
+        },
+        {
+          "title": "تسويات VAT صعبة المتابعة",
+          "text": "أنظم ملخصات ضريبة القيمة المضافة والمستندات الداعمة والتسويات لتجهيز إقرار أنظف."
+        },
+        {
+          "title": "دورة العمل داخل ERP غير محكمة",
+          "text": "أساعد في ضبط الصلاحيات ودورة العمل ونقاط المراجعة لتقليل الأخطاء بعد التشغيل."
+        }
+      ]
+    },
     "services": {
       "title": "الخدمات",
       "details": "ناقش هذه الخدمة",
       "items": [
-        "تنفيذ وترحيل أنظمة ERP",
-        "إعداد التقارير المالية",
-        "تحسين إدارة المخزون",
-        "الامتثال الضريبي وضريبة القيمة المضافة",
-        "تحليل البيانات ولوحات التحكم",
-        "تصحيح التكاليف والتسعير"
+        {
+          "title": "تنفيذ وترحيل أنظمة ERP",
+          "description": "إعداد سير العمل داخل النظام، ترحيل البيانات، وتجهيز الفريق للتشغيل برقابة مالية ومخزنية موثوقة.",
+          "points": [
+            "إعداد شجرة الحسابات ودورة التشغيل",
+            "ترحيل المخزون والموردين والأرصدة الافتتاحية",
+            "تدريب المستخدمين وضبط الرقابة بعد التشغيل"
+          ]
+        },
+        {
+          "title": "إعداد التقارير المالية",
+          "description": "بناء تقارير شهرية وضوابط إقفال تمنح الإدارة رؤية مالية واضحة يمكن الاعتماد عليها.",
+          "points": [
+            "قائمة الدخل وتقارير الإدارة",
+            "تسويات البنك والموردين والخزينة",
+            "مراجعة الإقفال الشهري وفروقات البيانات"
+          ]
+        },
+        {
+          "title": "تحسين إدارة المخزون",
+          "description": "تنظيف سجلات الأصناف والباركود والتصنيفات وتقارير المخزون لتقليل الأخطاء وتحسين قرارات الشراء.",
+          "points": [
+            "تنظيف الأصناف المكررة وغير النشطة",
+            "مراجعة الباركود والتصنيفات ووحدات القياس",
+            "تقارير الراكد والصلاحية وحركة الأصناف"
+          ]
+        },
+        {
+          "title": "الامتثال الضريبي وضريبة القيمة المضافة",
+          "description": "إعداد تسويات ضريبة القيمة المضافة ومراجعة المستندات الداعمة وتجهيز ملخصات دورية واضحة.",
+          "points": [
+            "مراجعة بيانات VAT ومطابقتها",
+            "فحص المستندات والفواتير الداعمة",
+            "ملخصات جاهزة للرفع الدوري"
+          ]
+        },
+        {
+          "title": "تحليل البيانات ولوحات التحكم",
+          "description": "تحويل ملفات Excel ومخرجات ERP إلى لوحات متابعة للمبيعات والمخزون والتكلفة والأداء التشغيلي.",
+          "points": [
+            "لوحات Excel وPower BI",
+            "تنظيف البيانات باستخدام Power Query",
+            "ملخصات مؤشرات تساعد على القرار"
+          ]
+        },
+        {
+          "title": "تصحيح التكاليف والتسعير",
+          "description": "مراجعة تكلفة الأصناف مقابل فواتير الموردين وتصحيح مشاكل التكلفة التي تؤثر على تقارير الأرباح.",
+          "points": [
+            "مراجعة تكلفة الأصناف النشطة",
+            "مطابقة أسعار الموردين مع النظام",
+            "فحص هوامش الربح ودقة قائمة الدخل"
+          ]
+        }
+      ]
+    },
+    "packages": {
+      "title": "باقات الخدمات",
+      "includesLabel": "ماذا تستلم؟",
+      "goodForLabel": "مناسب لمن؟",
+      "cta": "ناقش الباقة",
+      "items": [
+        {
+          "badge": "تأسيس",
+          "title": "تجهيز وترحيل ERP",
+          "description": "للشركات التي تنتقل من Excel أو نظام قديم إلى هيكل ERP أنظف وأكثر ضبطًا.",
+          "includes": [
+            "مراجعة البيانات وخطة الترحيل",
+            "الأرصدة الافتتاحية وسجلات الموردين",
+            "مراجعة دورة العمل بعد التشغيل"
+          ],
+          "goodFor": "شركات التجزئة أو التجارة التي تستعد لتشغيل نظام ERP جديد."
+        },
+        {
+          "badge": "تنظيف",
+          "title": "تنظيف بيانات المخزون",
+          "description": "للشركات التي تحتاج إلى بيانات أصناف أوضح، ضبط باركود، وتقارير مخزون أكثر موثوقية.",
+          "includes": [
+            "تنظيف الأصناف المكررة وغير النشطة",
+            "مراجعة الباركود والتصنيفات والوحدات",
+            "تقارير الحركة والراكد والملاحظات"
+          ],
+          "goodFor": "المتاجر ذات عدد أصناف كبير أو تكرار في المنتجات أو تصنيفات غير متسقة."
+        },
+        {
+          "badge": "شهري",
+          "title": "إعداد التقارير المالية",
+          "description": "للإدارات التي تحتاج إلى أرقام شهرية موثوقة وضوابط إقفال أوضح.",
+          "includes": [
+            "قائمة الدخل وتقارير الإدارة",
+            "تسويات البنك والموردين والخزينة",
+            "مراجعة الإقفال وفروقات البيانات"
+          ],
+          "goodFor": "الشركات التي تحتاج إلى تقارير دورية وتسويات ودعم للقرار."
+        },
+        {
+          "badge": "مراجعة",
+          "title": "مراجعة VAT والتكلفة",
+          "description": "للشركات التي تحتاج إلى تسويات VAT ومراجعة فواتير الموردين ودقة تكلفة الأصناف.",
+          "includes": [
+            "ملخصات VAT وفحص المستندات",
+            "مراجعة أسعار فواتير الموردين",
+            "ملاحظات تصحيح التكلفة والهوامش"
+          ],
+          "goodFor": "الشركات التي تجهز الإقرارات أو تصحح التكلفة وتقارير الأرباح."
+        }
       ]
     },
     "caseStudies": {
@@ -319,6 +721,32 @@
       "challengeLabel": "التحدي:",
       "solutionLabel": "الحل:",
       "resultsLabel": "النتائج:",
+      "feature": {
+        "kicker": "دراسة حالة مميزة",
+        "title": "ترحيل ERP واستعادة الرقابة على مخزون قطاع التجزئة",
+        "summary": "منشأة تجزئة كانت تحتاج إلى أساس ERP موثوق بعد تشتت البيانات وتكرار الأصناف وعدم اتساق التكلفة. ركز العمل على ترحيل البيانات، تنظيف المخزون، تصحيح التكلفة، وبناء ضوابط عملية للعمليات اليومية.",
+        "cta": "ناقش مشروعًا مشابهًا",
+        "metrics": [
+          "صنف نشط تمت إعادة تنظيمه",
+          "سجل تاريخي تمت مراجعته",
+          "فاتورة مورد تتم مراجعتها يوميًا",
+          "دعم التسويات والإقرارات"
+        ],
+        "flow": [
+          {
+            "title": "تأسيس البيانات",
+            "text": "ترحيل الأرصدة وسجلات المخزون وبيانات الموردين والملفات التاريخية داخل هيكل ERP منظم."
+          },
+          {
+            "title": "تنظيف المخزون",
+            "text": "إزالة التكرار، تصحيح الباركود، إعادة تنظيم التصنيفات، وتحسين موثوقية تتبع المخزون."
+          },
+          {
+            "title": "دقة مالية",
+            "text": "مراجعة التكلفة وفواتير الموردين والتسويات وبيانات VAT والتقارير المستخدمة في قرارات الإدارة."
+          }
+        ]
+      },
       "studies": [
         {
           "title": "ترحيل نظام ERP ونقل البيانات المالية",
@@ -372,56 +800,101 @@
     },
     "skills": {
       "title": "المهارات",
+      "kicker": "نقاط القوة الأساسية",
+      "summaryTitle": "أنظمة محاسبية، بيانات نظيفة، وتقارير موثوقة",
+      "summaryText": "أقوى نقطة لدي هي ربط التشغيل المحاسبي بانضباط أنظمة ERP: بيانات أساسية نظيفة، مخزون مضبوط، تكلفة دقيقة، وتقارير يمكن للإدارة الاعتماد عليها.",
       "items": [
         {
-          "title": "أنظمة ERP (Rewaa، DataSpace، Odoo، Oracle، Wafeq، Qoyod)"
+          "title": "أنظمة ERP",
+          "description": "إعداد النظام، ضبط دورة العمل، دعم الترحيل، وتجهيز التشغيل للمستخدمين."
         },
         {
-          "title": "إعداد التقارير والتحليل المالي"
+          "title": "التقارير المالية",
+          "description": "قوائم الدخل، التسويات، مراجعة الإقفال، ورؤية واضحة للإدارة."
         },
         {
-          "title": "إدارة المخزون وتنظيف البيانات"
+          "title": "ضبط المخزون",
+          "description": "تنظيف الأصناف، مراجعة الباركود، هيكلة التصنيفات، وتقارير المخزون."
         },
         {
-          "title": "Excel وPower BI"
+          "title": "Excel وPower BI",
+          "description": "لوحات متابعة، تنظيف Power Query، ملخصات مؤشرات، وتحليل يساعد القرار."
         },
         {
-          "title": "الامتثال الضريبي وضريبة القيمة المضافة"
+          "title": "الامتثال الضريبي VAT",
+          "description": "مراجعة بيانات VAT، المستندات الداعمة، التسويات، وملخصات الإقرار."
         },
         {
-          "title": "ترحيل البيانات وتكامل الأنظمة"
-        },
-        {
-          "title": "مراجعة فواتير الموردين والتسويات"
-        },
-        {
-          "title": "تصحيح التكاليف وتحليل التكلفة"
-        },
-        {
-          "title": "عمليات المحاسبة في قطاع التجزئة"
+          "title": "التكلفة والتسويات",
+          "description": "مراجعة فواتير الموردين، تصحيح تكلفة الأصناف، التسويات البنكية، ودقة الهوامش."
         }
       ]
     },
     "workSteps": {
       "title": "آلية العمل",
+      "kicker": "طريقة عملي",
+      "summaryTitle": "من بيانات غير منظمة إلى تقارير شهرية مضبوطة",
+      "summaryText": "أبدأ بفهم مصدر الأرقام داخل التشغيل، ثم أنظف البيانات، وأطبق ضوابط عملية، وأحول النتيجة إلى تقارير يمكن الاعتماد عليها.",
       "steps": [
         {
-          "title": "إدخال البيانات والتحقق منها",
-          "description": "أراجع فواتير الموردين وأتحقق من الكميات والأسعار والباركود ودقة البيانات قبل تسجيل العمليات داخل نظام ERP."
+          "title": "تشخيص الوضع الحالي",
+          "description": "مراجعة التقارير، مخرجات ERP، البيانات الأساسية، دورة الفواتير، ونقاط اختلاف الأرقام.",
+          "output": "المخرج: خريطة واضحة للمشكلة"
         },
         {
-          "title": "التسجيل والمطابقة المالية",
-          "description": "أسجل العمليات اليومية من مبيعات ومصروفات وأرصدة موردين ومرتجعات وعهد نقدية، مع تنفيذ التسويات البنكية للحفاظ على سجلات دقيقة."
+          "title": "تنظيف البيانات والتحقق منها",
+          "description": "تصحيح التكرار، الأصناف غير النشطة، الباركود، أرصدة الموردين، الأرصدة الافتتاحية، والسجلات المؤثرة على التقارير.",
+          "output": "المخرج: أساس بيانات أنظف"
         },
         {
-          "title": "التقارير وتحسين جودة البيانات",
-          "description": "أعد التقارير المالية، وأتابع حركة المخزون، وأراجع الأصناف الراكدة والمنتهية، وأحسن جودة البيانات لدعم قرارات الإدارة."
+          "title": "ضبط دورة العمل",
+          "description": "وضع نقاط مراجعة عملية للترحيل، حركة المخزون، مراجعة الفواتير، الصلاحيات، والإقفال الشهري.",
+          "output": "المخرج: أخطاء متكررة أقل"
+        },
+        {
+          "title": "التقارير والتحسين",
+          "description": "إعداد التقارير المالية، التسويات، مؤشرات المخزون، فحص التكلفة، وملاحظات تساعد على القرار.",
+          "output": "المخرج: رؤية إدارية موثوقة"
         }
       ]
     },
     "videos": {
       "title": "الخبرة المهنية",
       "achievements": "أبرز الإنجازات",
+      "introTitle": "عمليات محاسبة التجزئة بعمق ERP",
+      "introText": "خبرة عملية في ترحيل الأنظمة، تنظيف المخزون، مراجعة فواتير الموردين، دعم VAT، تصحيح التكلفة، والتقارير الشهرية.",
+      "tags": [
+        "ERP",
+        "المخزون",
+        "VAT",
+        "التقارير"
+      ],
+      "timeline": [
+        {
+          "label": "ERP",
+          "title": "ترحيل الأنظمة والتأسيس",
+          "text": "نقل البيانات المالية والمخزنية وبيانات الموردين والملفات التاريخية إلى هياكل ERP مع الحفاظ على سير العمل اليومي.",
+          "meta": "تأسيس البيانات وضبط التشغيل"
+        },
+        {
+          "label": "المخزون",
+          "title": "ضبط بيانات المخزون",
+          "text": "تنظيف الأصناف المكررة والباركود والتصنيفات والتكلفة والتقارير عبر آلاف الأصناف النشطة.",
+          "meta": "أكثر من 5,500 صنف نشط"
+        },
+        {
+          "label": "المالية",
+          "title": "التقارير والتسويات",
+          "text": "إعداد التقارير، مراجعة فواتير الموردين، فحص التكلفة، وتحسين موثوقية أرقام الأرباح والإقفال.",
+          "meta": "تقارير شهرية ودعم القرار"
+        },
+        {
+          "label": "الامتثال",
+          "title": "دعم VAT والمستندات",
+          "text": "مراجعة بيانات ضريبة القيمة المضافة والفواتير الداعمة والتسويات والملخصات المطلوبة للعمل الدوري.",
+          "meta": "جاهزية تسويات VAT"
+        }
+      ],
       "items": [
         {
           "title": "مشروع ترحيل ERP",
@@ -449,18 +922,73 @@
       "erpSystems": "أنظمة ERP",
       "accuracy": "معدل الدقة"
     },
+    "faq": {
+      "title": "أسئلة شائعة",
+      "items": [
+        {
+          "question": "هل تعمل عن بُعد؟",
+          "answer": "نعم. يمكنني مراجعة البيانات والتقارير ومخرجات ERP ودورة العمل عن بُعد، مع دعم حضوري عند الحاجة وحسب التوفر."
+        },
+        {
+          "question": "هل تدعم شركات خارج السعودية؟",
+          "answer": "نعم. يمكن تكييف طريقة العمل مع شركات التجزئة والتجارة في أسواق مختلفة، خصوصًا في احتياجات ERP والمخزون والتقارير وتنظيف البيانات."
+        },
+        {
+          "question": "هل تراجع نظام ERP يعمل بالفعل؟",
+          "answer": "نعم. يمكنني مراجعة دورة العمل الحالية والبيانات الأساسية وهيكل المخزون ومخرجات التقارير والصلاحيات وضوابط الإقفال الشهري."
+        },
+        {
+          "question": "هل يمكن تنفيذ ترحيل بيانات فقط؟",
+          "answer": "نعم. يمكن أن يكون نطاق العمل مقتصرًا على تجهيز وتنظيف والتحقق من البيانات المالية أو المخزنية وترحيلها بين الأنظمة."
+        },
+        {
+          "question": "ما المطلوب للبدء؟",
+          "answer": "وصف مختصر للمشكلة، اسم النظام المستخدم، عينات من التقارير أو المخرجات، والهدف المطلوب الوصول إليه. بعدها نحدد النطاق المناسب."
+        }
+      ]
+    },
     "discount": {
       "title": "لنبدأ العمل معًا",
-      "description": "أساعد الشركات على تحسين العمليات المحاسبية ورفع دقة التقارير المالية. وبخبرة عملية في أنظمة ERP وإدارة المخزون والامتثال الضريبي، أقدم حلولًا مناسبة لبيئات التجزئة والتجارة.",
+      "description": "عندك تحدي في المحاسبة أو ERP أو المخزون أو التقارير؟ ارسل لي التفاصيل وسأرد عليك بأفضل خطوة مناسبة.",
       "formTitle": "تواصل معي",
       "yourName": "اسمك",
       "yourEmail": "بريدك الإلكتروني",
       "yourPhone": "رقم هاتفك",
+      "serviceTopic": "اختر الخدمة",
+      "serviceOptions": {
+        "erp": "تنفيذ أو ترحيل ERP",
+        "inventory": "تنظيف بيانات المخزون",
+        "reports": "إعداد التقارير المالية",
+        "vat": "مراجعة VAT والضريبة",
+        "dashboards": "لوحات Excel أو Power BI",
+        "costing": "تصحيح التكلفة"
+      },
       "accountingNeeds": "احكِ لي عن احتياجك المحاسبي",
-      "send": "افتح مسودة البريد",
-      "note": "عند الإرسال سيفتح تطبيق البريد الإلكتروني لديك برسالة جاهزة. ويمكنك أيضًا التواصل معي مباشرة من الروابط التالية.",
+      "send": "إرسال عبر واتساب",
+      "note": "عند الإرسال سيفتح واتساب برسالة جاهزة تحتوي على بيانات التواصل واحتياجك. ويمكنك أيضًا التواصل معي مباشرة من الروابط التالية.",
       "directEmail": "راسلني مباشرة",
-      "directWhatsApp": "تواصل عبر واتساب"
+      "directWhatsApp": "تواصل عبر واتساب",
+      "directTelegram": "تيليجرام"
+    },
+    "whatsapp": {
+      "floatLabel": "واتساب",
+      "defaultMessage": "مرحبًا عبدالرحمن، زرت موقعك وأرغب في مناقشة دعم محاسبي أو دعم لأنظمة ERP.",
+      "formIntro": "مرحبًا عبدالرحمن، زرت موقعك وأرغب في مناقشة الطلب التالي:",
+      "formLabels": {
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "phone": "رقم الهاتف",
+        "topic": "الخدمة",
+        "message": "الاحتياج المحاسبي"
+      },
+      "services": {
+        "erp": "مرحبًا عبدالرحمن، أريد مناقشة خدمة تنفيذ أو ترحيل نظام ERP.",
+        "reports": "مرحبًا عبدالرحمن، أريد مناقشة خدمة إعداد التقارير المالية والإقفال الشهري.",
+        "inventory": "مرحبًا عبدالرحمن، أريد مناقشة خدمة تنظيف وتحسين بيانات المخزون.",
+        "vat": "مرحبًا عبدالرحمن، أريد مناقشة خدمة ضريبة القيمة المضافة والتسويات.",
+        "dashboards": "مرحبًا عبدالرحمن، أريد مناقشة خدمة لوحات Excel أو Power BI لشركتي.",
+        "costing": "مرحبًا عبدالرحمن، أريد مناقشة خدمة تصحيح تكلفة الأصناف ودقة تقارير الأرباح."
+      }
     },
     "footer": {
       "profession": "محاسب ERP وقطاع التجزئة",

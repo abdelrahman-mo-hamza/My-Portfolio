@@ -1,4 +1,5 @@
 const MOBILE_BREAKPOINT = 991;
+const WHATSAPP_NUMBER = "966590285307";
 
 let currentLanguage = getInitialLanguage();
 let translations = {};
@@ -48,6 +49,32 @@ function isMobileView() {
 
 function getUiLabel(key) {
   return uiLabels[currentLanguage]?.[key] || uiLabels.en[key] || "";
+}
+
+function buildWhatsAppUrl(serviceKey = "", customMessage = "") {
+  const serviceMessage = serviceKey ? getTranslation(`whatsapp.services.${serviceKey}`) : null;
+  const defaultMessage = getTranslation("whatsapp.defaultMessage") || "Hello Abdelrahman, I visited your portfolio and would like to discuss accounting or ERP support.";
+  const message = customMessage || serviceMessage || defaultMessage;
+
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+function refreshWhatsAppLinks() {
+  document.querySelectorAll("[data-whatsapp-link]").forEach((link) => {
+    link.setAttribute("href", buildWhatsAppUrl());
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+
+    const label = getTranslation("whatsapp.floatLabel") || "WhatsApp";
+    link.setAttribute("aria-label", label);
+  });
+
+  document.querySelectorAll("[data-service-key]").forEach((link) => {
+    const serviceKey = link.getAttribute("data-service-key") || "";
+    link.setAttribute("href", buildWhatsAppUrl(serviceKey));
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+  });
 }
 
 function getMobileMenuElements() {
@@ -240,6 +267,8 @@ function refreshInteractiveLabels() {
     const direction = scrollToggleBtn.dataset.direction === "up" ? "scrollUp" : "scrollDown";
     scrollToggleBtn.setAttribute("aria-label", getUiLabel(direction));
   }
+
+  refreshWhatsAppLinks();
 }
 
 function startCount(el) {
@@ -265,13 +294,13 @@ function startCount(el) {
 }
 
 function handleScroll() {
-  if (section && window.scrollY >= section.offsetTop - 250) {
+  if (section && section.getBoundingClientRect().top <= window.innerHeight - 250) {
     progressSpans.forEach((el) => {
       el.style.width = el.dataset.width;
     });
   }
 
-  if (statsSection && !started && window.scrollY >= statsSection.offsetTop - 150) {
+  if (statsSection && !started && statsSection.getBoundingClientRect().top <= window.innerHeight - 150) {
     nums.forEach((el) => startCount(el));
     started = true;
   }
@@ -281,7 +310,7 @@ function bindSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (event) => {
       const hash = anchor.getAttribute("href");
-      if (!hash || hash === "#" || anchor.id === "otherLinksTrigger") {
+      if (!hash || !hash.startsWith("#") || hash === "#" || anchor.id === "otherLinksTrigger") {
         return;
       }
 
@@ -364,19 +393,30 @@ function handleContactFormSubmit(event) {
   const name = (formData.get("name") || "").toString().trim();
   const email = (formData.get("email") || "").toString().trim();
   const phone = (formData.get("mobile") || "").toString().trim();
+  const topic = (formData.get("topic") || "").toString().trim();
   const message = (formData.get("message") || "").toString().trim();
+  const topicLabel = topic ? (getTranslation(`discount.serviceOptions.${topic}`) || topic) : "";
 
-  const subject = `Portfolio contact request from ${name}`;
+  const labels = getTranslation("whatsapp.formLabels") || {};
+  const intro = getTranslation("whatsapp.formIntro") || "Hello Abdelrahman, I visited your portfolio and would like to discuss this request:";
   const body = [
-    `Name: ${name}`,
-    `Email: ${email}`,
-    `Phone: ${phone}`,
+    intro,
     "",
-    "Accounting needs:",
+    `${labels.name || "Name"}: ${name}`,
+    `${labels.email || "Email"}: ${email}`,
+    `${labels.phone || "Phone"}: ${phone}`,
+    `${labels.topic || "Service"}: ${topicLabel}`,
+    "",
+    `${labels.message || "Accounting needs"}:`,
     message,
   ].join("\n");
 
-  window.location.href = `mailto:manobaker1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const whatsappUrl = buildWhatsAppUrl("", body);
+  const opened = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+  if (!opened) {
+    window.location.href = whatsappUrl;
+  }
 }
 
 function bindGalleryPreview() {
