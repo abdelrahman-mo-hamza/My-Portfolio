@@ -12,9 +12,6 @@ let currentTheme = getInitialTheme();
 let translations = {};
 let progressSpans = [];
 let section;
-let statsSection;
-let nums = [];
-let started = false;
 const uiLabels = {
   en: {
     language: "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
@@ -26,6 +23,8 @@ const uiLabels = {
     scrollUp: "Scroll to top",
     themeToDark: "Switch to dark mode",
     themeToLight: "Switch to light mode",
+    showMore: "Show more",
+    showLess: "Show less",
   },
   ar: {
     language: "English",
@@ -37,6 +36,8 @@ const uiLabels = {
     scrollUp: "\u0627\u0644\u0639\u0648\u062f\u0629 \u0625\u0644\u0649 \u0623\u0639\u0644\u0649 \u0627\u0644\u0635\u0641\u062d\u0629",
     themeToDark: "\u062a\u0641\u0639\u064a\u0644 \u0627\u0644\u0648\u0636\u0639 \u0627\u0644\u062f\u0627\u0643\u0646",
     themeToLight: "\u062a\u0641\u0639\u064a\u0644 \u0627\u0644\u0648\u0636\u0639 \u0627\u0644\u0641\u0627\u062a\u062d",
+    showMore: "\u0639\u0631\u0636 \u0627\u0644\u0645\u0632\u064a\u062f",
+    showLess: "\u0639\u0631\u0636 \u0623\u0642\u0644",
   },
 };
 
@@ -95,6 +96,32 @@ function updateThemeButton() {
   if (icon) {
     icon.className = currentTheme === "dark" ? "fas fa-sun" : "fas fa-moon";
   }
+}
+
+function setMetaContent(selector, content) {
+  if (!content) {
+    return;
+  }
+
+  const meta = document.querySelector(selector);
+  if (meta) {
+    meta.setAttribute("content", content);
+  }
+}
+
+function updateSeoMeta() {
+  const seo = getTranslation(document.body.classList.contains("not-found-page") ? "notFound.seo" : "seo") || getTranslation("seo");
+  if (!seo) {
+    return;
+  }
+
+  document.title = seo.title;
+  setMetaContent('meta[name="description"]', seo.description);
+  setMetaContent('meta[property="og:title"]', seo.title);
+  setMetaContent('meta[property="og:description"]', seo.description);
+  setMetaContent('meta[name="twitter:title"]', seo.title);
+  setMetaContent('meta[name="twitter:description"]', seo.description);
+  setMetaContent('meta[property="og:locale"]', currentLanguage === "ar" ? "ar_AR" : "en_US");
 }
 
 function applyTheme(theme, shouldPersist = true) {
@@ -251,7 +278,9 @@ function initializeLanguage() {
   applyLanguage(currentLanguage);
   updateLanguageButton();
   updateThemeButton();
+  updateSeoMeta();
   refreshInteractiveLabels();
+  refreshMobileToggleLabels();
   refreshCvLinks();
   refreshCvDownloads();
 }
@@ -309,7 +338,9 @@ function applyLanguage(lang) {
 
   updateLanguageButton();
   updateThemeButton();
+  updateSeoMeta();
   refreshInteractiveLabels();
+  refreshMobileToggleLabels();
   refreshCvLinks();
   refreshCvDownloads();
 }
@@ -370,26 +401,38 @@ function refreshInteractiveLabels() {
   refreshWhatsAppLinks();
 }
 
-function startCount(el) {
-  const goal = Number.parseInt(el.dataset.goal, 10);
-  if (!Number.isFinite(goal)) {
-    return;
-  }
+function refreshMobileToggleLabels() {
+  document.querySelectorAll("[data-mobile-toggle]").forEach((button) => {
+    const sectionElement = document.getElementById(button.getAttribute("data-mobile-toggle"));
+    const isExpanded = Boolean(sectionElement?.classList.contains("mobile-expanded"));
+    const label = getUiLabel(isExpanded ? "showLess" : "showMore");
 
-  let count = 0;
-  const increment = Math.max(1, Math.ceil(goal / 100));
+    button.textContent = label;
+    button.setAttribute("aria-expanded", String(isExpanded));
+  });
+}
 
-  const counter = setInterval(() => {
-    count += increment;
+function bindMobileSectionToggles() {
+  document.querySelectorAll("[data-mobile-toggle]").forEach((button) => {
+    const sectionId = button.getAttribute("data-mobile-toggle");
+    const sectionElement = document.getElementById(sectionId);
 
-    if (count >= goal) {
-      el.textContent = goal.toLocaleString();
-      clearInterval(counter);
+    if (!sectionElement) {
       return;
     }
 
-    el.textContent = count.toLocaleString();
-  }, 25);
+    button.addEventListener("click", () => {
+      const isExpanded = sectionElement.classList.toggle("mobile-expanded");
+      button.textContent = getUiLabel(isExpanded ? "showLess" : "showMore");
+      button.setAttribute("aria-expanded", String(isExpanded));
+
+      if (!isExpanded && isMobileView()) {
+        sectionElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+
+  refreshMobileToggleLabels();
 }
 
 function handleScroll() {
@@ -397,11 +440,6 @@ function handleScroll() {
     progressSpans.forEach((el) => {
       el.style.width = el.dataset.width;
     });
-  }
-
-  if (statsSection && !started && statsSection.getBoundingClientRect().top <= window.innerHeight - 150) {
-    nums.forEach((el) => startCount(el));
-    started = true;
   }
 }
 
@@ -427,6 +465,48 @@ function bindSmoothScroll() {
       }
     });
   });
+}
+
+function bindActiveNavigation() {
+  const navLinks = [...document.querySelectorAll('.main-nav a[href^="#"], .footer-links a[href^="#"]')]
+    .filter((link) => {
+      const hash = link.getAttribute("href");
+      return hash && hash.length > 1 && document.querySelector(hash);
+    });
+
+  if (!navLinks.length) {
+    return;
+  }
+
+  const sections = [...new Set(navLinks.map((link) => link.getAttribute("href").slice(1)))]
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+
+  const syncActiveLink = () => {
+    const anchorLine = window.innerHeight * 0.38;
+    let activeId = sections[0]?.id || "";
+
+    sections.forEach((sectionElement) => {
+      if (sectionElement.getBoundingClientRect().top <= anchorLine) {
+        activeId = sectionElement.id;
+      }
+    });
+
+    navLinks.forEach((link) => {
+      const isActive = link.getAttribute("href") === `#${activeId}`;
+      link.classList.toggle("is-active", isActive);
+
+      if (isActive) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", syncActiveLink, { passive: true });
+  window.addEventListener("resize", syncActiveLink);
+  syncActiveLink();
 }
 
 function bindMenuInteractions() {
@@ -684,11 +764,48 @@ function bindScrollToggle() {
   syncScrollToggle();
 }
 
+function bindRevealAnimations() {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const revealItems = document.querySelectorAll(
+    ".articles .box, .problem-card, .services .box, .case-studies .box, .skill-card, .process-card, .experience-item, .faq details, .footer-cta, .footer .box"
+  );
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+
+  revealItems.forEach((item, index) => {
+    item.classList.add("reveal-on-scroll");
+    item.style.setProperty("--reveal-delay", `${Math.min((index % 6) * 45, 180)}ms`);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.16 });
+
+  revealItems.forEach((item) => observer.observe(item));
+}
+
+function syncFooterYear() {
+  const footerYear = document.getElementById("footerYear");
+  if (!footerYear) {
+    return;
+  }
+
+  footerYear.textContent = String(new Date().getFullYear());
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   progressSpans = document.querySelectorAll(".the-progress span");
   section = document.querySelector(".our-skills");
-  nums = document.querySelectorAll(".stats .number");
-  statsSection = document.querySelector(".stats");
 
   const langSwitchBtn = document.getElementById("langSwitchBtn");
   const themeSwitchBtn = document.getElementById("themeSwitchBtn");
@@ -708,16 +825,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   bindMenuInteractions();
   bindSmoothScroll();
+  bindActiveNavigation();
   bindCvLinks();
   bindCvDownloads();
   bindGalleryPreview();
   bindScrollToggle();
+  bindMobileSectionToggles();
+  bindRevealAnimations();
+  syncFooterYear();
   applyTheme(currentTheme, false);
   loadTranslations();
   window.addEventListener("resize", () => {
     updateLanguageButton();
     updateThemeButton();
     refreshInteractiveLabels();
+    refreshMobileToggleLabels();
   });
 
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {

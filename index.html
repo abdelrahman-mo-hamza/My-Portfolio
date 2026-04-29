@@ -13,14 +13,21 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ERP & Retail Accountant - Expert in Financial Reporting, Inventory Management, VAT Compliance, and ERP Systems Implementation">
+  <meta name="description" content="ERP & Retail Accountant helping retail businesses clean accounting data, control ERP workflows, improve inventory accuracy, and prepare reliable VAT-ready reporting.">
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <title>Abdelrahman Mohamed Hamza - ERP & Retail Accountant Portfolio</title>
   <link rel="canonical" href="https://abdelrahman-mo-hamza.github.io/My-Portfolio/" />
+  <link rel="alternate" hreflang="en" href="https://abdelrahman-mo-hamza.github.io/My-Portfolio/?lang=en" />
+  <link rel="alternate" hreflang="ar" href="https://abdelrahman-mo-hamza.github.io/My-Portfolio/?lang=ar" />
+  <link rel="alternate" hreflang="x-default" href="https://abdelrahman-mo-hamza.github.io/My-Portfolio/" />
+  <link rel="preload" as="image" href="imgs/landing-image.webp" />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ar_AR" />
   <meta property="og:site_name" content="Abdelrahman Mohamed Hamza Portfolio" />
   <meta property="og:url" content="https://abdelrahman-mo-hamza.github.io/My-Portfolio/" />
   <meta property="og:title" content="Abdelrahman Mohamed Hamza - ERP & Retail Accountant Portfolio" />
-  <meta property="og:description" content="ERP & Retail Accountant specialized in financial reporting, inventory management, VAT compliance, and ERP systems implementation." />
+  <meta property="og:description" content="ERP & Retail Accountant helping retail businesses clean accounting data, control ERP workflows, improve inventory accuracy, and prepare reliable VAT-ready reporting." />
   <meta property="og:image" content="https://abdelrahman-mo-hamza.github.io/My-Portfolio/imgs/og.webp" />
   <meta property="og:image:secure_url" content="https://abdelrahman-mo-hamza.github.io/My-Portfolio/imgs/og.webp" />
   <meta property="og:image:width" content="1774" />
@@ -42,7 +49,7 @@
   </script>
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Abdelrahman Mohamed Hamza - ERP & Retail Accountant Portfolio" />
-  <meta name="twitter:description" content="ERP & Retail Accountant specialized in financial reporting, inventory management, VAT compliance, and ERP systems implementation." />
+  <meta name="twitter:description" content="ERP & Retail Accountant helping retail businesses clean accounting data, control ERP workflows, improve inventory accuracy, and prepare reliable VAT-ready reporting." />
   <meta name="twitter:image" content="https://abdelrahman-mo-hamza.github.io/My-Portfolio/imgs/og.webp" />
   <script type="application/ld+json">
     {
@@ -75,7 +82,7 @@
     }
   </script>
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/mano.css?v=20260429-theme-toggle" />
+  <link rel="stylesheet" href="css/mano.css?v=20260429-footer-compact" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="css/all.min.css" />
   <!-- Google Fonts -->
@@ -133,7 +140,7 @@
                 <a href="#faq"><i class="far fa-question-circle fa-fw"></i> <span data-translate="header.faq">FAQ</span></a>
               </li>
               <li>
-                <a href="#discount"><i class="fas fa-envelope fa-fw"></i> <span data-translate="header.getInTouch">Get in Touch</span></a>
+                <a href="#contact"><i class="fas fa-envelope fa-fw"></i> <span data-translate="header.getInTouch">Get in Touch</span></a>
               </li>
             </ul>
           </div>
@@ -158,12 +165,18 @@
   <div class="landing">
     <div class="container">
       <div class="text">
+        <span class="landing-kicker" data-translate="landing.kicker">ERP data, inventory, VAT, and reporting control</span>
         <h1 data-translate="landing.title">ERP & Retail Accounting Professional</h1>
-        <p data-translate="landing.description">Hi, I'm Abdelrahman Mohamed Hamza, an experienced ERP and Retail Accountant with proven expertise in financial systems implementation, inventory management, and VAT compliance. I specialize in data migration, financial reporting, and optimizing accounting processes in retail environments.</p>
+        <p data-translate="landing.description">I help retail and trading businesses turn messy accounting data into controlled ERP workflows, clean inventory records, VAT-ready reports, and management numbers they can trust.</p>
+        <div class="landing-proof" aria-label="Core focus areas">
+          <span><i class="fas fa-database"></i> <span data-translate="landing.proof.0">Data cleanup</span></span>
+          <span><i class="fas fa-boxes"></i> <span data-translate="landing.proof.1">Inventory control</span></span>
+          <span><i class="fas fa-file-invoice-dollar"></i> <span data-translate="landing.proof.2">Financial reporting</span></span>
+        </div>
         <div class="landing-actions">
           <a href="Abdelrahman-Mohamed-Hamza-CV-en.pdf" class="landing-action landing-action--primary" data-cv-download download="Abdelrahman-Mohamed-Hamza-CV-en.pdf" data-translate="landing.downloadCv">Download CV</a>
           <a href="cv.html" class="landing-action landing-action--tertiary" data-cv-link data-translate="landing.viewCv">View Online CV</a>
-          <a href="#discount" class="landing-action landing-action--secondary" data-translate="landing.contactCta">Get In Touch</a>
+          <a href="#contact" class="landing-action landing-action--secondary" data-translate="landing.contactCta">Get In Touch</a>
         </div>
         <div class="landing-highlights" aria-label="Professional highlights">
           <div>
@@ -184,8 +197,14 @@
           </div>
         </div>
       </div>
-      <div class="image">
-        <img src="imgs/landing-image.webp" alt="ERP and retail accounting illustration" />
+      <div class="image landing-visual">
+        <div class="landing-visual__frame">
+          <img src="imgs/landing-image.webp" alt="ERP and retail accounting illustration" fetchpriority="high" decoding="async" />
+          <div class="landing-visual__badge">
+            <strong data-translate="landing.visualBadgeTitle">Retail ERP Focus</strong>
+            <span data-translate="landing.visualBadgeText">Cleaner data. Stronger controls.</span>
+          </div>
+        </div>
       </div>
     </div>
     <a href="#articles" class="go-down">
@@ -200,7 +219,7 @@
     <div class="container">
 
       <div class="box">
-        <img src="imgs/cat-01.webp" alt="ERP systems management illustration" loading="eager" />
+        <img src="imgs/cat-01.webp" alt="ERP systems management illustration" loading="lazy" decoding="async" />
         <div class="content">
           <h3 data-translate="articles.skills.0.title"></h3>
           <p data-translate="articles.skills.0.description"></p>
@@ -212,7 +231,7 @@
       </div>
 
       <div class="box">
-        <img src="imgs/cat-08.webp" alt="Financial reporting illustration" loading="eager" />
+        <img src="imgs/cat-08.webp" alt="Financial reporting illustration" loading="lazy" decoding="async" />
         <div class="content">
           <h3 data-translate="articles.skills.1.title"></h3>
           <p data-translate="articles.skills.1.description"></p>
@@ -224,7 +243,7 @@
       </div>
 
       <div class="box">
-        <img src="imgs/cat-07.webp" alt="Inventory management illustration" loading="eager" />
+        <img src="imgs/cat-07.webp" alt="Inventory management illustration" loading="lazy" decoding="async" />
         <div class="content">
           <h3 data-translate="articles.skills.2.title"></h3>
           <p data-translate="articles.skills.2.description"></p>
@@ -236,7 +255,7 @@
       </div>
 
       <div class="box">
-        <img src="imgs/cat-04.webp" alt="VAT and tax compliance illustration" loading="eager" />
+        <img src="imgs/cat-04.webp" alt="VAT and tax compliance illustration" loading="lazy" decoding="async" />
         <div class="content">
           <h3 data-translate="articles.skills.3.title"></h3>
           <p data-translate="articles.skills.3.description"></p>
@@ -248,7 +267,7 @@
       </div>
 
       <div class="box">
-        <img src="imgs/cat-03.webp" alt="Data migration illustration" loading="eager" />
+        <img src="imgs/cat-03.webp" alt="Data migration illustration" loading="lazy" decoding="async" />
         <div class="content">
           <h3 data-translate="articles.skills.4.title"></h3>
           <p data-translate="articles.skills.4.description"></p>
@@ -260,7 +279,7 @@
       </div>
 
       <div class="box">
-        <img src="imgs/cat-02.webp" alt="Excel and Power BI illustration" loading="eager" />
+        <img src="imgs/cat-02.webp" alt="Excel and Power BI illustration" loading="lazy" decoding="async" />
         <div class="content">
           <h3 data-translate="articles.skills.5.title"></h3>
           <p data-translate="articles.skills.5.description"></p>
@@ -272,7 +291,7 @@
       </div>
 
       <div class="box">
-        <img src="imgs/cat-05.webp" alt="Supplier invoice review illustration" loading="eager" />
+        <img src="imgs/cat-05.webp" alt="Supplier invoice review illustration" loading="lazy" decoding="async" />
         <div class="content">
           <h3 data-translate="articles.skills.6.title"></h3>
           <p data-translate="articles.skills.6.description"></p>
@@ -284,7 +303,7 @@
       </div>
 
       <div class="box">
-        <img src="imgs/cat-06.webp" alt="Bank reconciliation illustration" loading="eager" />
+        <img src="imgs/cat-06.webp" alt="Bank reconciliation illustration" loading="lazy" decoding="async" />
         <div class="content">
           <h3 data-translate="articles.skills.7.title"></h3>
           <p data-translate="articles.skills.7.description"></p>
@@ -296,6 +315,7 @@
       </div>
 
     </div>
+    <button class="mobile-show-more" type="button" data-mobile-toggle="articles" aria-expanded="false" data-translate="ui.showMore">Show more</button>
   </div>
   <div class="spikes"></div>
   <!-- End Articles -->
@@ -317,6 +337,7 @@
       <div class="box"><div class="image"><img src="imgs/gallery-11.webp" alt="Certificate preview 11" loading="lazy" /></div></div>
       <div class="box"><div class="image"><img src="imgs/gallery-12.webp" alt="Certificate preview 12" loading="lazy" /></div></div>
     </div>
+    <button class="mobile-show-more" type="button" data-mobile-toggle="gallery" aria-expanded="false" data-translate="ui.showMore">Show more</button>
 
     <div class="gallery-preview" id="galleryPreview" aria-hidden="true">
       <div class="gallery-preview__backdrop" data-gallery-close="true"></div>
@@ -373,6 +394,7 @@
         <p data-translate="problems.items.5.text">I help define roles, workflows, permissions, and checks that reduce errors after launch.</p>
       </div>
     </div>
+    <button class="mobile-show-more" type="button" data-mobile-toggle="problems" aria-expanded="false" data-translate="ui.showMore">Show more</button>
   </div>
   <!-- End Problems -->
   <!-- Start Services -->
@@ -386,7 +408,7 @@
         <p class="service-desc" data-translate="services.items.0.description">Set up ERP workflows, migrate data, and prepare teams to operate with reliable financial and inventory controls.</p>
         <ul class="service-points" data-translate="services.items.0.points"></ul>
         <div class="info">
-          <a href="#discount" data-service-key="erp" data-translate="services.details">Discuss Related Work</a>
+          <a href="#contact" data-service-key="erp" data-translate="services.details">Discuss Related Work</a>
         </div>
       </div>
       <div class="box">
@@ -395,7 +417,7 @@
         <p class="service-desc" data-translate="services.items.1.description">Build monthly reports, closing controls, and financial visibility that management can rely on.</p>
         <ul class="service-points" data-translate="services.items.1.points"></ul>
         <div class="info">
-          <a href="#discount" data-service-key="reports" data-translate="services.details">Discuss Related Work</a>
+          <a href="#contact" data-service-key="reports" data-translate="services.details">Discuss Related Work</a>
         </div>
       </div>
       <div class="box">
@@ -404,7 +426,7 @@
         <p class="service-desc" data-translate="services.items.2.description">Clean product records, barcodes, categories, and stock reports to reduce errors and improve purchasing decisions.</p>
         <ul class="service-points" data-translate="services.items.2.points"></ul>
         <div class="info">
-          <a href="#discount" data-service-key="inventory" data-translate="services.details">Discuss Related Work</a>
+          <a href="#contact" data-service-key="inventory" data-translate="services.details">Discuss Related Work</a>
         </div>
       </div>
       <div class="box">
@@ -413,7 +435,7 @@
         <p class="service-desc" data-translate="services.items.3.description">Prepare VAT reconciliations, review supporting documents, and keep reporting ready for periodic filing.</p>
         <ul class="service-points" data-translate="services.items.3.points"></ul>
         <div class="info">
-          <a href="#discount" data-service-key="vat" data-translate="services.details">Discuss Related Work</a>
+          <a href="#contact" data-service-key="vat" data-translate="services.details">Discuss Related Work</a>
         </div>
       </div>
       <div class="box">
@@ -422,7 +444,7 @@
         <p class="service-desc" data-translate="services.items.4.description">Turn Excel and ERP exports into dashboards that show sales, stock, costs, and operational performance.</p>
         <ul class="service-points" data-translate="services.items.4.points"></ul>
         <div class="info">
-          <a href="#discount" data-service-key="dashboards" data-translate="services.details">Discuss Related Work</a>
+          <a href="#contact" data-service-key="dashboards" data-translate="services.details">Discuss Related Work</a>
         </div>
       </div>
       <div class="box">
@@ -431,10 +453,11 @@
         <p class="service-desc" data-translate="services.items.5.description">Review product costs against supplier invoices and fix costing issues that distort profit reporting.</p>
         <ul class="service-points" data-translate="services.items.5.points"></ul>
         <div class="info">
-          <a href="#discount" data-service-key="costing" data-translate="services.details">Discuss Related Work</a>
+          <a href="#contact" data-service-key="costing" data-translate="services.details">Discuss Related Work</a>
         </div>
       </div>
     </div>
+    <button class="mobile-show-more" type="button" data-mobile-toggle="services" aria-expanded="false" data-translate="ui.showMore">Show more</button>
   </div>
   <!-- End Services -->
   <!-- Start Case Studies -->
@@ -448,7 +471,7 @@
           <h3 data-translate="caseStudies.feature.title">Retail ERP Migration & Inventory Control Recovery</h3>
           <p data-translate="caseStudies.feature.summary">A retail operation needed a reliable ERP foundation after fragmented data, duplicated products, and inconsistent costing made reporting difficult. The work focused on data migration, inventory cleanup, cost correction, and practical controls for daily operations.</p>
           <div class="case-study-actions">
-            <a href="#discount" class="case-study-cta" data-service-key="erp" data-translate="caseStudies.feature.cta">Discuss a Similar Project</a>
+            <a href="#contact" class="case-study-cta" data-service-key="erp" data-translate="caseStudies.feature.cta">Discuss a Similar Project</a>
           </div>
         </div>
         <div class="case-study-results">
@@ -526,6 +549,7 @@
         </div>
       </div>
     </div>
+    <button class="mobile-show-more" type="button" data-mobile-toggle="case-studies" aria-expanded="false" data-translate="ui.showMore">Show more</button>
   </div>
   <!-- End Case Studies -->
   <!-- Start Skills -->
@@ -604,6 +628,7 @@
         </div>
       </div>
     </div>
+    <button class="mobile-show-more" type="button" data-mobile-toggle="our-skills" aria-expanded="false" data-translate="ui.showMore">Show more</button>
   </div>
   <!-- End Skills -->
   <!-- Start Work Steps -->
@@ -646,6 +671,7 @@
         </div>
       </div>
     </div>
+    <button class="mobile-show-more" type="button" data-mobile-toggle="work-steps" aria-expanded="false" data-translate="ui.showMore">Show more</button>
   </div>
   <!-- End Work Steps -->
   <!-- Start Videos -->
@@ -693,35 +719,9 @@
         </div>
       </div>
     </div>
+    <button class="mobile-show-more" type="button" data-mobile-toggle="videos" aria-expanded="false" data-translate="ui.showMore">Show more</button>
   </div>
   <!-- End Videos -->
-  <!-- Start Stats -->
-  <div class="stats" id="stats">
-    <h2 data-translate="stats.title">My Achievements</h2>
-    <div class="container">
-      <div class="box">
-        <i class="fas fa-boxes fa-2x fa-fw"></i>
-        <span class="number" data-goal="5500">0</span>
-        <span class="text" data-translate="stats.productsManaged">Products Managed</span>
-      </div>
-      <div class="box">
-        <i class="fas fa-exchange-alt fa-2x fa-fw"></i>
-        <span class="number" data-goal="11000">0</span>
-        <span class="text" data-translate="stats.recordsMigrated">Records Migrated</span>
-      </div>
-      <div class="box">
-        <i class="fas fa-building fa-2x fa-fw"></i>
-        <span class="number" data-goal="6">0</span>
-        <span class="text" data-translate="stats.erpSystems">ERP Systems</span>
-      </div>
-      <div class="box">
-        <i class="fas fa-chart-line fa-2x fa-fw"></i>
-        <span class="number" data-goal="100">0</span>
-        <span class="text" data-translate="stats.accuracy">% Accuracy</span>
-      </div>
-    </div>
-  </div>
-  <!-- End Stats -->
   <!-- Start FAQ -->
   <div class="faq" id="faq">
     <h2 class="main-title" data-translate="faq.title">FAQ</h2>
@@ -747,131 +747,96 @@
         <p data-translate="faq.items.4.answer">A short description of the problem, system name, sample reports or exports, and the goal you want to reach. From there, we can define the right scope.</p>
       </details>
     </div>
+    <button class="mobile-show-more" type="button" data-mobile-toggle="faq" aria-expanded="false" data-translate="ui.showMore">Show more</button>
   </div>
   <!-- End FAQ -->
-  <!-- Start Discount -->
-  <div class="discount" id="discount">
-    <div class="image">
-      <div class="content">
-        <h2 data-translate="discount.title">Let's Work Together</h2>
-        <p data-translate="discount.description">
-          Have an accounting, ERP, inventory, or reporting challenge? Send me the details and I will reply with the best next step.
-        </p>
-        <img src="imgs/discount.webp" alt="Business collaboration illustration" loading="lazy" />
-      </div>
-    </div>
-    <div class="form">
-      <div class="content">
-        <h2 data-translate="discount.formTitle">Get In Touch</h2>
-        <form id="contactForm">
-          <input class="input" type="text" placeholder="Your Name" data-translate="discount.yourName" name="name" autocomplete="name" required />
-          <input class="input" type="email" placeholder="Your Email" data-translate="discount.yourEmail" name="email" autocomplete="email" required />
-          <input class="input" type="tel" placeholder="Your Phone" data-translate="discount.yourPhone" name="mobile" autocomplete="tel" inputmode="tel" required />
-          <select class="input" name="topic" required>
-            <option value="" data-translate="discount.serviceTopic">Choose Topic</option>
-            <option value="erp" data-translate="discount.serviceOptions.erp">ERP implementation or migration</option>
-            <option value="inventory" data-translate="discount.serviceOptions.inventory">Inventory cleanup</option>
-            <option value="reports" data-translate="discount.serviceOptions.reports">Financial reporting</option>
-            <option value="vat" data-translate="discount.serviceOptions.vat">VAT and tax review</option>
-            <option value="dashboards" data-translate="discount.serviceOptions.dashboards">Excel or Power BI dashboards</option>
-            <option value="costing" data-translate="discount.serviceOptions.costing">Cost correction</option>
-          </select>
-          <textarea class="input" placeholder="Tell Us About Your Accounting Needs" data-translate="discount.accountingNeeds" name="message" required></textarea>
-          <input type="submit" data-translate="discount.send" value="Send" />
-        </form>
-        <p class="contact-note" data-translate="discount.note">Submitting opens your email app with a ready-to-send message. You can also contact me directly below.</p>
-        <div class="direct-contact-links">
-          <a href="https://wa.me/966590285307" class="whatsapp-link" target="_blank" rel="noopener noreferrer" data-whatsapp-link>
-            <i class="fab fa-whatsapp"></i>
-            <span data-translate="discount.directWhatsApp">Chat on WhatsApp</span>
-          </a>
-          <a href="mailto:manobaker1@gmail.com" class="email-link">
-            <i class="far fa-envelope"></i>
-            <span data-translate="discount.directEmail">Email Directly</span>
-          </a>
-          <a href="https://t.me/mano_love1" class="telegram-link" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-telegram-plane"></i>
-            <span data-translate="discount.directTelegram">Telegram</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Discount -->
   <!-- Start Footer -->
-  <div class="footer">
-    <div class="container">
-      <div class="box">
-        <h3>Abdelrahman Mohamed Hamza</h3>
-        <p data-translate="footer.profession">ERP & Retail Accountant</p>
-        <ul class="social">
-          <li>
-            <a href="https://www.facebook.com/TheAccountantHub.ar" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook profile">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://t.me/mano_love1" target="_blank" rel="noopener noreferrer" class="telegram" aria-label="Telegram profile">
-              <i class="fab fa-telegram-plane"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/abdelrahman-mo-hamza/" target="_blank" rel="noopener noreferrer" class="youtube" aria-label="LinkedIn profile">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://wa.me/966590285307" target="_blank" rel="noopener noreferrer" class="whatsapp" aria-label="WhatsApp chat" data-whatsapp-link>
-              <i class="fab fa-whatsapp fa-lg"></i>
-            </a>
-          </li>
-        </ul>
-        <p class="text" data-translate="footer.description">Specialist in financial reporting, ERP systems, inventory management, and VAT compliance for retail businesses.</p>
-      </div>
-      <div class="box">
-        <h3 data-translate="footer.expertise">Expertise</h3>
-        <ul class="links">
-          <li>
-            <a href="#services" class="facebook" data-translate="footer.expertiseItems.0">ERP Systems</a>
-          </li>
-          <li>
-            <a href="#services" class="twitter" data-translate="footer.expertiseItems.1">Financial Reporting</a>
-          </li>
-          <li>
-            <a href="#services" class="youtube" data-translate="footer.expertiseItems.2">Inventory Management</a>
-          </li>
-          <li>
-            <a href="#services" class="whatsapp" data-translate="footer.expertiseItems.3">Data Migration</a>
-          </li>
-          <li>
-            <a href="#services" class="whatsapp" data-translate="footer.expertiseItems.4">VAT Compliance</a>
-          </li>
-        </ul>
-      </div>
-      <div class="box">
-        <h3 data-translate="footer.education">Education & Certifications</h3>
-        <p><strong data-translate="footer.bachelors">Bachelor's Degree in Accounting</strong><br><span data-translate="footer.university">Sadat City University, Faculty of Commerce</span></p>
-        <p><strong data-translate="footer.erpExperience">ERP Systems Experience:</strong><br><span data-translate="footer.erpExperienceDetails">Rewaa, DataSpace, Odoo, Oracle, Wafeq, Qoyod</span></p>
-      </div>
-      <div class="box">
-        <div class="line">
-          <i class="fas fa-map-marker-alt fa-fw"></i>
-          <div class="info" data-translate="footer.location">Jeddah, Saudi Arabia</div>
+  <div class="footer" id="contact">
+    <div class="container footer-shell">
+      <div class="footer-cta">
+        <div class="footer-cta__copy">
+          <span data-translate="footer.ctaKicker">Available for focused projects</span>
+          <h2 data-translate="footer.ctaTitle">Ready to clean your accounting data and control your ERP workflow?</h2>
+          <p data-translate="footer.ctaText">Send the current challenge and I will help you define the clearest next step.</p>
         </div>
-        <div class="line">
-          <i class="far fa-clock fa-fw"></i>
-          <div class="info" data-translate="footer.availability">Available for:<br>Consulting & Projects</div>
+        <div class="footer-cta__actions">
+          <a href="https://wa.me/966590285307" class="footer-action footer-action--primary" target="_blank" rel="noopener noreferrer" data-whatsapp-link>
+            <i class="fab fa-whatsapp"></i>
+            <span data-translate="footer.ctaWhatsApp">WhatsApp</span>
+          </a>
+          <a href="mailto:manobaker1@gmail.com" class="footer-action">
+            <i class="far fa-envelope"></i>
+            <span data-translate="footer.ctaEmail">Email</span>
+          </a>
+          <a href="Abdelrahman-Mohamed-Hamza-CV-en.pdf" class="footer-action" data-cv-download download="Abdelrahman-Mohamed-Hamza-CV-en.pdf">
+            <i class="fas fa-download"></i>
+            <span data-translate="footer.ctaCv">Download CV</span>
+          </a>
         </div>
-        <div class="line">
-          <i class="fas fa-phone-volume fa-fw"></i>
-          <div class="info">
-            <span>+966590285307</span>
-            <span>+201554575716</span>
+      </div>
+
+      <div class="footer-grid">
+        <div class="box footer-brand">
+          <h3>Abdelrahman Mohamed Hamza</h3>
+          <p data-translate="footer.profession">ERP & Retail Accountant</p>
+          <p class="text" data-translate="footer.description">Specialist in financial reporting, ERP systems, inventory management, and VAT compliance for retail businesses.</p>
+          <ul class="social">
+            <li>
+              <a href="https://www.facebook.com/TheAccountantHub.ar" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook profile">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://t.me/mano_love1" target="_blank" rel="noopener noreferrer" class="telegram" aria-label="Telegram profile">
+                <i class="fab fa-telegram-plane"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/abdelrahman-mo-hamza/" target="_blank" rel="noopener noreferrer" class="youtube" aria-label="LinkedIn profile">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/966590285307" target="_blank" rel="noopener noreferrer" class="whatsapp" aria-label="WhatsApp chat" data-whatsapp-link>
+                <i class="fab fa-whatsapp fa-lg"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="box footer-links">
+          <h3 data-translate="footer.quickLinks">Quick Links</h3>
+          <ul class="links">
+            <li><a href="#articles" data-translate="header.skills">Skills</a></li>
+            <li><a href="#case-studies" data-translate="header.caseStudies">Case Studies</a></li>
+            <li><a href="#gallery" data-translate="header.certifications">Certifications</a></li>
+            <li><a href="cv.html" data-cv-link data-translate="header.cv">CV</a></li>
+            <li><a href="#contact" data-translate="footer.contactLink">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="box footer-contact">
+          <h3 data-translate="footer.contactTitle">Contact</h3>
+          <div class="line">
+            <i class="fas fa-map-marker-alt fa-fw"></i>
+            <div class="info" data-translate="footer.location">Jeddah, Saudi Arabia</div>
           </div>
+          <div class="line">
+            <i class="far fa-clock fa-fw"></i>
+            <div class="info" data-translate="footer.availability">Available for:<br>Consulting & Projects</div>
+          </div>
+          <div class="line">
+            <i class="fas fa-phone-volume fa-fw"></i>
+            <div class="info">
+              <span>+966590285307</span>
+              <span>+201554575716</span>
+            </div>
+          </div>
+          <p class="footer-education"><strong data-translate="footer.bachelors">Bachelor's Degree in Accounting</strong><span data-translate="footer.erpExperienceDetails">Rewaa, DataSpace, Odoo, Oracle, Wafeq, Qoyod</span></p>
         </div>
       </div>
     </div>
-    <p class="copyright" data-translate="footer.copyright">All rights reserved © 2024 Abdelrahman Mohamed Hamza - ERP & Retail Accountant</p>
+    <p class="copyright"><span data-translate="footer.copyrightPrefix">All rights reserved</span> © <span id="footerYear">2026</span> <span data-translate="footer.copyrightName">Abdelrahman Mohamed Hamza - ERP & Retail Accountant</span></p>
   </div>
   <!-- End Footer -->
   <a class="whatsapp-float" id="whatsappFloat" href="https://wa.me/966590285307" target="_blank" rel="noopener noreferrer" data-whatsapp-link aria-label="Chat on WhatsApp">
@@ -881,7 +846,7 @@
   <button class="scroll-toggle" id="scrollToggleBtn" type="button" aria-label="Scroll to bottom">
     <i class="fas fa-angle-double-down"></i>
   </button>
-  <script src="js/main.js?v=20260429-theme-toggle"></script>
+  <script src="js/main.js?v=20260429-footer-compact"></script>
 </body>
 
 </html>

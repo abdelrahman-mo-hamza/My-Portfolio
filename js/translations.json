@@ -1,5 +1,13 @@
 {
   "en": {
+    "seo": {
+      "title": "Abdelrahman Mohamed Hamza - ERP & Retail Accountant Portfolio",
+      "description": "ERP & Retail Accountant helping retail businesses clean accounting data, control ERP workflows, improve inventory accuracy, and prepare reliable VAT-ready reporting."
+    },
+    "ui": {
+      "showMore": "Show more",
+      "showLess": "Show less"
+    },
     "header": {
       "logo": "Abdelrahman - Accountant",
       "skills": "Skills",
@@ -18,11 +26,19 @@
       "cv": "CV"
     },
     "landing": {
+      "kicker": "ERP data, inventory, VAT, and reporting control",
       "title": "ERP & Retail Accounting Professional",
-      "description": "Hi, I'm Abdelrahman Mohamed Hamza, an experienced ERP and Retail Accountant with proven expertise in financial systems implementation, inventory management, and VAT compliance. I specialize in data migration, financial reporting, and optimizing accounting processes in retail environments.",
+      "description": "I help retail and trading businesses turn messy accounting data into controlled ERP workflows, clean inventory records, VAT-ready reports, and management numbers they can trust.",
       "downloadCv": "Download CV",
       "viewCv": "View Online CV",
       "contactCta": "Get In Touch",
+      "proof": [
+        "Data cleanup",
+        "Inventory control",
+        "Financial reporting"
+      ],
+      "visualBadgeTitle": "Retail ERP Focus",
+      "visualBadgeText": "Cleaner data. Stronger controls.",
       "highlights": [
         "Products managed",
         "Records migrated",
@@ -421,13 +437,6 @@
       ],
       "previewText": "هَٰذَا مِن فَضْلِ رَبِّي لِيَبْلُوَنِي أَأَشْكُرُ أَمْ أَكْفُرُ ۖ وَمَن شَكَرَ فَإِنَّمَا يَشْكُرُ لِنَفْسِهِ ۖ وَمَن كَفَرَ فَإِنَّ رَبِّي غَنِيٌّ كَرِيمٌ"
     },
-    "stats": {
-      "title": "Key Results",
-      "productsManaged": "Products Managed",
-      "recordsMigrated": "Records Migrated",
-      "erpSystems": "ERP Systems",
-      "accuracy": "Accuracy Rate"
-    },
     "faq": {
       "title": "FAQ",
       "items": [
@@ -496,9 +505,37 @@
         "costing": "Hello Abdelrahman, I would like to discuss product costing correction and profit reporting accuracy."
       }
     },
+    "notFound": {
+      "seo": {
+        "title": "Page Not Found - Abdelrahman Mohamed Hamza",
+        "description": "The portfolio page you requested was not found. Return to Abdelrahman Mohamed Hamza's ERP and retail accounting portfolio."
+      },
+      "eyebrow": "404",
+      "title": "This page is not available",
+      "text": "The link may have changed, but the portfolio is still ready. Return home or contact me directly.",
+      "home": "Back to Portfolio",
+      "contact": "Contact Me",
+      "cv": "View CV"
+    },
     "footer": {
       "profession": "ERP & Retail Accountant",
       "description": "Specialist in financial reporting, ERP systems, inventory management, and VAT compliance for retail businesses.",
+      "ctaKicker": "Available for focused projects",
+      "ctaTitle": "Ready to clean your accounting data and control your ERP workflow?",
+      "ctaText": "Send the current challenge and I will help you define the clearest next step.",
+      "ctaWhatsApp": "WhatsApp",
+      "ctaEmail": "Email",
+      "ctaCv": "Download CV",
+      "proofTitle": "Proof Points",
+      "stats": [
+        "Products managed",
+        "Records migrated",
+        "ERP systems",
+        "Compliance support"
+      ],
+      "quickLinks": "Quick Links",
+      "contactTitle": "Contact",
+      "contactLink": "Contact",
       "expertise": "Expertise",
       "expertiseItems": [
         "ERP Systems",
@@ -514,10 +551,20 @@
       "erpExperienceDetails": "Rewaa, DataSpace, Odoo, Oracle, Wafeq, Qoyod",
       "location": "Jeddah, Saudi Arabia",
       "availability": "Available for:<br>Consulting & Projects",
-      "copyright": "All rights reserved © 2024 Abdelrahman Mohamed Hamza - ERP & Retail Accountant"
+      "copyrightPrefix": "All rights reserved",
+      "copyrightName": "Abdelrahman Mohamed Hamza - ERP & Retail Accountant",
+      "copyright": "All rights reserved © 2026 Abdelrahman Mohamed Hamza - ERP & Retail Accountant"
     }
   },
   "ar": {
+    "seo": {
+      "title": "عبدالرحمن محمد حمزة - بورتفوليو محاسب ERP وقطاع التجزئة",
+      "description": "محاسب ERP يساعد شركات التجزئة على تنظيم البيانات المحاسبية، ضبط دورة عمل ERP، تحسين دقة المخزون، وتجهيز تقارير موثوقة للضريبة والإدارة."
+    },
+    "ui": {
+      "showMore": "عرض المزيد",
+      "showLess": "عرض أقل"
+    },
     "header": {
       "logo": "عبدالرحمن - محاسب",
       "skills": "المهارات",
@@ -536,11 +583,19 @@
       "cv": "السيرة الذاتية"
     },
     "landing": {
+      "kicker": "ضبط بيانات ERP والمخزون والضريبة والتقارير",
       "title": "محاسب ERP متخصص في قطاع التجزئة",
-      "description": "مرحبًا، أنا عبدالرحمن محمد حمزة، محاسب ERP بخبرة عملية في تشغيل الأنظمة المالية وإدارة المخزون والامتثال الضريبي. أركز على ترحيل البيانات، إعداد التقارير المالية، وتحسين العمليات المحاسبية داخل بيئات التجزئة.",
+      "description": "أساعد شركات التجزئة والتجارة على تحويل البيانات المحاسبية غير المنظمة إلى دورة عمل ERP مضبوطة، ومخزون أنظف، وتقارير جاهزة للضريبة، وأرقام إدارية يمكن الاعتماد عليها.",
       "downloadCv": "تحميل السيرة الذاتية",
       "viewCv": "عرض السيرة أونلاين",
       "contactCta": "تواصل معي",
+      "proof": [
+        "تنظيف البيانات",
+        "ضبط المخزون",
+        "التقارير المالية"
+      ],
+      "visualBadgeTitle": "تركيز على ERP التجزئة",
+      "visualBadgeText": "بيانات أنظف. رقابة أقوى.",
       "highlights": [
         "صنف تمت إدارته",
         "سجل تم ترحيله",
@@ -939,13 +994,6 @@
       ],
       "previewText": "هَٰذَا مِن فَضْلِ رَبِّي لِيَبْلُوَنِي أَأَشْكُرُ أَمْ أَكْفُرُ ۖ وَمَن شَكَرَ فَإِنَّمَا يَشْكُرُ لِنَفْسِهِ ۖ وَمَن كَفَرَ فَإِنَّ رَبِّي غَنِيٌّ كَرِيمٌ"
     },
-    "stats": {
-      "title": "نتائج ملموسة",
-      "productsManaged": "أصناف تمت إدارتها",
-      "recordsMigrated": "سجلات تم ترحيلها",
-      "erpSystems": "أنظمة ERP",
-      "accuracy": "معدل الدقة"
-    },
     "faq": {
       "title": "أسئلة شائعة",
       "items": [
@@ -1014,9 +1062,37 @@
         "costing": "مرحبًا عبدالرحمن، أريد مناقشة عمل متعلق بتصحيح تكلفة الأصناف ودقة تقارير الأرباح."
       }
     },
+    "notFound": {
+      "seo": {
+        "title": "الصفحة غير موجودة - عبدالرحمن محمد حمزة",
+        "description": "الصفحة المطلوبة غير موجودة. يمكنك العودة إلى بورتفوليو عبدالرحمن محمد حمزة المتخصص في محاسبة ERP وقطاع التجزئة."
+      },
+      "eyebrow": "404",
+      "title": "الصفحة غير متاحة",
+      "text": "ربما تغير الرابط، لكن البورتفوليو ما زال جاهزًا. يمكنك العودة للرئيسية أو التواصل معي مباشرة.",
+      "home": "العودة للبورتفوليو",
+      "contact": "تواصل معي",
+      "cv": "عرض السيرة الذاتية"
+    },
     "footer": {
       "profession": "محاسب ERP وقطاع التجزئة",
       "description": "متخصص في التقارير المالية، وأنظمة ERP، وإدارة المخزون، والامتثال الضريبي للشركات العاملة في التجزئة.",
+      "ctaKicker": "متاح للمشاريع المركزة",
+      "ctaTitle": "جاهز لتنظيم بياناتك المحاسبية وضبط دورة عمل ERP؟",
+      "ctaText": "أرسل التحدي الحالي وسأساعدك في تحديد أوضح خطوة تالية.",
+      "ctaWhatsApp": "واتساب",
+      "ctaEmail": "البريد الإلكتروني",
+      "ctaCv": "تحميل السيرة الذاتية",
+      "proofTitle": "أرقام مختصرة",
+      "stats": [
+        "صنف تمت إدارته",
+        "سجل تم ترحيله",
+        "أنظمة ERP",
+        "دعم الامتثال"
+      ],
+      "quickLinks": "روابط سريعة",
+      "contactTitle": "التواصل",
+      "contactLink": "تواصل معي",
       "expertise": "مجالات الخبرة",
       "expertiseItems": [
         "أنظمة ERP",
@@ -1032,7 +1108,9 @@
       "erpExperienceDetails": "Rewaa، DataSpace، Odoo، Oracle، Wafeq، Qoyod",
       "location": "جدة، المملكة العربية السعودية",
       "availability": "متاح لـ:<br>الاستشارات والمشاريع",
-      "copyright": "جميع الحقوق محفوظة © 2024 عبدالرحمن محمد حمزة - محاسب ERP وقطاع التجزئة"
+      "copyrightPrefix": "جميع الحقوق محفوظة",
+      "copyrightName": "عبدالرحمن محمد حمزة - محاسب ERP وقطاع التجزئة",
+      "copyright": "جميع الحقوق محفوظة © 2026 عبدالرحمن محمد حمزة - محاسب ERP وقطاع التجزئة"
     }
   }
 }

@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://abdelrahman-mo-hamza.github.io/My-Portfolio/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://abdelrahman-mo-hamza.github.io/My-Portfolio/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://abdelrahman-mo-hamza.github.io/My-Portfolio/?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://abdelrahman-mo-hamza.github.io/My-Portfolio/" />
     <lastmod>2026-04-29</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://abdelrahman-mo-hamza.github.io/My-Portfolio/cv.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://abdelrahman-mo-hamza.github.io/My-Portfolio/cv.html?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://abdelrahman-mo-hamza.github.io/My-Portfolio/cv.html?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://abdelrahman-mo-hamza.github.io/My-Portfolio/cv.html" />
     <lastmod>2026-04-29</lastmod>
     <priority>0.7</priority>
   </url>
