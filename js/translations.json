@@ -10,6 +10,7 @@
     },
     "header": {
       "logo": "Abdelrahman - Accountant",
+      "logoShort": "Abdelrahman",
       "skills": "Skills",
       "services": "Value Areas",
       "caseStudies": "Case Studies",
@@ -567,6 +568,7 @@
     },
     "header": {
       "logo": "عبدالرحمن - محاسب",
+      "logoShort": "عبدالرحمن",
       "skills": "المهارات",
       "services": "مجالات القيمة",
       "caseStudies": "أبرز المشاريع",

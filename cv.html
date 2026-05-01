@@ -426,6 +426,157 @@
       font-weight: 900;
     }
 
+    .section-head p {
+      margin: -4px 0 16px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .certificate-gallery-section {
+      margin-top: 24px;
+    }
+
+    .certificate-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .certificate-card {
+      padding: 8px;
+      border: 1px solid #e2efff;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 8px 18px rgb(15 23 42 / 7%);
+      cursor: zoom-in;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .certificate-card:hover,
+    .certificate-card:focus-visible {
+      border-color: var(--accent);
+      box-shadow: 0 14px 26px rgb(33 150 243 / 14%);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .certificate-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: contain;
+      background: #f8fbff;
+    }
+
+    .certificate-preview {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    .certificate-preview.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .certificate-preview__backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgb(15 23 42 / 72%);
+    }
+
+    .certificate-preview__frame {
+      position: relative;
+      z-index: 2;
+      width: fit-content;
+      max-width: min(94vw, 980px);
+      max-height: calc(100vh - 52px);
+      margin: 0;
+      padding: 14px;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 28px 70px rgb(15 23 42 / 35%);
+    }
+
+    .certificate-preview__frame img {
+      display: block;
+      max-width: 100%;
+      max-height: calc(100vh - 108px);
+      object-fit: contain;
+    }
+
+    .certificate-preview__frame figcaption {
+      padding-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .certificate-preview__close,
+    .certificate-preview__nav {
+      position: absolute;
+      z-index: 3;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgb(255 255 255 / 36%);
+      border-radius: 50%;
+      background: rgb(255 255 255 / 94%);
+      color: var(--accent-dark);
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .certificate-preview__close:hover,
+    .certificate-preview__nav:hover,
+    .certificate-preview__close:focus-visible,
+    .certificate-preview__nav:focus-visible {
+      background: #fff;
+      transform: scale(1.06);
+      outline: none;
+    }
+
+    .certificate-preview__close {
+      top: 18px;
+      inset-inline-end: 18px;
+    }
+
+    .certificate-preview__nav {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .certificate-preview__nav:hover,
+    .certificate-preview__nav:focus-visible {
+      transform: translateY(-50%) scale(1.06);
+    }
+
+    .certificate-preview__nav--prev {
+      inset-inline-start: 18px;
+    }
+
+    .certificate-preview__nav--next {
+      inset-inline-end: 18px;
+    }
+
+    body.cv-certificate-preview-active {
+      overflow: hidden;
+    }
+
     .footer {
       padding: 16px 38px 24px;
       color: #718096;
@@ -495,6 +646,22 @@
       color: var(--accent-dark);
     }
 
+    html[data-theme="dark"] .certificate-card,
+    html[data-theme="dark"] .certificate-preview__frame {
+      background: #162033;
+      border-color: #2c3d56;
+    }
+
+    html[data-theme="dark"] .certificate-card img {
+      background: #0f172a;
+    }
+
+    html[data-theme="dark"] .certificate-preview__close,
+    html[data-theme="dark"] .certificate-preview__nav {
+      background: #162033;
+      color: #dbeafe;
+    }
+
     @media print {
       html[data-theme="dark"] {
         color-scheme: light;
@@ -530,6 +697,11 @@
 
       .cv-toolbar {
         display: none;
+      }
+
+      .certificate-gallery-section,
+      .certificate-preview {
+        display: none !important;
       }
 
       .hero {
@@ -676,6 +848,38 @@
       .side {
         border-left: none;
         border-top: 1px solid var(--line);
+      }
+
+      .certificate-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .certificate-preview {
+        padding: 14px;
+      }
+
+      .certificate-preview__close {
+        top: 12px;
+        inset-inline-end: 12px;
+      }
+
+      .certificate-preview__nav {
+        top: auto;
+        bottom: 16px;
+        transform: none;
+      }
+
+      .certificate-preview__nav:hover,
+      .certificate-preview__nav:focus-visible {
+        transform: scale(1.06);
+      }
+
+      .certificate-preview__nav--prev {
+        inset-inline-start: calc(50% - 58px);
+      }
+
+      .certificate-preview__nav--next {
+        inset-inline-end: calc(50% - 58px);
       }
     }
   </style>
@@ -900,6 +1104,28 @@
     const supportedThemes = ["light", "dark"];
     const themeStorageKey = "theme";
     let currentTheme = getInitialTheme();
+    const CERTIFICATE_IMAGES = Array.from({ length: 12 }, (_, index) => {
+      const number = String(index + 1).padStart(2, "0");
+      return { src: `imgs/gallery-${number}.webp` };
+    });
+    const CERTIFICATE_COPY = {
+      ar: {
+        title: "\u0635\u0648\u0631 \u0627\u0644\u0634\u0647\u0627\u062f\u0627\u062a",
+        intro: "\u0627\u0636\u063a\u0637 \u0639\u0644\u0649 \u0623\u064a \u0634\u0647\u0627\u062f\u0629 \u0644\u0639\u0631\u0636\u0647\u0627 \u0628\u062d\u062c\u0645 \u0623\u0643\u0628\u0631 \u0648\u0627\u0644\u062a\u0646\u0642\u0644 \u0628\u064a\u0646\u0647\u0627.",
+        open: "\u0641\u062a\u062d \u0627\u0644\u0634\u0647\u0627\u062f\u0629",
+        close: "\u0625\u063a\u0644\u0627\u0642 \u0639\u0631\u0636 \u0627\u0644\u0634\u0647\u0627\u062f\u0629",
+        prev: "\u0627\u0644\u0634\u0647\u0627\u062f\u0629 \u0627\u0644\u0633\u0627\u0628\u0642\u0629",
+        next: "\u0627\u0644\u0634\u0647\u0627\u062f\u0629 \u0627\u0644\u062a\u0627\u0644\u064a\u0629"
+      },
+      en: {
+        title: "Certificate Images",
+        intro: "Click any certificate to view it larger and move between certificates.",
+        open: "Open certificate",
+        close: "Close certificate viewer",
+        prev: "Previous certificate",
+        next: "Next certificate"
+      }
+    };
 
     function detectBrowserLanguage() {
       const language = navigator.language || navigator.userLanguage || "en";
@@ -1032,6 +1258,125 @@
       `;
     }
 
+    function getCertificateCopy(language) {
+      return CERTIFICATE_COPY[language] || CERTIFICATE_COPY.en;
+    }
+
+    function renderCertificates(language) {
+      const copy = getCertificateCopy(language);
+
+      return `
+        <section class="section certificate-gallery-section" id="certificates">
+          <div class="section-head">
+            <h2>${escapeHtml(copy.title)}</h2>
+            <p>${escapeHtml(copy.intro)}</p>
+          </div>
+          <div class="certificate-grid">
+            ${CERTIFICATE_IMAGES.map((certificate, index) => `
+              <button class="certificate-card" type="button" data-certificate-index="${index}" aria-label="${escapeHtml(copy.open)} ${index + 1}">
+                <img src="${escapeHtml(certificate.src)}" alt="${escapeHtml(copy.open)} ${index + 1}" loading="lazy">
+              </button>
+            `).join("")}
+          </div>
+        </section>
+      `;
+    }
+
+    function renderCertificatePreview(language) {
+      const copy = getCertificateCopy(language);
+
+      return `
+        <div class="certificate-preview" data-certificate-preview aria-hidden="true" tabindex="-1">
+          <div class="certificate-preview__backdrop" data-certificate-close="true"></div>
+          <button class="certificate-preview__close" type="button" data-certificate-close-button aria-label="${escapeHtml(copy.close)}">
+            <i class="fas fa-times"></i>
+          </button>
+          <button class="certificate-preview__nav certificate-preview__nav--prev" type="button" data-certificate-prev aria-label="${escapeHtml(copy.prev)}">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <figure class="certificate-preview__frame">
+            <img data-certificate-preview-image src="" alt="">
+            <figcaption data-certificate-counter>1 / ${CERTIFICATE_IMAGES.length}</figcaption>
+          </figure>
+          <button class="certificate-preview__nav certificate-preview__nav--next" type="button" data-certificate-next aria-label="${escapeHtml(copy.next)}">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      `;
+    }
+
+    function bindCertificatePreview(language) {
+      const copy = getCertificateCopy(language);
+      const preview = root.querySelector("[data-certificate-preview]");
+      const previewImage = root.querySelector("[data-certificate-preview-image]");
+      const previewCounter = root.querySelector("[data-certificate-counter]");
+      const closeButton = root.querySelector("[data-certificate-close-button]");
+      const prevButton = root.querySelector("[data-certificate-prev]");
+      const nextButton = root.querySelector("[data-certificate-next]");
+      const backdrop = root.querySelector("[data-certificate-close]");
+      const cards = [...root.querySelectorAll("[data-certificate-index]")];
+      let currentIndex = 0;
+      let activeTrigger = null;
+
+      if (!preview || !previewImage || !previewCounter || !closeButton || !prevButton || !nextButton || !backdrop || !cards.length) {
+        return;
+      }
+
+      const updatePreview = () => {
+        const certificate = CERTIFICATE_IMAGES[currentIndex];
+        previewImage.src = certificate.src;
+        previewImage.alt = `${copy.open} ${currentIndex + 1}`;
+        previewCounter.textContent = `${currentIndex + 1} / ${CERTIFICATE_IMAGES.length}`;
+      };
+
+      const openPreview = (index, trigger) => {
+        currentIndex = index;
+        activeTrigger = trigger;
+        updatePreview();
+        preview.classList.add("active");
+        preview.setAttribute("aria-hidden", "false");
+        document.body.classList.add("cv-certificate-preview-active");
+        closeButton.focus();
+      };
+
+      const closePreview = () => {
+        preview.classList.remove("active");
+        preview.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("cv-certificate-preview-active");
+        previewImage.removeAttribute("src");
+
+        if (activeTrigger) {
+          activeTrigger.focus();
+        }
+      };
+
+      const movePreview = (step) => {
+        currentIndex = (currentIndex + step + CERTIFICATE_IMAGES.length) % CERTIFICATE_IMAGES.length;
+        updatePreview();
+      };
+
+      cards.forEach((card) => {
+        card.addEventListener("click", () => {
+          openPreview(Number(card.dataset.certificateIndex) || 0, card);
+        });
+      });
+
+      closeButton.addEventListener("click", closePreview);
+      backdrop.addEventListener("click", closePreview);
+      prevButton.addEventListener("click", () => movePreview(-1));
+      nextButton.addEventListener("click", () => movePreview(1));
+
+      preview.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closePreview();
+        } else if (event.key === "ArrowLeft") {
+          movePreview(-1);
+        } else if (event.key === "ArrowRight") {
+          movePreview(1);
+        }
+      });
+    }
+
     function applyLanguage(lang) {
       const language = supportedLanguages.includes(lang) ? lang : "en";
       const content = CV_CONTENT[language];
@@ -1098,10 +1443,12 @@
                 <h2>${escapeHtml(content.projectsTitle)}</h2>
                 ${content.projects.map(renderProject).join("")}
               </section>
+              ${renderCertificates(language)}
             </div>
           </section>
           <footer class="footer">${escapeHtml(content.footer)}</footer>
         </main>
+        ${renderCertificatePreview(language)}
       `;
 
       applyTheme(currentTheme, false);
@@ -1110,6 +1457,13 @@
       root.querySelector("[data-language]")?.addEventListener("click", (event) => {
         applyLanguage(event.currentTarget.dataset.language);
       });
+      bindCertificatePreview(language);
+
+      if (window.location.hash === "#certificates") {
+        requestAnimationFrame(() => {
+          root.querySelector("#certificates")?.scrollIntoView({ block: "start" });
+        });
+      }
     }
 
     applyLanguage(getInitialLanguage());

@@ -82,7 +82,7 @@
     }
   </script>
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/mano.css?v=20260429-footer-compact" />
+  <link rel="stylesheet" href="css/mano.css?v=20260501-value-areas-restore" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="css/all.min.css" />
   <!-- Google Fonts -->
@@ -95,16 +95,19 @@
   <!-- Start Header -->
   <div class="header" id="header">
     <div class="container">
-      <a href="#header" class="logo" data-translate="header.logo">Abdelrahman - Accountant</a>
+      <a href="#header" class="logo">
+        <span class="logo-full" data-translate="header.logo">Abdelrahman - Accountant</span>
+        <span class="logo-short" data-translate="header.logoShort">Abdelrahman</span>
+      </a>
 
-      <button class="hamburger-menu" id="hamburgerBtn" type="button" aria-label="Toggle navigation" aria-controls="mobileNav" aria-expanded="false">
+      <button class="mobile-menu-trigger" id="hamburgerBtn" type="button" aria-label="Toggle navigation" aria-controls="mobileNav" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
       <ul class="main-nav" id="mobileNav">
-        <li><a href="#articles" data-translate="header.skills">Skills</a></li>
+        <li><a href="#problems" data-translate="header.problems">Problems I Solve</a></li>
         <li><a href="#services" data-translate="header.services">Value Areas</a></li>
         <li><a href="#case-studies" data-translate="header.caseStudies">Case Studies</a></li>
         <li><a href="cv.html" data-cv-link data-translate="header.cv">CV</a></li>
@@ -123,16 +126,10 @@
                 <a href="#problems"><i class="fas fa-tools fa-fw"></i> <span data-translate="header.problems">Problems I Solve</span></a>
               </li>
               <li>
-                <a href="#gallery"><i class="fas fa-certificate fa-fw"></i> <span data-translate="header.certifications">Certifications</span></a>
+                <a href="cv.html#certificates" data-cv-link data-cv-section="certificates"><i class="fas fa-certificate fa-fw"></i> <span data-translate="header.certifications">Certifications</span></a>
               </li>
               <li>
                 <a href="#services"><i class="far fa-building fa-fw"></i> <span data-translate="header.services">Value Areas</span></a>
-              </li>
-              <li>
-                <a href="#our-skills"><i class="far fa-check-circle fa-fw"></i> <span data-translate="header.mySkills">My Skills</span></a>
-              </li>
-              <li>
-                <a href="#work-steps"><i class="far fa-clipboard fa-fw"></i> <span data-translate="header.myProcess">My Process</span></a>
               </li>
             </ul>
             <ul class="links">
@@ -167,6 +164,15 @@
       <div class="text">
         <span class="landing-kicker" data-translate="landing.kicker">ERP data, inventory, VAT, and reporting control</span>
         <h1 data-translate="landing.title">ERP & Retail Accounting Professional</h1>
+        <div class="landing-mobile-visual">
+          <div class="landing-visual__frame">
+            <img src="imgs/landing-image.webp" alt="ERP and retail accounting illustration" loading="eager" decoding="async" />
+            <div class="landing-visual__badge">
+              <strong data-translate="landing.visualBadgeTitle">Retail ERP Focus</strong>
+              <span data-translate="landing.visualBadgeText">Cleaner data. Stronger controls.</span>
+            </div>
+          </div>
+        </div>
         <p data-translate="landing.description">I help retail and trading businesses turn messy accounting data into controlled ERP workflows, clean inventory records, VAT-ready reports, and management numbers they can trust.</p>
         <div class="landing-proof" aria-label="Core focus areas">
           <span><i class="fas fa-database"></i> <span data-translate="landing.proof.0">Data cleanup</span></span>
@@ -207,158 +213,8 @@
         </div>
       </div>
     </div>
-    <a href="#articles" class="go-down">
-      <i class="fas fa-angle-double-down fa-2x"></i>
-    </a>
   </div>
   <!-- End Landing -->
-  <!-- Start Articles -->
-  <div class="articles" id="articles">
-    <h2 class="main-title" data-translate="articles.title">Skills</h2>
-
-    <div class="container">
-
-      <div class="box">
-        <img src="imgs/cat-01.webp" alt="ERP systems management illustration" loading="lazy" decoding="async" />
-        <div class="content">
-          <h3 data-translate="articles.skills.0.title"></h3>
-          <p data-translate="articles.skills.0.description"></p>
-        </div>
-        <div class="info">
-          <a href="#our-skills" data-translate="articles.readMore">Read More</a>
-          <i class="fas fa-long-arrow-alt-right"></i>
-        </div>
-      </div>
-
-      <div class="box">
-        <img src="imgs/cat-08.webp" alt="Financial reporting illustration" loading="lazy" decoding="async" />
-        <div class="content">
-          <h3 data-translate="articles.skills.1.title"></h3>
-          <p data-translate="articles.skills.1.description"></p>
-        </div>
-        <div class="info">
-          <a href="#our-skills" data-translate="articles.readMore">Read More</a>
-          <i class="fas fa-long-arrow-alt-right"></i>
-        </div>
-      </div>
-
-      <div class="box">
-        <img src="imgs/cat-07.webp" alt="Inventory management illustration" loading="lazy" decoding="async" />
-        <div class="content">
-          <h3 data-translate="articles.skills.2.title"></h3>
-          <p data-translate="articles.skills.2.description"></p>
-        </div>
-        <div class="info">
-          <a href="#our-skills" data-translate="articles.readMore">Read More</a>
-          <i class="fas fa-long-arrow-alt-right"></i>
-        </div>
-      </div>
-
-      <div class="box">
-        <img src="imgs/cat-04.webp" alt="VAT and tax compliance illustration" loading="lazy" decoding="async" />
-        <div class="content">
-          <h3 data-translate="articles.skills.3.title"></h3>
-          <p data-translate="articles.skills.3.description"></p>
-        </div>
-        <div class="info">
-          <a href="#our-skills" data-translate="articles.readMore">Read More</a>
-          <i class="fas fa-long-arrow-alt-right"></i>
-        </div>
-      </div>
-
-      <div class="box">
-        <img src="imgs/cat-03.webp" alt="Data migration illustration" loading="lazy" decoding="async" />
-        <div class="content">
-          <h3 data-translate="articles.skills.4.title"></h3>
-          <p data-translate="articles.skills.4.description"></p>
-        </div>
-        <div class="info">
-          <a href="#our-skills" data-translate="articles.readMore">Read More</a>
-          <i class="fas fa-long-arrow-alt-right"></i>
-        </div>
-      </div>
-
-      <div class="box">
-        <img src="imgs/cat-02.webp" alt="Excel and Power BI illustration" loading="lazy" decoding="async" />
-        <div class="content">
-          <h3 data-translate="articles.skills.5.title"></h3>
-          <p data-translate="articles.skills.5.description"></p>
-        </div>
-        <div class="info">
-          <a href="#our-skills" data-translate="articles.readMore">Read More</a>
-          <i class="fas fa-long-arrow-alt-right"></i>
-        </div>
-      </div>
-
-      <div class="box">
-        <img src="imgs/cat-05.webp" alt="Supplier invoice review illustration" loading="lazy" decoding="async" />
-        <div class="content">
-          <h3 data-translate="articles.skills.6.title"></h3>
-          <p data-translate="articles.skills.6.description"></p>
-        </div>
-        <div class="info">
-          <a href="#our-skills" data-translate="articles.readMore">Read More</a>
-          <i class="fas fa-long-arrow-alt-right"></i>
-        </div>
-      </div>
-
-      <div class="box">
-        <img src="imgs/cat-06.webp" alt="Bank reconciliation illustration" loading="lazy" decoding="async" />
-        <div class="content">
-          <h3 data-translate="articles.skills.7.title"></h3>
-          <p data-translate="articles.skills.7.description"></p>
-        </div>
-        <div class="info">
-          <a href="#our-skills" data-translate="articles.readMore">Read More</a>
-          <i class="fas fa-long-arrow-alt-right"></i>
-        </div>
-      </div>
-
-    </div>
-    <button class="mobile-show-more" type="button" data-mobile-toggle="articles" aria-expanded="false" data-translate="ui.showMore">Show more</button>
-  </div>
-  <div class="spikes"></div>
-  <!-- End Articles -->
-  <!-- Start Gallery -->
-  <div class="gallery" id="gallery">
-    <h2 class="main-title" data-translate="gallery.title">Certificates</h2>
-
-    <div class="container">
-      <div class="box"><div class="image"><img src="imgs/gallery-01.webp" alt="Certificate preview 1" loading="lazy" /></div></div>
-      <div class="box"><div class="image"><img src="imgs/gallery-02.webp" alt="Certificate preview 2" loading="lazy" /></div></div>
-      <div class="box"><div class="image"><img src="imgs/gallery-03.webp" alt="Certificate preview 3" loading="lazy" /></div></div>
-      <div class="box"><div class="image"><img src="imgs/gallery-04.webp" alt="Certificate preview 4" loading="lazy" /></div></div>
-      <div class="box"><div class="image"><img src="imgs/gallery-05.webp" alt="Certificate preview 5" loading="lazy" /></div></div>
-      <div class="box"><div class="image"><img src="imgs/gallery-06.webp" alt="Certificate preview 6" loading="lazy" /></div></div>
-      <div class="box"><div class="image"><img src="imgs/gallery-07.webp" alt="Certificate preview 7" loading="lazy" /></div></div>
-      <div class="box"><div class="image"><img src="imgs/gallery-08.webp" alt="Certificate preview 8" loading="lazy" /></div></div>
-      <div class="box"><div class="image"><img src="imgs/gallery-09.webp" alt="Certificate preview 9" loading="lazy" /></div></div>
-      <div class="box"><div class="image"><img src="imgs/gallery-10.webp" alt="Certificate preview 10" loading="lazy" /></div></div>
-      <div class="box"><div class="image"><img src="imgs/gallery-11.webp" alt="Certificate preview 11" loading="lazy" /></div></div>
-      <div class="box"><div class="image"><img src="imgs/gallery-12.webp" alt="Certificate preview 12" loading="lazy" /></div></div>
-    </div>
-    <button class="mobile-show-more" type="button" data-mobile-toggle="gallery" aria-expanded="false" data-translate="ui.showMore">Show more</button>
-
-    <div class="gallery-preview" id="galleryPreview" aria-hidden="true">
-      <div class="gallery-preview__backdrop" data-gallery-close="true"></div>
-      <button class="gallery-preview__close" id="galleryPreviewClose" type="button" aria-label="Close certificate viewer">
-        <i class="fas fa-times"></i>
-      </button>
-      <button class="gallery-preview__nav gallery-preview__nav--prev" id="galleryPreviewPrev" type="button" aria-label="Previous certificate">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <div class="gallery-preview__frame">
-        <img id="galleryPreviewImage" src="" alt="" />
-        <div class="gallery-preview__meta">
-          <span id="galleryPreviewCounter">1 / 12</span>
-        </div>
-      </div>
-      <button class="gallery-preview__nav gallery-preview__nav--next" id="galleryPreviewNext" type="button" aria-label="Next certificate">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-    </div>
-  </div>
-  <!-- End Gallery -->
   <!-- Start Problems -->
   <div class="problems" id="problems">
     <h2 class="main-title" data-translate="problems.title">Problems I Solve</h2>
@@ -438,26 +294,7 @@
           <a href="#contact" data-service-key="vat" data-translate="services.details">Discuss Related Work</a>
         </div>
       </div>
-      <div class="box">
-        <i class="fas fa-chart-bar fa-4x"></i>
-        <h3 data-translate="services.items.4.title">Data Analysis & Dashboards</h3>
-        <p class="service-desc" data-translate="services.items.4.description">Turn Excel and ERP exports into dashboards that show sales, stock, costs, and operational performance.</p>
-        <ul class="service-points" data-translate="services.items.4.points"></ul>
-        <div class="info">
-          <a href="#contact" data-service-key="dashboards" data-translate="services.details">Discuss Related Work</a>
-        </div>
-      </div>
-      <div class="box">
-        <i class="fas fa-stream fa-4x"></i>
-        <h3 data-translate="services.items.5.title">Cost Correction & Costing</h3>
-        <p class="service-desc" data-translate="services.items.5.description">Review product costs against supplier invoices and fix costing issues that distort profit reporting.</p>
-        <ul class="service-points" data-translate="services.items.5.points"></ul>
-        <div class="info">
-          <a href="#contact" data-service-key="costing" data-translate="services.details">Discuss Related Work</a>
-        </div>
-      </div>
     </div>
-    <button class="mobile-show-more" type="button" data-mobile-toggle="services" aria-expanded="false" data-translate="ui.showMore">Show more</button>
   </div>
   <!-- End Services -->
   <!-- Start Case Studies -->
@@ -511,7 +348,7 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container case-study-list">
       <div class="box">
         <h3 data-translate="caseStudies.studies.0.title">ERP Migration & Financial Data Transfer</h3>
         <div>
@@ -552,128 +389,6 @@
     <button class="mobile-show-more" type="button" data-mobile-toggle="case-studies" aria-expanded="false" data-translate="ui.showMore">Show more</button>
   </div>
   <!-- End Case Studies -->
-  <!-- Start Skills -->
-  <div class="our-skills" id="our-skills">
-    <h2 class="main-title" data-translate="skills.title">My Skills</h2>
-
-    <div class="container skills-board">
-      <div class="skills-profile">
-        <span data-translate="skills.kicker">Core Strengths</span>
-        <h3 data-translate="skills.summaryTitle">Accounting systems, clean data, and reliable reporting</h3>
-        <p data-translate="skills.summaryText">My strongest area is connecting accounting operations with ERP discipline: clean master data, controlled inventory, accurate costing, and reports management can trust.</p>
-        <div class="skills-tools">
-          <span>Rewaa</span>
-          <span>DataSpace</span>
-          <span>Odoo</span>
-          <span>Oracle</span>
-          <span>Excel</span>
-          <span>Power BI</span>
-        </div>
-      </div>
-
-      <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-card__head">
-            <i class="fas fa-server"></i>
-            <span class="percent">90%</span>
-          </div>
-          <h3 data-translate="skills.items.0.title">ERP Systems</h3>
-          <p data-translate="skills.items.0.description">ERP setup, workflow control, migration support, and user-ready operations.</p>
-          <div class="the-progress"><span style="width: 0" data-width="90%"></span></div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__head">
-            <i class="fas fa-file-invoice-dollar"></i>
-            <span class="percent">85%</span>
-          </div>
-          <h3 data-translate="skills.items.1.title">Financial Reporting</h3>
-          <p data-translate="skills.items.1.description">Income statements, reconciliations, closing reviews, and management visibility.</p>
-          <div class="the-progress"><span style="width: 0" data-width="85%"></span></div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__head">
-            <i class="fas fa-boxes"></i>
-            <span class="percent">88%</span>
-          </div>
-          <h3 data-translate="skills.items.2.title">Inventory Control</h3>
-          <p data-translate="skills.items.2.description">Product cleanup, barcode review, category structure, and stock reporting.</p>
-          <div class="the-progress"><span style="width: 0" data-width="88%"></span></div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__head">
-            <i class="fas fa-chart-pie"></i>
-            <span class="percent">92%</span>
-          </div>
-          <h3 data-translate="skills.items.3.title">Excel & Power BI</h3>
-          <p data-translate="skills.items.3.description">Dashboards, Power Query cleanup, KPI summaries, and decision-ready analysis.</p>
-          <div class="the-progress"><span style="width: 0" data-width="92%"></span></div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__head">
-            <i class="fas fa-percent"></i>
-            <span class="percent">86%</span>
-          </div>
-          <h3 data-translate="skills.items.4.title">VAT Compliance</h3>
-          <p data-translate="skills.items.4.description">VAT data review, supporting documents, reconciliations, and filing summaries.</p>
-          <div class="the-progress"><span style="width: 0" data-width="86%"></span></div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__head">
-            <i class="fas fa-balance-scale"></i>
-            <span class="percent">87%</span>
-          </div>
-          <h3 data-translate="skills.items.5.title">Costing & Reconciliation</h3>
-          <p data-translate="skills.items.5.description">Supplier invoice checks, product cost correction, bank reconciliation, and margin accuracy.</p>
-          <div class="the-progress"><span style="width: 0" data-width="87%"></span></div>
-        </div>
-      </div>
-    </div>
-    <button class="mobile-show-more" type="button" data-mobile-toggle="our-skills" aria-expanded="false" data-translate="ui.showMore">Show more</button>
-  </div>
-  <!-- End Skills -->
-  <!-- Start Work Steps -->
-  <div class="work-steps" id="work-steps">
-    <h2 class="main-title" data-translate="workSteps.title">My Accounting Process</h2>
-    <div class="container process-board">
-      <div class="process-intro">
-        <span data-translate="workSteps.kicker">How I Work</span>
-        <h3 data-translate="workSteps.summaryTitle">From messy data to controlled monthly reporting</h3>
-        <p data-translate="workSteps.summaryText">I start by understanding the operational source of the numbers, then clean the data, apply controls, and turn the result into reports the business can use.</p>
-      </div>
-      <div class="process-grid">
-        <div class="process-card">
-          <span class="process-number">01</span>
-          <i class="fas fa-search-dollar"></i>
-          <h3 data-translate="workSteps.steps.0.title">Diagnose the Current State</h3>
-          <p data-translate="workSteps.steps.0.description">Review reports, ERP exports, master data, invoice flow, and the exact points where numbers stop matching.</p>
-          <strong data-translate="workSteps.steps.0.output">Output: clear issue map</strong>
-        </div>
-        <div class="process-card">
-          <span class="process-number">02</span>
-          <i class="fas fa-broom"></i>
-          <h3 data-translate="workSteps.steps.1.title">Clean and Validate Data</h3>
-          <p data-translate="workSteps.steps.1.description">Fix duplicates, inactive items, barcodes, supplier balances, opening balances, and records that affect reporting.</p>
-          <strong data-translate="workSteps.steps.1.output">Output: cleaner data foundation</strong>
-        </div>
-        <div class="process-card">
-          <span class="process-number">03</span>
-          <i class="fas fa-cogs"></i>
-          <h3 data-translate="workSteps.steps.2.title">Control the Workflow</h3>
-          <p data-translate="workSteps.steps.2.description">Set practical checks for posting, inventory movement, invoice review, permissions, and monthly closing.</p>
-          <strong data-translate="workSteps.steps.2.output">Output: fewer repeated errors</strong>
-        </div>
-        <div class="process-card">
-          <span class="process-number">04</span>
-          <i class="fas fa-chart-line"></i>
-          <h3 data-translate="workSteps.steps.3.title">Report and Improve</h3>
-          <p data-translate="workSteps.steps.3.description">Prepare financial reports, reconciliations, stock insights, cost checks, and notes that support decisions.</p>
-          <strong data-translate="workSteps.steps.3.output">Output: reliable management view</strong>
-        </div>
-      </div>
-    </div>
-    <button class="mobile-show-more" type="button" data-mobile-toggle="work-steps" aria-expanded="false" data-translate="ui.showMore">Show more</button>
-  </div>
-  <!-- End Work Steps -->
   <!-- Start Videos -->
   <div class="videos" id="videos">
     <h2 class="main-title" data-translate="videos.title">Professional Experience</h2>
@@ -807,9 +522,9 @@
         <div class="box footer-links">
           <h3 data-translate="footer.quickLinks">Quick Links</h3>
           <ul class="links">
-            <li><a href="#articles" data-translate="header.skills">Skills</a></li>
+            <li><a href="#problems" data-translate="header.problems">Problems I Solve</a></li>
             <li><a href="#case-studies" data-translate="header.caseStudies">Case Studies</a></li>
-            <li><a href="#gallery" data-translate="header.certifications">Certifications</a></li>
+            <li><a href="cv.html#certificates" data-cv-link data-cv-section="certificates" data-translate="header.certifications">Certifications</a></li>
             <li><a href="cv.html" data-cv-link data-translate="header.cv">CV</a></li>
             <li><a href="#contact" data-translate="footer.contactLink">Contact</a></li>
           </ul>
@@ -846,7 +561,7 @@
   <button class="scroll-toggle" id="scrollToggleBtn" type="button" aria-label="Scroll to bottom">
     <i class="fas fa-angle-double-down"></i>
   </button>
-  <script src="js/main.js?v=20260429-footer-compact"></script>
+  <script src="js/main.js?v=20260501-value-areas-restore"></script>
 </body>
 
 </html>
