@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abdelrahman-mo-hamza.github.io/My-Portfolio/sitemap.xml
